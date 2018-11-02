@@ -7,18 +7,40 @@
 //
 
 import UIKit
+import MNkSupportUtilities
 
-class ViewController: UIViewController {
-
+class ViewController:MNkBaseVC<Model>{
+    
+    override func fetchData() {}
+    override func insertAndLayoutSubviews() {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        data = nil
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
+struct Model{
+    
+}
+
+class SampleTVCell: MNkBaseTVCell<Model>{
+    
+}
+
+class SampleCVCell: MNkBaseCVCell<Model>{
+    
+    override func updateUI(_ data: Model) {
+        
+    }
+   
+}
+
+class TableviewController: MNkBaseTableVC<Model,SampleTVCell>{
+    
+    override func fetchData() {
+        
+    }
+    
+    
+}

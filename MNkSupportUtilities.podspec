@@ -21,16 +21,16 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/m.nadeeshan@yahoo.co.uk/MNkSupportUtilities'
+  s.homepage         = 'https://github.com/MnkGitBox/MNkSupportUtilities'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'm.nadeeshan@yahoo.co.uk' => 'malith.mnk93@gmail.com' }
-  s.source           = { :git => 'https://github.com/m.nadeeshan@yahoo.co.uk/MNkSupportUtilities.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MnkGitBox/MNkSupportUtilities.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'MNkSupportUtilities/Classes/**/*'
+  s.source_files = 'Classes/**/*'
   
   # s.resource_bundles = {
   #   'MNkSupportUtilities' => ['MNkSupportUtilities/Assets/*.png']

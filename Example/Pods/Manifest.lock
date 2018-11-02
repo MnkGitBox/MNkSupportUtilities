@@ -1,0 +1,16 @@
+PODS:
+  - MNkSupportUtilities (0.1.0)
+
+DEPENDENCIES:
+  - MNkSupportUtilities (from `../`)
+
+EXTERNAL SOURCES:
+  MNkSupportUtilities:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MNkSupportUtilities: caae065a0268cb65cdff2efcb9b9b24750b35cb5
+
+PODFILE CHECKSUM: 778c8fc811be3480347261f570132bd4020b823b
+
+COCOAPODS: 1.5.3

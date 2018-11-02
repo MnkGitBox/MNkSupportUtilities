@@ -1,0 +1,6 @@
+framework module Pods_MNkSupportUtilities_Example {
+  umbrella header "Pods-MNkSupportUtilities_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		0AF4C7DA6E69BD614D0D4016 /* Pods-MNkSupportUtilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Example/Pods-MNkSupportUtilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0D9CBCF53659C23B7609E541 /* Pods_MNkSupportUtilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNkSupportUtilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		352D676D8B21D931BC1424C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		352D676D8B21D931BC1424C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MNkSupportUtilities_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNkSupportUtilities_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,8 +42,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		676F0C0BE7975933B0F3E713 /* Pods-MNkSupportUtilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Tests/Pods-MNkSupportUtilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		77EF4DEA64B87E758DEE25F3 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MNkSupportUtilities.podspec; path = ../MNkSupportUtilities.podspec; sourceTree = "<group>"; };
-		846E4D360D356CA9B2062DCD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		77EF4DEA64B87E758DEE25F3 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MNkSupportUtilities.podspec; path = ../MNkSupportUtilities.podspec; sourceTree = "<group>"; };
+		846E4D360D356CA9B2062DCD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9C870EC5D6AA131A5FA988F8 /* Pods-MNkSupportUtilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Tests/Pods-MNkSupportUtilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2476DB9500E60FFBEC28DC0 /* Pods-MNkSupportUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Example/Pods-MNkSupportUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D9B6833DBFB45089F6C447EF /* Pods_MNkSupportUtilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNkSupportUtilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +212,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = SGWDF4729Q;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -469,7 +470,9 @@
 			baseConfigurationReference = 0AF4C7DA6E69BD614D0D4016 /* Pods-MNkSupportUtilities_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SGWDF4729Q;
 				INFOPLIST_FILE = MNkSupportUtilities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -484,7 +487,9 @@
 			baseConfigurationReference = B2476DB9500E60FFBEC28DC0 /* Pods-MNkSupportUtilities_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SGWDF4729Q;
 				INFOPLIST_FILE = MNkSupportUtilities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
