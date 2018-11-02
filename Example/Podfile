@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MNkSupportUtilities_Example' do
+  pod 'MNkSupportUtilities', :path => '../'
+
+  target 'MNkSupportUtilities_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
