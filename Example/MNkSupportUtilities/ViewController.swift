@@ -9,7 +9,7 @@
 import UIKit
 import MNkSupportUtilities
 
-class ViewController:MNkBaseVC<Model>{
+class ViewController:MNkBaseVCWithParameter<Model>{
     
     override func fetchData() {}
     override func insertAndLayoutSubviews() {}

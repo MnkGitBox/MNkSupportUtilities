@@ -7,19 +7,10 @@
 
 import UIKit
 
-open class MNkBaseVC<T>: UIViewController {
+open class MNkBaseVCWithParameter<T>: MNkBasicViewController {
     
     public var data:T?{didSet{reloadData()}}
 
-    open func insertAndLayoutSubviews(){}
-    open func fetchData(){}
-    open func reloadData(){}
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        insertAndLayoutSubviews()
-        fetchData()
-    }
 }
 
 
