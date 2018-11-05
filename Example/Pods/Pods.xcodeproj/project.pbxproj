@@ -11,6 +11,7 @@
 		46BF01B357B764DD13B415022178835C /* Pods-MNkSupportUtilities_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382584A70D92C5AC73246BC508522C8 /* Pods-MNkSupportUtilities_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F5712B3A1F2F672C7D13DC0F6AD32FD /* Pods-MNkSupportUtilities_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */; };
 		774E7103218FF77100CA56B8 /* MNkBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774E7102218FF77100CA56B8 /* MNkBasicViewController.swift */; };
+		774E7105219003EB00CA56B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774E7104219003EB00CA56B8 /* Extensions.swift */; };
 		7768B74A218C5F73004BF130 /* MNkBasicCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B743218C5F72004BF130 /* MNkBasicCollectionVC.swift */; };
 		7768B74B218C5F73004BF130 /* MNkBasicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B744218C5F72004BF130 /* MNkBasicTableVC.swift */; };
 		7768B74C218C5F73004BF130 /* MNkBaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B745218C5F72004BF130 /* MNkBaseCVCell.swift */; };
@@ -60,6 +61,7 @@
 		5F1C3B2E31F7A4B4204C916DA945E395 /* MNkSupportUtilities-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNkSupportUtilities-umbrella.h"; sourceTree = "<group>"; };
 		7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNkSupportUtilities_Example-dummy.m"; sourceTree = "<group>"; };
 		774E7102218FF77100CA56B8 /* MNkBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkBasicViewController.swift; sourceTree = "<group>"; };
+		774E7104219003EB00CA56B8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7768B743218C5F72004BF130 /* MNkBasicCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNkBasicCollectionVC.swift; sourceTree = "<group>"; };
 		7768B744218C5F72004BF130 /* MNkBasicTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNkBasicTableVC.swift; sourceTree = "<group>"; };
 		7768B745218C5F72004BF130 /* MNkBaseCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNkBaseCVCell.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				774E7102218FF77100CA56B8 /* MNkBasicViewController.swift */,
 				7768B743218C5F72004BF130 /* MNkBasicCollectionVC.swift */,
 				7768B744218C5F72004BF130 /* MNkBasicTableVC.swift */,
+				774E7104219003EB00CA56B8 /* Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				7768B750218C5F73004BF130 /* MNkBaseTableVC.swift in Sources */,
 				7768B74A218C5F73004BF130 /* MNkBasicCollectionVC.swift in Sources */,
 				7768B74B218C5F73004BF130 /* MNkBasicTableVC.swift in Sources */,
+				774E7105219003EB00CA56B8 /* Extensions.swift in Sources */,
 				7768B74F218C5F73004BF130 /* MNkBaseViewController.swift in Sources */,
 				7768B74C218C5F73004BF130 /* MNkBaseCVCell.swift in Sources */,
 				774E7103218FF77100CA56B8 /* MNkBasicViewController.swift in Sources */,

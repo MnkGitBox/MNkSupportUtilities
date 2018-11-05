@@ -22,6 +22,7 @@ open class MNkBaseTableVC<T,C:MNkBaseTVCell<T>>: UITableViewController{
         super.viewDidLoad()
         configTableview()
         fetchData()
+        view.backgroundColor = .white
     }
     
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return data.count}

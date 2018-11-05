@@ -17,6 +17,8 @@ class ViewController:MNkBaseVCWithParameter<Model>{
     override func viewDidLoad() {
         super.viewDidLoad()
         data = nil
+        
+        view.activeShadow()
     }
 }
 

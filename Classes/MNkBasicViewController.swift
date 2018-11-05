@@ -17,5 +17,6 @@ open class MNkBasicViewController: UIViewController {
         super.viewDidLoad()
         insertAndLayoutSubviews()
         fetchData()
+        view.backgroundColor = .white
     }
 }

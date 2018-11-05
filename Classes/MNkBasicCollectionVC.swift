@@ -24,6 +24,7 @@ open class MNkBasicCollectionVC<T>:UICollectionViewController{
         addCellClasses()
         configCollectionView()
         fetchData()
+        view.backgroundColor = .white
     }
     
     

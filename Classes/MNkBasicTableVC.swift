@@ -23,6 +23,7 @@ open class MNkBasicTableVC<T>:UITableViewController{
         addCellClasses()
         configCollectionView()
         fetchData()
+        view.backgroundColor = .white
     }
     
     

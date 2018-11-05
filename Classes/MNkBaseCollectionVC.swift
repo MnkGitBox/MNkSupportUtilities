@@ -22,6 +22,7 @@ open class MNkBaseCollectionVC<T,C:MNkBaseCVCell<T>>: UICollectionViewController
         super.viewDidLoad()
         configCollectionView()
         fetchData()
+        view.backgroundColor = .white
     }
     
     
