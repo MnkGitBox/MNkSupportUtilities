@@ -8,15 +8,18 @@
 import UIKit
 
 open class MNkBasicViewController: UIViewController {
-
+    
     open func insertAndLayoutSubviews(){}
     open func fetchData(){}
-    open func reloadData(){}
+    open func updateUIWithNewData(){}
+    open func config(){}
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        insertAndLayoutSubviews()
-        fetchData()
         view.backgroundColor = .white
+        insertAndLayoutSubviews()
+        config()
+        fetchData()
+        
     }
 }

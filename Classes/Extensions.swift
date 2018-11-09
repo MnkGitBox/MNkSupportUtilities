@@ -11,7 +11,6 @@ import Foundation
         //UIView Extenstions start
 //-------------------------------------------//
 
-
 public extension UIView{
     public func activeShadow(using opacity:Float = 0.1,shadowRadius:CGFloat = 8){
         self.layer.shadowColor = UIColor.black.cgColor

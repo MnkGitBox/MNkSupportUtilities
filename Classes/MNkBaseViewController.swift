@@ -9,8 +9,8 @@ import UIKit
 
 open class MNkBaseVCWithParameter<T>: MNkBasicViewController {
     
-    public var data:T?{didSet{reloadData()}}
-
+    public var data:T?{didSet{updateUIWithNewData()}}
+    
 }
 
 

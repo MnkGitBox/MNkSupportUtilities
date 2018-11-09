@@ -18,6 +18,7 @@ open class MNkBaseCollectionVC<T,C:MNkBaseCVCell<T>>: UICollectionViewController
     }
     open func fetchData(){}
     
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()

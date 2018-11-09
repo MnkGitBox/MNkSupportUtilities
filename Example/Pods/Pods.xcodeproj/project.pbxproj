@@ -10,6 +10,7 @@
 		0575487470E21DD5C204924B89983996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		46BF01B357B764DD13B415022178835C /* Pods-MNkSupportUtilities_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382584A70D92C5AC73246BC508522C8 /* Pods-MNkSupportUtilities_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F5712B3A1F2F672C7D13DC0F6AD32FD /* Pods-MNkSupportUtilities_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */; };
+		770F1F9921955EE90020631A /* MNkBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F1F9821955EE90020631A /* MNkBaseView.swift */; };
 		774E7103218FF77100CA56B8 /* MNkBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774E7102218FF77100CA56B8 /* MNkBasicViewController.swift */; };
 		774E7105219003EB00CA56B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774E7104219003EB00CA56B8 /* Extensions.swift */; };
 		7768B74A218C5F73004BF130 /* MNkBasicCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B743218C5F72004BF130 /* MNkBasicCollectionVC.swift */; };
@@ -19,6 +20,7 @@
 		7768B74E218C5F73004BF130 /* MNkBaseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B747218C5F73004BF130 /* MNkBaseTVCell.swift */; };
 		7768B74F218C5F73004BF130 /* MNkBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B748218C5F73004BF130 /* MNkBaseViewController.swift */; };
 		7768B750218C5F73004BF130 /* MNkBaseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768B749218C5F73004BF130 /* MNkBaseTableVC.swift */; };
+		77E3FEE42191677D00503B08 /* MNkTextViewNoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E3FEE32191677D00503B08 /* MNkTextViewNoPadding.swift */; };
 		7B4F60182535B29B033FCD8E5E35C71F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		801464283D7571E4534934D2E46DD45D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		B53F8E19D0B64820D2BDCC7857548757 /* MNkSupportUtilities-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F1C3B2E31F7A4B4204C916DA945E395 /* MNkSupportUtilities-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +61,7 @@
 		57D62ED8165E104488CBBDAF364E20E9 /* Pods-MNkSupportUtilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNkSupportUtilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5F1C3B2E31F7A4B4204C916DA945E395 /* MNkSupportUtilities-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MNkSupportUtilities-umbrella.h"; sourceTree = "<group>"; };
+		770F1F9821955EE90020631A /* MNkBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkBaseView.swift; sourceTree = "<group>"; };
 		7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNkSupportUtilities_Example-dummy.m"; sourceTree = "<group>"; };
 		774E7102218FF77100CA56B8 /* MNkBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkBasicViewController.swift; sourceTree = "<group>"; };
 		774E7104219003EB00CA56B8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		7768B747218C5F73004BF130 /* MNkBaseTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNkBaseTVCell.swift; sourceTree = "<group>"; };
 		7768B748218C5F73004BF130 /* MNkBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNkBaseViewController.swift; sourceTree = "<group>"; };
 		7768B749218C5F73004BF130 /* MNkBaseTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNkBaseTableVC.swift; sourceTree = "<group>"; };
+		77E3FEE32191677D00503B08 /* MNkTextViewNoPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkTextViewNoPadding.swift; sourceTree = "<group>"; };
 		88809FA8E199B249D4A7DCC654AACF37 /* Pods_MNkSupportUtilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNkSupportUtilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BA415E13FFBC2A72994E1206CF42B0 /* Pods-MNkSupportUtilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNkSupportUtilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		90CFD21FFE3433414E78EEF00B9500EB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,8 +171,18 @@
 				7768B743218C5F72004BF130 /* MNkBasicCollectionVC.swift */,
 				7768B744218C5F72004BF130 /* MNkBasicTableVC.swift */,
 				774E7104219003EB00CA56B8 /* Extensions.swift */,
+				77E3FEE52191678500503B08 /* SupportSubviewClasses */,
+				770F1F9821955EE90020631A /* MNkBaseView.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		77E3FEE52191678500503B08 /* SupportSubviewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				77E3FEE32191677D00503B08 /* MNkTextViewNoPadding.swift */,
+			);
+			path = SupportSubviewClasses;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -378,6 +392,8 @@
 				F4177B27B68003DA6BBFA7D2C486348B /* MNkSupportUtilities-dummy.m in Sources */,
 				7768B74E218C5F73004BF130 /* MNkBaseTVCell.swift in Sources */,
 				7768B750218C5F73004BF130 /* MNkBaseTableVC.swift in Sources */,
+				77E3FEE42191677D00503B08 /* MNkTextViewNoPadding.swift in Sources */,
+				770F1F9921955EE90020631A /* MNkBaseView.swift in Sources */,
 				7768B74A218C5F73004BF130 /* MNkBasicCollectionVC.swift in Sources */,
 				7768B74B218C5F73004BF130 /* MNkBasicTableVC.swift in Sources */,
 				774E7105219003EB00CA56B8 /* Extensions.swift in Sources */,

@@ -17,7 +17,7 @@ open class MNkBasicTableVC<T>:UITableViewController{
     }
     open func addCellClasses(){}
     open func fetchData(){}
-
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         addCellClasses()

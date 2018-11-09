@@ -32,9 +32,7 @@ class SampleTVCell: MNkBaseTVCell<Model>{
 
 class SampleCVCell: MNkBaseCVCell<Model>{
     
-    override func updateUI(_ data: Model) {
-        
-    }
+    override func updateUI() {}
    
 }
 
@@ -44,5 +42,9 @@ class TableviewController: MNkBaseTableVC<Model,SampleTVCell>{
         
     }
     
+    
+}
+
+class TextView: MNkTextViewNoPadding{
     
 }
