@@ -1,9 +1,9 @@
 {
   "name": "MNkSupportUtilities",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "summary": "A short description of MNkSupportUtilities.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/m.nadeeshan@yahoo.co.uk/MNkSupportUtilities",
+  "homepage": "https://github.com/MnkGitBox/MNkSupportUtilities",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "m.nadeeshan@yahoo.co.uk": "malith.mnk93@gmail.com"
   },
   "source": {
-    "git": "https://github.com/m.nadeeshan@yahoo.co.uk/MNkSupportUtilities.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/MnkGitBox/MNkSupportUtilities.git",
+    "tag": "0.1.4"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "MNkSupportUtilities/Classes/**/*"
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "SDWebImage": [
+
+    ]
+  }
 }

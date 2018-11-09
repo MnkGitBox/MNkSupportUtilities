@@ -1,15 +1,24 @@
 PODS:
-  - MNkSupportUtilities (0.1.0)
+  - MNkSupportUtilities (0.1.4):
+    - SDWebImage
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - MNkSupportUtilities (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   MNkSupportUtilities:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MNkSupportUtilities: caae065a0268cb65cdff2efcb9b9b24750b35cb5
+  MNkSupportUtilities: 5168d2cb7aa0bf6fd6ec9bdc20e809ecb1c9e6b3
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
 PODFILE CHECKSUM: 778c8fc811be3480347261f570132bd4020b823b
 

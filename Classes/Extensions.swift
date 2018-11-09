@@ -8,7 +8,7 @@
 import Foundation
 
 //-------------------------------------------//
-        //UIView Extenstions start
+        //UIView Extenstions
 //-------------------------------------------//
 
 public extension UIView{
@@ -41,5 +41,16 @@ public extension UIView{
 }
 
 //-------------------------------------------//
-        //UIView Extenstions end
+        //UIimageview Extenstions
 //-------------------------------------------//
+
+import SDWebImage
+extension UIImageView{
+    func setImage(with url:URL?,tintColor tColor:UIColor,plaseHolder plImage:UIImage? = nil,options sdwedImageOptions:SDWebImageOptions = []){
+        sd_setImage(with: url, placeholderImage: plImage, options: sdwedImageOptions) { [weak self]image, _,_, _ in
+            let _image = image?.withRenderingMode(.alwaysTemplate)
+            self?.tintColor = tColor
+            self?.image = _image
+        }
+    }
+}
