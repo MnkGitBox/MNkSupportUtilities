@@ -22,34 +22,34 @@ open class MNkVerticalAlignButton: UIView {
         }
     }
     
-    @IBInspectable public var image:UIImage = #imageLiteral(resourceName: "missing icon"){
+    public var image:UIImage = #imageLiteral(resourceName: "missing icon"){
         didSet{
             
             let imageMode:UIImageRenderingMode = isWantTintColor ? UIImageRenderingMode.alwaysTemplate : .alwaysOriginal
             imageView.image = image.withRenderingMode(imageMode)
         }
     }
-    @IBInspectable public  var title:String? = "Custom Button"{
+    public var title:String? = "Custom Button"{
         didSet{
             titleLabel.text = title?.capitalized
         }
     }
-     @IBInspectable public var titleFontColor:UIColor = .white{
+    public var titleFontColor:UIColor = .white{
         didSet{
             titleLabel.textColor = titleFontColor
         }
     }
-    @IBInspectable public var titleFontSize:CGFloat = 12{
+    public var titleFontSize:CGFloat = 12{
         didSet{
             titleLabel.font = UIFont(name: "AvenirNext-Medium", size: titleFontSize)
         }
     }
-    @IBInspectable public var imageTintColor:UIColor = .white{
+    public var imageTintColor:UIColor = .white{
         didSet{
             imageView.tintColor = imageTintColor
         }
     }
-    @IBInspectable public var isWantTintColor:Bool = false{
+   public var isWantTintColor:Bool = false{
         didSet{
             let renderingMode:UIImageRenderingMode = isWantTintColor ? .alwaysTemplate : .alwaysOriginal
             imageView.image = image.withRenderingMode(renderingMode)
