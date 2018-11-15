@@ -14,7 +14,6 @@ open class MNkView:UIView{
         backgroundColor = .white
         insertAndLayoutSubviews()
         config()
-        
     }
     
     public required init?(coder aDecoder: NSCoder) {
