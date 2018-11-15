@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MNkSupportUtilities'
   s.version          = '0.1.5'
-  s.summary          = 'All Supporting functions and classes going to my coding time and efficiency increase. And helps to maintain unique coding pattern with common custom components.'
+  s.summary          = 'All Supporting functions and components'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'All supporting functions and components that easy And helps to maintain unique coding pattern with common custom components.'
 
   s.homepage         = 'https://github.com/MnkGitBox/MNkSupportUtilities'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

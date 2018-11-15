@@ -464,10 +464,10 @@
 				DAE87DD7C2E99DE08ACEED69BA28E0DF /* MNkBasicViewController.swift */,
 				E324FDF66E1A197681105A42F6E8020F /* MNkVerticalAlignButton.swift */,
 				77D7180C219D6A83000E9561 /* MNkView.swift */,
+				77D7180E219D6A9F000E9561 /* MNkUIViewTVCompatable.swift */,
 				45F899E77F724C096F3764D6C72561C7 /* Pod */,
 				E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */,
 				C7E7CBD6F798F44275061A6415F1BEC2 /* SupportSubviewClasses */,
-				77D7180E219D6A9F000E9561 /* MNkUIViewTVCompatable.swift */,
 			);
 			name = MNkSupportUtilities;
 			path = ../..;
