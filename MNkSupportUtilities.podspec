@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MNkSupportUtilities'
-  s.version          = '0.1.4'
-  s.summary          = 'A short description of MNkSupportUtilities.'
+  s.version          = '0.1.5'
+  s.summary          = 'All Supporting functions and classes going to my coding time and efficiency increase. And helps to maintain unique coding pattern with common custom components.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'm.nadeeshan@yahoo.co.uk' => 'malith.mnk93@gmail.com' }
   s.source           = { :git => 'https://github.com/MnkGitBox/MNkSupportUtilities.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/malithnadeeshan'
 
   s.ios.deployment_target = '11.0'
 

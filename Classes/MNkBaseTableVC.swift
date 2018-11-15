@@ -4,12 +4,11 @@
 //
 //  Created by MNk_Dev on 2/11/18.
 //
-
 import UIKit
 open class MNkBaseTableVC<T,C:MNkBaseTVCell<T>>: UITableViewController{
     
     public var data:[T] = []{didSet{tableView.reloadData()}}
-    public var cellID:String{return "GenericCellID \(arc4random())"}
+    public var cellID:String = "GenericCellID \(arc4random())"
     
     open func configTableview(){
         tableView.register(C.self, forCellReuseIdentifier:cellID)

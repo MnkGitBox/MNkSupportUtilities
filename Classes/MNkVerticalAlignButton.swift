@@ -4,9 +4,7 @@
 //
 //  Created by MNk_Dev on 9/11/18.
 //
-
 import UIKit
-
 open class MNkVerticalAlignButton: UIView {
     
     public var imageUrl:URL?{
@@ -22,39 +20,53 @@ open class MNkVerticalAlignButton: UIView {
         }
     }
     
-    public var image:UIImage = #imageLiteral(resourceName: "missing icon"){
+    public var contentEdgeInset:UIEdgeInsets = .zero{
+        didSet{
+            setContentInset()
+        }
+    }
+    
+    public var titleHeightConstant:CGFloat = 0.0{
+        didSet{
+            titleHeightAnchor?.constant = titleHeightConstant
+        }
+    }
+    
+    @IBInspectable public var image:UIImage?{
         didSet{
             
             let imageMode:UIImageRenderingMode = isWantTintColor ? UIImageRenderingMode.alwaysTemplate : .alwaysOriginal
-            imageView.image = image.withRenderingMode(imageMode)
+            imageView.image = image?.withRenderingMode(imageMode)
         }
     }
-    public var title:String? = "Custom Button"{
+    @IBInspectable public  var title:String? = "Custom Button"{
         didSet{
             titleLabel.text = title?.capitalized
         }
     }
-    public var titleFontColor:UIColor = .white{
+    @IBInspectable public var titleFontColor:UIColor = .white{
         didSet{
             titleLabel.textColor = titleFontColor
         }
     }
-    public var titleFontSize:CGFloat = 12{
+    @IBInspectable public var titleFontSize:CGFloat = 12{
         didSet{
             titleLabel.font = UIFont(name: "AvenirNext-Medium", size: titleFontSize)
         }
     }
-    public var imageTintColor:UIColor = .white{
+    @IBInspectable public var imageTintColor:UIColor = .white{
         didSet{
             imageView.tintColor = imageTintColor
         }
     }
-   public var isWantTintColor:Bool = false{
+    @IBInspectable public var isWantTintColor:Bool = false{
         didSet{
             let renderingMode:UIImageRenderingMode = isWantTintColor ? .alwaysTemplate : .alwaysOriginal
-            imageView.image = image.withRenderingMode(renderingMode)
+            imageView.image = image?.withRenderingMode(renderingMode)
         }
     }
+    
+    private var titleHeightAnchor:NSLayoutConstraint?
     
     private var imageContainer:UIView = {
         let view = UIView()
@@ -65,7 +77,7 @@ open class MNkVerticalAlignButton: UIView {
         let iv = UIImageView()
         let imageMode:UIImageRenderingMode = isWantTintColor ? UIImageRenderingMode.alwaysTemplate : .alwaysOriginal
         iv.tintColor = imageTintColor
-        iv.image = image.withRenderingMode(imageMode)
+        iv.image = image?.withRenderingMode(imageMode)
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -89,6 +101,11 @@ open class MNkVerticalAlignButton: UIView {
     private var imageRightConstant:NSLayoutConstraint?
     private var imageTopConstant:NSLayoutConstraint?
     private var imageBottomConstant:NSLayoutConstraint?
+    
+    private var svLeadingAnchor:NSLayoutConstraint?
+    private var svTralingAnchor:NSLayoutConstraint?
+    private var svTopAnchor:NSLayoutConstraint?
+    private var svBottomAnchor:NSLayoutConstraint?
     
     public func insertAndLayoutSubViews(){
         
@@ -120,16 +137,19 @@ open class MNkVerticalAlignButton: UIView {
         
         self.addSubview(stackView)
         
-        NSLayoutConstraint.activate([stackView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                                        constant: 8),
-                                     stackView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                                         constant: -8),
-                                     stackView.topAnchor.constraint(equalTo: topAnchor,
-                                                                    constant:  8),
-                                     stackView.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                                                       constant:-8)])
+        svLeadingAnchor = stackView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 8)
+        svTralingAnchor = stackView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -8)
+        svTopAnchor = stackView.topAnchor.constraint(equalTo: topAnchor,constant:  8)
+        svBottomAnchor = stackView.bottomAnchor.constraint(equalTo: bottomAnchor,constant:-8)
         
-        titleLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        svLeadingAnchor?.isActive = true
+        svTralingAnchor?.isActive = true
+        svTopAnchor?.isActive = true
+        svBottomAnchor?.isActive = true
+        
+        
+        titleHeightAnchor = titleLabel.heightAnchor.constraint(equalToConstant: 34)
+        titleHeightAnchor?.isActive = true
         
         
     }
@@ -173,6 +193,13 @@ open class MNkVerticalAlignButton: UIView {
         imageRightConstant?.constant = -imageEdgeInset.right
         imageBottomConstant?.constant = -imageEdgeInset.bottom
         imageTopConstant?.constant = imageEdgeInset.top
+    }
+    
+    private func setContentInset(){
+        svLeadingAnchor?.constant = contentEdgeInset.left
+        svTralingAnchor?.constant = -contentEdgeInset.right
+        svTopAnchor?.constant = contentEdgeInset.top
+        svBottomAnchor?.constant = -contentEdgeInset.bottom
     }
     
 }
