@@ -40,6 +40,7 @@ class SampleCVCell: MNkBaseCVCell<Model>{
 class TableviewController: MNkBaseTableVC<Model,SampleTVCell>{
     
     override func fetchData() {
+        let _ = MNkSeperator(.black)
         
     }
     
