@@ -7,12 +7,7 @@
 import UIKit
 open class MNkVerticalAlignButton: UIView {
     
-    public var imageUrl:URL?{
-        didSet{
-            guard isWantTintColor else{return}
-            imageView.setImage(with: imageUrl, tintColor: imageTintColor)
-        }
-    }
+    
     
     public  var imageEdgeInset:UIEdgeInsets = .zero{
         didSet{
@@ -34,9 +29,7 @@ open class MNkVerticalAlignButton: UIView {
     
     @IBInspectable public var image:UIImage?{
         didSet{
-            
-            let imageMode:UIImageRenderingMode = isWantTintColor ? UIImageRenderingMode.alwaysTemplate : .alwaysOriginal
-            imageView.image = image?.withRenderingMode(imageMode)
+            imageView.image = image
         }
     }
     @IBInspectable public  var title:String? = "Custom Button"{
@@ -49,21 +42,20 @@ open class MNkVerticalAlignButton: UIView {
             titleLabel.textColor = titleFontColor
         }
     }
-    @IBInspectable public var titleFontSize:CGFloat = 12{
+    
+    @IBInspectable public var titleFont:UIFont = UIFont.systemFont(ofSize: 14){
         didSet{
-            titleLabel.font = UIFont(name: "AvenirNext-Medium", size: titleFontSize)
+            titleLabel.font = titleFont
         }
     }
+    
     @IBInspectable public var imageTintColor:UIColor = .white{
         didSet{
             imageView.tintColor = imageTintColor
         }
     }
-    @IBInspectable public var isWantTintColor:Bool = false{
-        didSet{
-            let renderingMode:UIImageRenderingMode = isWantTintColor ? .alwaysTemplate : .alwaysOriginal
-            imageView.image = image?.withRenderingMode(renderingMode)
-        }
+    public func setImage(from url:URL?,_ tintColor:UIColor? = nil,_ placeHolder:UIImage? = nil){
+        imageView.setImage(with: url, tintColor: tintColor, plaseHolder: placeHolder)
     }
     
     private var titleHeightAnchor:NSLayoutConstraint?
@@ -75,9 +67,8 @@ open class MNkVerticalAlignButton: UIView {
     
     private lazy var imageView:UIImageView = {
         let iv = UIImageView()
-        let imageMode:UIImageRenderingMode = isWantTintColor ? UIImageRenderingMode.alwaysTemplate : .alwaysOriginal
         iv.tintColor = imageTintColor
-        iv.image = image?.withRenderingMode(imageMode)
+        iv.image = image
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -87,7 +78,7 @@ open class MNkVerticalAlignButton: UIView {
     private lazy var titleLabel:UILabel = {
         let label = UILabel()
         label.text = title?.capitalized
-        label.font = UIFont(name: "AvenirNext-Medium", size: titleFontSize)
+        label.font = titleFont
         label.textColor = titleFontColor
         label.numberOfLines = 2
         label.textAlignment = .center

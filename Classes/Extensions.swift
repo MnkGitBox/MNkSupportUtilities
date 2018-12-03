@@ -8,13 +8,12 @@
 import Foundation
 
 //-------------------------------------------//
-        //UIView Extenstions
+//UIView Extenstions
 //-------------------------------------------//
-
 public extension UIView{
-    public func activeShadow(using opacity:Float = 0.1,shadowRadius:CGFloat = 8){
+    public func activeShadow(using opacity:Float = 0.1,shadowRadius:CGFloat = 8,_ offSet:CGSize = CGSize(width: 0, height: 1)){
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOffset = offSet
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = opacity
         self.clipsToBounds = false
@@ -41,14 +40,18 @@ public extension UIView{
 }
 
 //-------------------------------------------//
-        //UIimageview Extenstions
+//UIimageview Extenstions
 //-------------------------------------------//
 
 import SDWebImage
 extension UIImageView{
-    func setImage(with url:URL?,tintColor tColor:UIColor,plaseHolder plImage:UIImage? = nil,options sdwedImageOptions:SDWebImageOptions = []){
+    func setImage(with url:URL?,tintColor tColor:UIColor?,plaseHolder plImage:UIImage? = nil,options sdwedImageOptions:SDWebImageOptions = []){
+        var renderingMode:UIImageRenderingMode = .alwaysOriginal
+        if tColor != nil{
+            renderingMode = .alwaysTemplate
+        }
         sd_setImage(with: url, placeholderImage: plImage, options: sdwedImageOptions) { [weak self]image, _,_, _ in
-            let _image = image?.withRenderingMode(.alwaysTemplate)
+            let _image = image?.withRenderingMode(renderingMode)
             self?.tintColor = tColor
             self?.image = _image
         }

@@ -32,7 +32,8 @@ class SampleTVCell: MNkBaseTVCell<Model>{
 
 class SampleCVCell: MNkBaseCVCell<Model>{
     
-    override func updateUI() {}
+    override func updateUI(with data: Model) {
+    }
    
 }
 

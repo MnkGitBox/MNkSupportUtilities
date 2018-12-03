@@ -9,10 +9,15 @@ import UIKit
 
 open class MNkBaseCVCell<T>: UICollectionViewCell {
     
-    public var data:T!{didSet{updateUI()}}
+    public var data:T?{
+        didSet{
+            guard let _data = data else{return}
+            updateUI(with:_data)
+        }
+    }
     
     open func insertAndLayoutSubviews(){}
-    open func updateUI(){}
+    open func updateUI(with data:T){}
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
