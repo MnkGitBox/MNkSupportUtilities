@@ -47,6 +47,8 @@
 		740611AB6CC3AB87FBF781C6C759F9D8 /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F9F609611642409A92A22C629F294F /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EE9AD21B5263D007036CF /* MNkSeperator.swift */; };
 		7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770F08321BF72200003661D /* CoreDataSupport.swift */; };
+		7796234221C3AF2C00B1588C /* MNKViewController_TV_Parameter_CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7796234021C3AF2C00B1588C /* MNKViewController_TV_Parameter_CellType.swift */; };
+		7796234321C3AF2C00B1588C /* MNKViewController_TV_Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7796234121C3AF2C00B1588C /* MNKViewController_TV_Parameter.swift */; };
 		77D71811219D7047000E9561 /* MNkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D71810219D7047000E9561 /* MNkView.swift */; };
 		77D71813219D7062000E9561 /* MNkUIViewTVCompatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D71812219D7062000E9561 /* MNkUIViewTVCompatable.swift */; };
 		7AF762424983B0A7329951E5A20442E3 /* SDWebImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9F654B1721CC52C147286614CD7DBF /* SDWebImageCoder.m */; };
@@ -175,6 +177,8 @@
 		7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNkSupportUtilities_Example-dummy.m"; sourceTree = "<group>"; };
 		771EE9AD21B5263D007036CF /* MNkSeperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkSeperator.swift; path = Classes/MNkSeperator.swift; sourceTree = "<group>"; };
 		7770F08321BF72200003661D /* CoreDataSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataSupport.swift; path = Classes/CoreDataSupport.swift; sourceTree = "<group>"; };
+		7796234021C3AF2C00B1588C /* MNKViewController_TV_Parameter_CellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNKViewController_TV_Parameter_CellType.swift; path = Classes/MNKViewController_TV_Parameter_CellType.swift; sourceTree = "<group>"; };
+		7796234121C3AF2C00B1588C /* MNKViewController_TV_Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNKViewController_TV_Parameter.swift; path = Classes/MNKViewController_TV_Parameter.swift; sourceTree = "<group>"; };
 		77D71810219D7047000E9561 /* MNkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkView.swift; path = Classes/MNkView.swift; sourceTree = "<group>"; };
 		77D71812219D7062000E9561 /* MNkUIViewTVCompatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkUIViewTVCompatable.swift; path = Classes/MNkUIViewTVCompatable.swift; sourceTree = "<group>"; };
 		7E7AD208AFFA020F6489D0D3A6361374 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MNkSupportUtilities.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -471,6 +475,8 @@
 				77D71812219D7062000E9561 /* MNkUIViewTVCompatable.swift */,
 				7770F08321BF72200003661D /* CoreDataSupport.swift */,
 				771EE9AD21B5263D007036CF /* MNkSeperator.swift */,
+				7796234021C3AF2C00B1588C /* MNKViewController_TV_Parameter_CellType.swift */,
+				7796234121C3AF2C00B1588C /* MNKViewController_TV_Parameter.swift */,
 				45F899E77F724C096F3764D6C72561C7 /* Pod */,
 				E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */,
 				C7E7CBD6F798F44275061A6415F1BEC2 /* SupportSubviewClasses */,
@@ -754,6 +760,8 @@
 				77D71811219D7047000E9561 /* MNkView.swift in Sources */,
 				E411299FE386C7CD80A8C7B03F52A872 /* MNkBasicCollectionVC.swift in Sources */,
 				01D0C6478F6CA4E9A843EB9D7535CC89 /* MNkBasicTableVC.swift in Sources */,
+				7796234321C3AF2C00B1588C /* MNKViewController_TV_Parameter.swift in Sources */,
+				7796234221C3AF2C00B1588C /* MNKViewController_TV_Parameter_CellType.swift in Sources */,
 				02F47ED5405944073C3F1CDEE0D79201 /* MNkBasicViewController.swift in Sources */,
 				D02CCDBFF3E9E26C2101A3D85CAE4347 /* MNkSupportUtilities-dummy.m in Sources */,
 				56796BD811377B318F4DE3374262ED16 /* MNkTextViewNoPadding.swift in Sources */,
