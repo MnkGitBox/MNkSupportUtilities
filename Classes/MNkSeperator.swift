@@ -6,6 +6,7 @@
 //
 
 open class MNkSeperator:MNkView{
+    public var heightAnchorCons:NSLayoutConstraint?
     private var color:UIColor?
     public init(_ color:UIColor,_ frame: CGRect = .zero) {
         self.color = color
@@ -21,6 +22,7 @@ open class MNkSeperator:MNkView{
     }
     override open func insertAndLayoutSubviews() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        heightAnchorCons = self.heightAnchor.constraint(equalToConstant: 1)
+        heightAnchorCons?.isActive = true
     }
 }

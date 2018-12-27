@@ -1,13 +1,12 @@
 //
-//  MNkBaseCVCell.swift
-//  FBSnapshotTestCase
+//  MNkCollectionViewCell.swift
+//  MNkSupportUtilities
 //
-//  Created by MNk_Dev on 2/11/18.
+//  Created by MNk_Dev on 27/12/18.
 //
-
 import UIKit
 
-open class MNkBaseCVCell<T>: UICollectionViewCell {
+open class MNkCVCell_Parameter<T>: UICollectionViewCell {
     
     public var data:T?{
         didSet{
@@ -16,17 +15,26 @@ open class MNkBaseCVCell<T>: UICollectionViewCell {
         }
     }
     
-    open func insertAndLayoutSubviews(){}
     open func updateUI(with data:T){}
+    
+}
+
+
+
+
+
+open class MNkCollectionViewCell:UICollectionViewCell{
+    open func insertAndLayoutSubviews(){}
+    open func config(){}
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        insertAndLayoutSubviews()
         backgroundColor = .white
+        insertAndLayoutSubviews()
+        config()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

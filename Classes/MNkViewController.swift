@@ -1,13 +1,12 @@
 //
-//  MNkBasicViewController.swift
+//  MNkViewController.swift
 //  MNkSupportUtilities
 //
-//  Created by MNk_Dev on 5/11/18.
+//  Created by MNk_Dev on 27/12/18.
 //
-
 import UIKit
 
-open class MNkBasicViewController: UIViewController {
+open class MNkViewController: UIViewController {
     
     open func insertAndLayoutSubviews(){}
     open func fetchData(){}
@@ -22,4 +21,10 @@ open class MNkBasicViewController: UIViewController {
         fetchData()
         
     }
+}
+
+
+
+open class MNkBaseVCWithParameter<T>: MNkViewController {
+    public var data:T?{didSet{updateUIWithNewData()}}
 }

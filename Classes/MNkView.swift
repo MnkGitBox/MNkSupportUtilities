@@ -20,3 +20,58 @@ open class MNkView:UIView{
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+
+open class MNkView_Parameter<T>:MNkView{
+    public var data:T!{didSet{updateUIWithNewData()}}
+}
+
+
+
+
+
+open class MNkView_TV_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>:MNkView,UITableViewDataSource,UITableViewDelegate{
+    
+    public lazy var tableView:UITableView = {
+        let tv = UITableView()
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(C.self, forCellReuseIdentifier: cellID)
+        tv.tableFooterView = UIView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+    
+    public var cellID:String = "GenericCellID \(arc4random())"
+    public var data:[T] = []{didSet{updateUIWithNewData()}}
+    
+    open override func insertAndLayoutSubviews() {
+        addSubview(tableView)
+        NSLayoutConstraint.activate([tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                                     tableView.topAnchor.constraint(equalTo: topAnchor),
+                                     tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                                     tableView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+    }
+    open func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! C
+        cell.data = data[indexPath.item]
+        return cell
+    }
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {return UITableViewAutomaticDimension}
+    
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {}
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {return nil}
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {return nil}
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {return 0}
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {return nil}
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {return 0}
+}
