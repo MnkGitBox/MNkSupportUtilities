@@ -7,14 +7,16 @@
 
 import UIKit
 
-class MNKViewController_TV_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>: MNKViewController_TV_Parameter<T>{
+open class MNkTableViewController_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>: MNkTableViewController_Parameter<T>{
     
-    override func config() {
+    open override func config() {
+        super.config()
         tableview.register(C.self, forCellReuseIdentifier: cellID)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! C
+        cell.data = data[indexPath.item]
         return cell
     }
 }
@@ -23,10 +25,10 @@ class MNKViewController_TV_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>: MNKVi
 
 
 
-open class MNKViewController_TV_Parameter<T>:MNkTableViewController{
+open class MNkTableViewController_Parameter<T>:MNkTableViewController{
     
     public var data:[T] = [] {didSet{updateUIWithNewData()}}
-    public var cellID:String{return "GenericCellID \(arc4random())"}
+    public var cellID:String =  "GenericCellID \(arc4random())"
     
     
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +36,7 @@ open class MNKViewController_TV_Parameter<T>:MNkTableViewController{
     }
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MNkTVCell_Parameter<T>
+        cell.data = data[indexPath.item]
         return cell
     }
     
