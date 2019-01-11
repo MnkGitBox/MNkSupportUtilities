@@ -25,6 +25,6 @@ open class MNkViewController: UIViewController {
 
 
 
-open class MNkBaseVCWithParameter<T>: MNkViewController {
+open class MNkViewController_Parameter<T>: MNkViewController {
     public var data:T?{didSet{updateUIWithNewData()}}
 }
