@@ -6,7 +6,7 @@
 //
 import UIKit
 
-open class MNkCVCell_Parameter<T>: UICollectionViewCell {
+open class MNkCVCell_Parameter<T>: MNkCollectionViewCell {
     
     public var data:T?{
         didSet{
