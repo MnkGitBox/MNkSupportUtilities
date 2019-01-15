@@ -8,13 +8,9 @@
 import UIKit
 open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
     
-    open var scrollDirection:UICollectionViewScrollDirection{
-        return .horizontal
-    }
+    open var layout:UICollectionViewLayout = UICollectionViewFlowLayout()
     
     public lazy var collectionView:UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = scrollDirection
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.dataSource = self
         cv.delegate = self
@@ -49,7 +45,7 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
 
 
 open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCollectionVC_Parameter<T>{
-
+    
     public var cellID:String = "GenericCellID \(arc4random())"
     
     open override func config() {
@@ -67,7 +63,7 @@ open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCo
 
 
 open class MNkCollectionVC_Parameter<T>:MNKCollectionViewController{
-     public var data:[T] = []{didSet{updateUIWithNewData()}}
+    public var data:[T] = []{didSet{updateUIWithNewData()}}
     
-     open  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return data.count}
+    open  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return data.count}
 }
