@@ -27,7 +27,7 @@ open class MNkTableViewCell:UITableViewCell{
 
 open class MNkTVCell_Parameter<T>:MNkTableViewCell{
     
-    public var data:T?{
+    open var data:T?{
         didSet{
             guard let _data = data else{return}
             updateUI(with: _data)

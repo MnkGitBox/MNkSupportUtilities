@@ -42,13 +42,13 @@ public extension UIView{
     //UIView layout extensions
     public func activateLayouts(equalConstant value:CGFloat = 0,to parentView:UIView){
         self.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([self.leadingAnchor.constraint(equalTo: parentView.leadingAnchor,
+        NSLayoutConstraint.activate([self.leadingAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.leadingAnchor,
                                                                    constant: value),
-                                     self.trailingAnchor.constraint(equalTo: parentView.trailingAnchor,
+                                     self.trailingAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.trailingAnchor,
                                                                     constant: -value),
-                                     self.topAnchor.constraint(equalTo: parentView.topAnchor,
+                                     self.topAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.topAnchor,
                                                                constant: value),
-                                     self.bottomAnchor.constraint(equalTo: parentView.bottomAnchor,
+                                     self.bottomAnchor.constraint(equalTo: parentView.safeAreaLayoutGuide.bottomAnchor,
                                                                   constant: -value)])
     }
     
@@ -70,17 +70,17 @@ public extension UIView{
         self.translatesAutoresizingMaskIntoConstraints = false
         switch layoutKey{
         case .traling:
-            self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant).isActive = true
+            self.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: constant).isActive = true
         case .leading:
-            self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant).isActive = true
+            self.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: constant).isActive = true
         case .top:
-            self.topAnchor.constraint(equalTo: view.topAnchor, constant:constant).isActive = true
+            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:constant).isActive = true
         case .centerY:
             self.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
         case .centerX:
             self.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant:constant).isActive = true
         case .bottom:
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:constant).isActive = true
+            self.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant:constant).isActive = true
         case .height:
             self.heightAnchor.constraint(equalToConstant: constant).isActive = true
         case .width:
