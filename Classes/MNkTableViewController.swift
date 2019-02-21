@@ -17,8 +17,9 @@ open class MNkTableViewController_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! C
         cell.data = data[indexPath.item]
-        return cell
+        return tableview(tableview, updateCellDataWhenReloadingAt: indexPath, of: cell)
     }
+    open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
 }
 
 
