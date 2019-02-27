@@ -6,12 +6,14 @@
 //
 import UIKit
 open class MNkView:UIView{
+    open func createViews(){}
     open func insertAndLayoutSubviews(){}
     open func config(){}
     open func updateUIWithNewData(){}
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        createViews()
         insertAndLayoutSubviews()
         config()
     }

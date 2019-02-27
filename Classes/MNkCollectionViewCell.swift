@@ -24,12 +24,14 @@ open class MNkCVCell_Parameter<T>: MNkCollectionViewCell {
 
 
 open class MNkCollectionViewCell:UICollectionViewCell{
+    open func createViews(){}
     open func insertAndLayoutSubviews(){}
     open func config(){}
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        createViews()
         insertAndLayoutSubviews()
         config()
     }

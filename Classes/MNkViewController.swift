@@ -7,7 +7,7 @@
 import UIKit
 
 open class MNkViewController: UIViewController {
-    
+    open func createViews(){}
     open func insertAndLayoutSubviews(){}
     open func fetchData(){}
     open func updateUIWithNewData(){}
@@ -16,6 +16,7 @@ open class MNkViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        createViews()
         insertAndLayoutSubviews()
         config()
         fetchData()

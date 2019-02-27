@@ -7,11 +7,13 @@
 
 import UIKit
 open class MNkTableViewCell:UITableViewCell{
+    open func createViews(){}
     open func insertAndLayoutSubviews(){}
     open func config(){}
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        createViews()
         insertAndLayoutSubviews()
         backgroundColor = .white
         config()
