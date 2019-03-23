@@ -8,45 +8,23 @@
 
 import UIKit
 import MNkSupportUtilities
-//
-//class ViewController:MNkBaseVCWithParameter<Model>{
-//    
-//    override func fetchData() {}
-//    override func insertAndLayoutSubviews() {}
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        data = nil
-//        
-//        view.activeShadow()
-//    }
-//}
-//
-//struct Model{
-//    
-//}
-//
-//class SampleTVCell: MNkBaseTVCell<Model>{
-//    
-//}
-//
-//class SampleCVCell: MNkBaseCVCell<Model>{
-//    
-//    override func updateUI(with data: Model) {
-//    }
-//   
-//}
-//
-//class TableviewController: MNkBaseTableVC<Model,SampleTVCell>{
-//    
-//    override func fetchData() {
-//        let _ = MNkSeperator(.black)
-//        
-//    }
-//    
-//    
-//}
-//
-//class TextView: MNkTextViewNoPadding{
-//    
-//}
+
+class ViewController:MNkViewController{
+    
+    var textField:MNkTextFieldWithError!
+    
+    override func createViews() {
+        textField = MNkTextFieldWithError()
+        textField.textField.borders = [.bottom]
+        textField.textField.borderColor = .green
+    }
+    
+    override func insertAndLayoutSubviews() {
+        view.addSubview(textField)
+        textField.activateLayouts(to: self.view, [.centerY:0,.centerX:0,.width:200])
+    }
+    
+    override func config() {
+        textField.errorLabel.text = "This is error...!"
+    }
+}

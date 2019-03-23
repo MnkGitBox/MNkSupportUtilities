@@ -51,6 +51,8 @@
 		7DA1B07E9DFA141B8DEF825DC861ABF9 /* SDAnimatedImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = C2ED1B72DE451BFC1B87C557E6BBC04F /* SDAnimatedImageRep.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DE13E2C36BE888CA6A032B552E24C5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4479C8599476854863894A2C35EB8342 /* Foundation.framework */; };
 		801464283D7571E4534934D2E46DD45D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4479C8599476854863894A2C35EB8342 /* Foundation.framework */; };
+		82B24D1522462D3700E80641 /* MNkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B24D1322462D3600E80641 /* MNkTextField.swift */; };
+		82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */; };
 		878E83566AB3106B2BBF7E07EA6786F9 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38D14CEE1017CC1DE8F8BFE438B9C /* UIView+WebCache.m */; };
 		89ECCB3AD2D9F7A190C69A8E44DBA699 /* Pods-MNkSupportUtilities_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */; };
 		90EEDCEB1703E65946C410EC0FAEE394 /* SDWebImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A526FB1CE6377077D60EE4C6148515 /* SDWebImageCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,6 +176,8 @@
 		77EE308921D4EDF100AB422C /* MNkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkViewController.swift; path = Classes/MNkViewController.swift; sourceTree = "<group>"; };
 		7E7AD208AFFA020F6489D0D3A6361374 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MNkSupportUtilities.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8282929CCF36A9E7F871E7843D578686 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		82B24D1322462D3600E80641 /* MNkTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextField.swift; path = Classes/MNkTextField.swift; sourceTree = "<group>"; };
+		82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextFieldWithError.swift; path = Classes/MNkTextFieldWithError.swift; sourceTree = "<group>"; };
 		84901522DF4EC4268C426E6146D988D5 /* MNkSupportUtilities.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNkSupportUtilities.xcconfig; sourceTree = "<group>"; };
 		89BA415E13FFBC2A72994E1206CF42B0 /* Pods-MNkSupportUtilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNkSupportUtilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D9205063853923A43BEA78F70A9881C /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
@@ -453,6 +457,8 @@
 				96E3BB3B1B0D21A324B952C6CBFED8EE /* Extensions.swift */,
 				7770F08321BF72200003661D /* CoreDataSupport.swift */,
 				771EE9AD21B5263D007036CF /* MNkSeperator.swift */,
+				82B24D1322462D3600E80641 /* MNkTextField.swift */,
+				82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */,
 				45F899E77F724C096F3764D6C72561C7 /* Pod */,
 				E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */,
 				C7E7CBD6F798F44275061A6415F1BEC2 /* SupportSubviewClasses */,
@@ -726,9 +732,11 @@
 				77EE308B21D4EDF100AB422C /* MNkView.swift in Sources */,
 				77EE308E21D4EDF100AB422C /* MNkCollectionViewCell.swift in Sources */,
 				77EE308A21D4EDF100AB422C /* MNkTableViewCell.swift in Sources */,
+				82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */,
 				77EE308D21D4EDF100AB422C /* MNkTableViewController.swift in Sources */,
 				CAF44DD37D1B4AB55A963D1F872A83D8 /* Extensions.swift in Sources */,
 				771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */,
+				82B24D1522462D3700E80641 /* MNkTextField.swift in Sources */,
 				7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */,
 				D02CCDBFF3E9E26C2101A3D85CAE4347 /* MNkSupportUtilities-dummy.m in Sources */,
 				56796BD811377B318F4DE3374262ED16 /* MNkTextViewNoPadding.swift in Sources */,
