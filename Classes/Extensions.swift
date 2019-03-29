@@ -11,7 +11,7 @@ import Foundation
 //UIView Extenstions
 //-------------------------------------------//
 public extension UIView{
-    public func activeShadow(using opacity:Float = 0.1,shadowRadius:CGFloat = 8,_ offSet:CGSize = CGSize(width: 0, height: 1)){
+    func activeShadow(using opacity:Float = 0.1,shadowRadius:CGFloat = 8,_ offSet:CGSize = CGSize(width: 0, height: 1)){
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = offSet
         self.layer.shadowRadius = shadowRadius
@@ -20,12 +20,12 @@ public extension UIView{
         self.layer.masksToBounds = false
     }
     
-    public func addCornerRadius(){
+    func addCornerRadius(){
         self.layer.cornerRadius = self.bounds.size.width * 0.03
         self.clipsToBounds = true
     }
     
-    public func addCornerRadius(to corners:UIRectCorner,_ radius:CGFloat){
+    func addCornerRadius(to corners:UIRectCorner,_ radius:CGFloat){
         
         let path = UIBezierPath(roundedRect:self.bounds,
                                 byRoundingCorners:corners,
@@ -40,7 +40,7 @@ public extension UIView{
     
     
     //UIView layout extensions
-    public func activateLayouts(equalConstant value:CGFloat = 0,to parentView:UIView,_ isSafeAreaActivate:Bool = false){
+    func activateLayouts(equalConstant value:CGFloat = 0,to parentView:UIView,_ isSafeAreaActivate:Bool = false){
         self.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([self.leadingAnchor.constraint(equalTo: isSafeAreaActivate ? parentView.safeAreaLayoutGuide.leadingAnchor : parentView.leadingAnchor,
@@ -53,13 +53,13 @@ public extension UIView{
                                                                   constant: -value)])
     }
     
-    public func activateLayouts(to parentView:UIView = UIView(),_ layouts:[MNkLayoutKeys:CGFloat],_ isSafeAreaActivate:Bool = false){
+    func activateLayouts(to parentView:UIView = UIView(),_ layouts:[MNkLayoutKeys:CGFloat],_ isSafeAreaActivate:Bool = false){
         for val in layouts{
             activateLayout(to: parentView, val.key, val.value,isSafeAreaActivate)
         }
     }
     
-    public func activateLayouts(to layoutsConfig:[UIView:[MNkLayoutKeys:CGFloat]],_ isSafeAreaActivate:Bool = false){
+    func activateLayouts(to layoutsConfig:[UIView:[MNkLayoutKeys:CGFloat]],_ isSafeAreaActivate:Bool = false){
         for config in layoutsConfig{
             for layout in config.value{
                 activateLayout(to: config.key, layout.key, layout.value,isSafeAreaActivate)
@@ -67,7 +67,7 @@ public extension UIView{
         }
     }
     
-    public func activateLayout(to view:UIView,_ layoutKey:MNkLayoutKeys,_ constant:CGFloat,_ isSafeAreaActivate:Bool = false){
+    func activateLayout(to view:UIView,_ layoutKey:MNkLayoutKeys,_ constant:CGFloat,_ isSafeAreaActivate:Bool = false){
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

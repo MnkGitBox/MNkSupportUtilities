@@ -115,7 +115,7 @@ extension MNkTextValidatable{
     
     func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->Bool{
         
-        var validatedData = (true,"")
+//        var validatedData = (true,"")
         var password:String = ""
         
         var isValidate = true
