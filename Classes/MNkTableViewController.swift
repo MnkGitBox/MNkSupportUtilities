@@ -29,8 +29,6 @@ open class MNkTableViewController_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>
 open class MNkTableViewController_Parameter<T>:MNkTableViewController{
     
     public var data:[T] = [] {didSet{updateUIWithNewData()}}
-    public var cellID:String =  "GenericCellID \(arc4random())"
-    
     
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -51,8 +49,10 @@ open class MNkTableViewController_Parameter<T>:MNkTableViewController{
 
 
 open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITableViewDelegate{
+    public var cellID:String =  "GenericCellID \(arc4random())"
+    
     public lazy var tableview:UITableView = {
-        let tv = UITableView()
+        let tv = UITableView.init(frame: self.view.bounds)
         tv.delegate = self
         tv.dataSource = self
         tv.backgroundColor = .white
@@ -62,10 +62,6 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(tableview)
-        NSLayoutConstraint.activate([tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                                     tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                                     tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                                     tableview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
     }
     
     open override func config() {

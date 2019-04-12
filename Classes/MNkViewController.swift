@@ -12,6 +12,7 @@ open class MNkViewController: UIViewController {
     open func fetchData(){}
     open func updateUIWithNewData(){}
     open func config(){}
+    open func setAppSetting(){}
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,11 @@ open class MNkViewController: UIViewController {
         config()
         fetchData()
         
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setAppSetting()
     }
 }
 
