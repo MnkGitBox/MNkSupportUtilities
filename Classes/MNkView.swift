@@ -10,12 +10,18 @@ open class MNkView:UIView{
     open func insertAndLayoutSubviews(){}
     open func config(){}
     open func updateUIWithNewData(){}
+    open func setAppSetting(){}
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         createViews()
         insertAndLayoutSubviews()
         config()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setAppSetting()
     }
     
     public required init?(coder aDecoder: NSCoder) {
