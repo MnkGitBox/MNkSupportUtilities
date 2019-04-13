@@ -14,14 +14,17 @@ open class MNkViewController: UIViewController {
     open func config(){}
     open func setAppSetting(){}
     
-    open override func viewDidLoad() {
-        super.viewDidLoad()
+    private func doLoadThings(){
         view.backgroundColor = .white
         createViews()
         insertAndLayoutSubviews()
         config()
         fetchData()
-        
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        doLoadThings()
     }
     
     open override func viewWillAppear(_ animated: Bool) {

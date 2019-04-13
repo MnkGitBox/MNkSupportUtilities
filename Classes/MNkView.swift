@@ -11,13 +11,17 @@ open class MNkView:UIView{
     open func config(){}
     open func updateUIWithNewData(){}
     open func setAppSetting(){}
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    private func doLoadThings(){
         backgroundColor = .white
         createViews()
         insertAndLayoutSubviews()
         config()
-        setAppSetting()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        doLoadThings()
     }
     
     open override func willMove(toWindow newWindow: UIWindow?) {
@@ -26,7 +30,8 @@ open class MNkView:UIView{
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+       super.init(coder: aDecoder)
+        doLoadThings()
     }
 }
 

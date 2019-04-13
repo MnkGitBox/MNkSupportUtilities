@@ -28,15 +28,20 @@ open class MNkCollectionViewCell:UICollectionViewCell{
     open func insertAndLayoutSubviews(){}
     open func config(){}
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    private func doLoadThings(){
         backgroundColor = .white
         createViews()
         insertAndLayoutSubviews()
         config()
     }
     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        doLoadThings()
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        doLoadThings()
     }
 }

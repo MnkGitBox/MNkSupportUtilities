@@ -11,15 +11,20 @@ open class MNkTableViewCell:UITableViewCell{
     open func insertAndLayoutSubviews(){}
     open func config(){}
     
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    private func doLoadThings(){
         createViews()
         insertAndLayoutSubviews()
         backgroundColor = .white
         config()
     }
+    
+    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+       doLoadThings()
+    }
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        doLoadThings()
     }
 }
 
