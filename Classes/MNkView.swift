@@ -17,10 +17,11 @@ open class MNkView:UIView{
         createViews()
         insertAndLayoutSubviews()
         config()
+        setAppSetting()
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    open override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
         setAppSetting()
     }
     
