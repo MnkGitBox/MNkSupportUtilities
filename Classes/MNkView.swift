@@ -79,7 +79,7 @@ open class MNkView_TV_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>:MNkView,UIT
         return data.count
     }
     
-    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {return UITableViewAutomaticDimension}
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {return UITableView.automaticDimension}
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {}

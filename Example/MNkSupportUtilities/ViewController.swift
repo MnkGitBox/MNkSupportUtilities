@@ -25,6 +25,6 @@ class ViewController:MNkViewController{
     }
     
     override func config() {
-        textField.errorLabel.text = "This is error...!"
+        textField.errorLabel?.text = "This is error...!"
     }
 }

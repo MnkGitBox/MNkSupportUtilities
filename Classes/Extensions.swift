@@ -116,7 +116,7 @@ public extension UIView{
 import SDWebImage
 extension UIImageView{
     func setImage(with url:URL?,tintColor tColor:UIColor?,plaseHolder plImage:UIImage? = nil,options sdwedImageOptions:SDWebImageOptions = []){
-        var renderingMode:UIImageRenderingMode = .alwaysOriginal
+        var renderingMode:UIImage.RenderingMode = .alwaysOriginal
         if tColor != nil{
             renderingMode = .alwaysTemplate
         }

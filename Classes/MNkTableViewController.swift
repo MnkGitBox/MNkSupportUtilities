@@ -78,5 +78,5 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
     
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {return nil}
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {return 0}
-    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return UITableViewAutomaticDimension}
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return UITableView.automaticDimension}
 }
