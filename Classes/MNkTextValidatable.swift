@@ -117,7 +117,7 @@ extension MNkTextValidatable{
     ///Validate data of given validatable text areas.
     public func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->ValidatedData{
         
-        var password:String = ""
+        var password:String!
         
         var validatedData = ValidatedData()
 
@@ -165,12 +165,14 @@ extension MNkTextValidatable{
                 }
                 continue
             case .conformPassword:
-                let result = password == _textContainer.textView.textString ?? ""
-                let error = "password not matched"
-                setTextContainer(toDefault: result, _textContainer,error)
-                if !result{
-                    validatedData.isValidate = false
-                    validatedData.errors.append(error)
+                if let _password = password{
+                    let result = _password == _textContainer.textView.textString ?? ""
+                    let error = "password not matched"
+                    setTextContainer(toDefault: result, _textContainer,error)
+                    if !result{
+                        validatedData.isValidate = false
+                        validatedData.errors.append(error)
+                    }
                 }
                 continue
                 
@@ -186,8 +188,12 @@ extension MNkTextValidatable{
             }
         }
         
-        if !validatedData.errors.isEmpty{
+        if validatedData.errors.count > 1{
             validatedData.commonError = defaultErrorMsg
+        }
+        
+        if validatedData.errors.count == 1{
+            validatedData.commonError = validatedData.errors.first
         }
         
         return validatedData
