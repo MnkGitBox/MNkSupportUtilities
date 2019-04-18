@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ValidationData = (textContainer:MNkValidatableTextView,type:ValidationType)
+public typealias ValidationData = (textContainer:MNkValidatableTextView,type:ValidationType)
 
 public protocol MNkValidatableTextView{
     var textView:UIView{get}
@@ -26,9 +26,9 @@ extension MNkValidatableTextView{
 
 
 
-protocol MNkTextValidatable{
+public protocol MNkTextValidatable{
     var hasEmptyTextContainer:Bool{get}
-    var validationData:[ValidationData]{get set}
+    var validationData:[ValidationData]{get}
     var errorColor:UIColor{get}
     var defaultColor:UIColor{get}
     var textColor:UIColor{get}
@@ -38,27 +38,28 @@ protocol MNkTextValidatable{
 
 extension MNkTextValidatable{
     
-    var errorColor:UIColor{
+    public var errorColor:UIColor{
         return #colorLiteral(red: 1, green: 0.462745098, blue: 0.4588235294, alpha: 1)
     }
-    var defaultColor:UIColor{
+    public var defaultColor:UIColor{
         return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
-    var textColor:UIColor{
+    public var textColor:UIColor{
         return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
-    var borderColor:UIColor{
+    public var borderColor:UIColor{
         return .lightGray
     }
     
-    var validationDisplayStyle:ValidationErrorDisplayType{
+    public var validationDisplayStyle:ValidationErrorDisplayType{
         return .backgroundOnly
     }
     
     //MARK:- CHECK IS THERE ANY EMPTY TEXT FIELD
-    var hasEmptyTextContainer:Bool{
+    public var hasEmptyTextContainer:Bool{
         return checkEmptyTextContainer()
     }
+    
     private func checkEmptyTextContainer()->Bool{
         var hasEmpty:Bool = false
         for data in validationData{
@@ -74,7 +75,7 @@ extension MNkTextValidatable{
         return hasEmpty
     }
     
-    func isEmpty(_ textField:MNkValidatableTextView)->Bool{
+    private func isEmpty(_ textField:MNkValidatableTextView)->Bool{
         guard textField.textView.textString == "" else{
             setTextContainer(toDefault: true, textField)
             return false
@@ -113,15 +114,13 @@ extension MNkTextValidatable{
     
     //MARK:- VALIDATE TEXT FIELD DATA ACORDING TO IT TYPE
     
-    func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->Bool{
+    public func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->Bool{
         
-//        var validatedData = (true,"")
         var password:String = ""
         
         var isValidate = true
         
         guard !hasEmptyTextContainer else{
-//            validatedData = (false,defaultErrorMsg)
             isValidate = false
             return isValidate
         }
@@ -136,10 +135,6 @@ extension MNkTextValidatable{
             case .email:
                 let result = validateEmail(in:_textContainer.textView)
                 setTextContainer(toDefault: result, _textContainer,"Please enter valid email")
-//                guard result else{
-//                    validatedData = (false,"Please enter valid email")
-//                    return validatedData
-//                }
                 if !result{
                     isValidate = false
                 }
@@ -148,10 +143,6 @@ extension MNkTextValidatable{
             case .phoneNo:
                 let result = validatePhoneNo(in: _textContainer.textView)
                 setTextContainer(toDefault: result, _textContainer,"Please enter valid phone number")
-//                guard result else{
-//                    validatedData = (false,"Please enter valid phone number")
-//                    return validatedData
-//                }
                 if !result{
                     isValidate = false
                 }
@@ -160,10 +151,6 @@ extension MNkTextValidatable{
                 password = _textContainer.textView.textString ?? ""
                 let result = password.count >= 6 ? true : false
                 setTextContainer(toDefault: result, _textContainer,"The password must be 6 characters long or more")
-//                guard result else{
-//                    validatedData = (false,"The password must be 6 characters long or more")
-//                    return validatedData
-//                }
                 if !result{
                     isValidate = false
                 }
@@ -171,11 +158,6 @@ extension MNkTextValidatable{
             case .conformPassword:
                 let result = password == _textContainer.textView.textString ?? ""
                 setTextContainer(toDefault: result, _textContainer,"password not matched")
-//                guard password == _textContainer.textView.textString ?? "" else{
-//                    validatedData = (false,"password not matched")
-//                    setTextContainer(toDefault: false, _textContainer)
-//                    return validatedData
-//                }
                 if !result{
                     isValidate = false
                 }
@@ -188,13 +170,6 @@ extension MNkTextValidatable{
                 if result{
                     isValidate = false
                 }
-//                guard let _text = data.textContainer.textView.textString,
-//                    !_text.isEmpty
-//                    else{
-//                        validatedData = (false,defaultErrorMsg)
-//                        setTextContainer(toDefault: false, _textContainer)
-//                        return validatedData
-//                }
                 continue
             }
         }
@@ -227,7 +202,7 @@ extension MNkTextValidatable{
     
 }
 
-enum ValidationType {
+public enum ValidationType {
     case normal
     case email
     case phoneNo

@@ -9,7 +9,10 @@
 import UIKit
 import MNkSupportUtilities
 
-class ViewController:MNkViewController{
+class ViewController:MNkViewController,MNkTextValidatable{
+    var validationData: [ValidationData]{
+        return [(textField,.normal)]
+    }
     
     var textField:MNkTextFieldWithError!
     
