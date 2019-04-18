@@ -9,11 +9,17 @@ import Foundation
 
 open class MNkTextField: UITextField{
     
-    public enum Edge{
-        case top
-        case bottom
-        case left
-        case right
+    public var errorBorder:Edge = .bottom
+    
+    public var errBorderView:UIView?{
+        return borderViews.filter{return $0.tag == errorBorder.rawValue}.first
+    }
+    
+    public enum Edge:Int{
+        case top = 0
+        case bottom = 1
+        case left = 2
+        case right = 3
     }
     
     public var borders:[Edge] = []{
@@ -30,6 +36,7 @@ open class MNkTextField: UITextField{
     }
     
     private var borderViews:[UIView] = []
+
     
     private func insertBorders(){
         for edge in borders{
@@ -39,6 +46,7 @@ open class MNkTextField: UITextField{
     private func insertBorder(to edge:Edge){
         let border = UIView()
         border.backgroundColor = borderColor
+        border.tag = edge.rawValue
         border.translatesAutoresizingMaskIntoConstraints = false
         addSubview(border)
         borderViews.append(border)
@@ -79,5 +87,19 @@ open class MNkTextField: UITextField{
         for border in borderViews{
             border.backgroundColor = borderColor
         }
+    }
+    
+    
+}
+
+/*..........................................................
+ MARK:- Validatable textview protocol implementation
+ ..........................................................*/
+extension MNkTextField:MNkValidatableTextView{
+    public var textView: UIView {
+        return self
+    }
+    public var errorBorderView: UIView?{
+        return errBorderView
     }
 }

@@ -16,10 +16,10 @@ public protocol MNkValidatableTextView{
 }
 
 extension MNkValidatableTextView{
-    var errorBorderView:UIView?{
+    public var errorBorderView:UIView?{
         return nil
     }
-    var errorLabel:UILabel?{
+    public var errorLabel:UILabel?{
         return nil
     }
 }
