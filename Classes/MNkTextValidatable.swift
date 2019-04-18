@@ -114,15 +114,17 @@ extension MNkTextValidatable{
     
     //MARK:- VALIDATE TEXT FIELD DATA ACORDING TO IT TYPE
     
-    public func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->Bool{
+    ///Validate data of given validatable text areas.
+    public func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->ValidatedData{
         
         var password:String = ""
         
-        var isValidate = true
+        var validatedData = ValidatedData()
+
         
         guard !hasEmptyTextContainer else{
-            isValidate = false
-            return isValidate
+            validatedData.isValidate = false
+            return validatedData
         }
         
         for data in validationData{
@@ -134,32 +136,40 @@ extension MNkTextValidatable{
             switch _validationType{
             case .email:
                 let result = validateEmail(in:_textContainer.textView)
-                setTextContainer(toDefault: result, _textContainer,"Please enter valid email")
+                let error = "Please enter valid email"
+                setTextContainer(toDefault: result, _textContainer,error)
                 if !result{
-                    isValidate = false
+                    validatedData.isValidate = false
+                    validatedData.errors.append(error)
                 }
                 continue
                 
             case .phoneNo:
                 let result = validatePhoneNo(in: _textContainer.textView)
+                let error = "Please enter valid phone number"
                 setTextContainer(toDefault: result, _textContainer,"Please enter valid phone number")
                 if !result{
-                    isValidate = false
+                    validatedData.isValidate = false
+                    validatedData.errors.append(error)
                 }
                 continue
             case .password:
                 password = _textContainer.textView.textString ?? ""
                 let result = password.count >= 6 ? true : false
-                setTextContainer(toDefault: result, _textContainer,"The password must be 6 characters long or more")
+                let error = "The password must be 6 characters long or more"
+                setTextContainer(toDefault: result, _textContainer,error)
                 if !result{
-                    isValidate = false
+                    validatedData.isValidate = false
+                    validatedData.errors.append(error)
                 }
                 continue
             case .conformPassword:
                 let result = password == _textContainer.textView.textString ?? ""
-                setTextContainer(toDefault: result, _textContainer,"password not matched")
+                let error = "password not matched"
+                setTextContainer(toDefault: result, _textContainer,error)
                 if !result{
-                    isValidate = false
+                    validatedData.isValidate = false
+                    validatedData.errors.append(error)
                 }
                 continue
                 
@@ -168,13 +178,18 @@ extension MNkTextValidatable{
                 let result = text?.isEmpty ?? true
                 setTextContainer(toDefault: !result, _textContainer)
                 if result{
-                    isValidate = false
+                    validatedData.isValidate = false
+                    validatedData.errors.append(defaultErrorMsg)
                 }
                 continue
             }
         }
         
-        return isValidate
+        if !validatedData.errors.isEmpty{
+            validatedData.commonError = defaultErrorMsg
+        }
+        
+        return validatedData
     }
     
     private func validateEmail(in emailTextContainer:UIView)->Bool{
@@ -202,6 +217,7 @@ extension MNkTextValidatable{
     
 }
 
+///Types of validation options
 public enum ValidationType {
     case normal
     case email
@@ -227,10 +243,20 @@ extension UIView{
     }
 }
 
-
+///Error display type of form text area.
 public enum ValidationErrorDisplayType{
     case backgroundOnly
     case backgroundErrorMessages
     case boderOnly
     case borderErrorMessages
+}
+
+///Data returned after validate called.
+public struct ValidatedData{
+    var isValidate:Bool = true
+    ///All Errors array generate in validation process
+    var errors:[String] = []
+    ///Return common validation error if there is more than one validation errors.
+    var commonError:String?
+    
 }

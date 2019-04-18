@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MNkSupportUtilities'
-  s.version          = '0.3.8'
+  s.version          = '0.3.9'
   s.summary          = 'All Supporting functions and components'
 
 # This description is used to generate tags and improve search results.
