@@ -253,10 +253,10 @@ public enum ValidationErrorDisplayType{
 
 ///Data returned after validate called.
 public struct ValidatedData{
-    var isValidate:Bool = true
+    public var isValidate:Bool = true
     ///All Errors array generate in validation process
-    var errors:[String] = []
+    public var errors:[String] = []
     ///Return common validation error if there is more than one validation errors.
-    var commonError:String?
+    public var commonError:String?
     
 }
