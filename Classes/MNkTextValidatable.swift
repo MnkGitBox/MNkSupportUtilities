@@ -124,7 +124,7 @@ extension MNkTextValidatable{
         
         guard !hasEmptyTextContainer else{
             validatedData.isValidate = false
-            validatedData.errors.append(defaultErrorMsg)
+            validatedData.commonError = defaultErrorMsg
             return validatedData
         }
         
