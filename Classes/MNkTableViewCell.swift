@@ -11,6 +11,8 @@ open class MNkTableViewCell:UITableViewCell{
     open func insertAndLayoutSubviews(){}
     open func config(){}
     
+    open func setAppSetting(){}
+    
     private func doLoadThings(){
         createViews()
         insertAndLayoutSubviews()
@@ -25,6 +27,11 @@ open class MNkTableViewCell:UITableViewCell{
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         doLoadThings()
+    }
+    
+    open override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        setAppSetting()
     }
 }
 

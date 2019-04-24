@@ -16,7 +16,7 @@ open class MNkCVCell_Parameter<T>: MNkCollectionViewCell {
     }
     
     open func updateUI(with data:T){}
-    
+
 }
 
 
@@ -27,6 +27,8 @@ open class MNkCollectionViewCell:UICollectionViewCell{
     open func createViews(){}
     open func insertAndLayoutSubviews(){}
     open func config(){}
+    
+    open func setAppSetting(){}
     
     private func doLoadThings(){
         backgroundColor = .white
@@ -43,5 +45,10 @@ open class MNkCollectionViewCell:UICollectionViewCell{
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         doLoadThings()
+    }
+
+    open override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        setAppSetting()
     }
 }

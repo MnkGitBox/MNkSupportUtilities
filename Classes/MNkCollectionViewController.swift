@@ -10,6 +10,8 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
     
     open var layout:UICollectionViewLayout = UICollectionViewFlowLayout()
     
+    public var cellID:String = "GenericCellID \(arc4random())"
+    
     public lazy var collectionView:UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.dataSource = self
@@ -45,8 +47,6 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
 
 
 open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCollectionVC_Parameter<T>{
-    
-    public var cellID:String = "GenericCellID \(arc4random())"
     
     open override func config() {
         collectionView.register(C.self, forCellWithReuseIdentifier: cellID)
