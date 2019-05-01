@@ -37,6 +37,10 @@ class ViewController:MNkCollectionVC_Parameter_CellType<Test,Cell>{
     override func fetchData() {
         data = [Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test()]
     }
+    override func config() {
+        super.config()
+        print(safeAreaEdgeInsets)
+    }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: collectionView.bounds.size.width / 2,
@@ -52,3 +56,5 @@ class Cell:MNkCVCell_Parameter<Test>{
 }
 
 struct Test{}
+
+

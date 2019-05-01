@@ -7,6 +7,12 @@
 import UIKit
 
 open class MNkViewController: UIViewController {
+    
+    public var safeAreaEdgeInsets:UIEdgeInsets{
+        guard let window = UIApplication.shared.windows.first else{return .zero}
+        return window.safeAreaInsets
+    }
+    
     open func createViews(){}
     open func insertAndLayoutSubviews(){}
     open func fetchData(){}

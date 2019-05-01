@@ -58,7 +58,7 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(tableview)
-        view.activateLayouts(to: self.view, true)
+        tableview.activateLayouts(to: self.view)
     }
     
     open override func config() {

@@ -25,7 +25,7 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(collectionView)
-        collectionView.activateLayouts(to: self.view, true)
+        collectionView.activateLayouts(to: self.view)
     }
     
     open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}
