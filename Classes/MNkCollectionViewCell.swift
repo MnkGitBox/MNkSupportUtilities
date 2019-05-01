@@ -57,59 +57,54 @@ open class MNkCollectionViewCell:UICollectionViewCell{
 
 
 
-class MNkEmptyCVCell:MNkCollectionViewCell{
+open class MNkEmptyCVCell:MNkCollectionViewCell{
     
-    var message:String?{
+    public var message:String?{
         didSet{
             messageLabel.text = message
         }
     }
     
-    var heading:String?{
+    public var heading:String?{
         didSet{
             headingLabel.text = heading
         }
     }
     
-    var placeHolderImage:UIImage?{
+    public var placeHolderImage:UIImage?{
         didSet{
             imageview.image = placeHolderImage
         }
     }
     
-    var isHideButton:Bool = false{
+    public var isHideButton:Bool = false{
         didSet{
             retryButton.isHidden = isHideButton
         }
     }
     
-    private let imageview:UIImageView = {
-        let iv = UIImageView()
-        iv.tintColor = .lightGray
-        iv.contentMode = .scaleAspectFit
-        return iv
-    }()
+    public var imageview:UIImageView!
+    public var headingLabel:UILabel!
+    public var stackview:UIStackView!
+    public var messageLabel:UILabel!
+    public var retryButton:UIButton!
     
-    private let headingLabel:UILabel = {
-        let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        lbl.textColor = .black
-        lbl.textAlignment = .center
-        return lbl
-    }()
-    private var messageLabel:UILabel!
-    private var retryButton:UIButton!
-    
-    private let stackview:UIStackView = {
-        let sv = UIStackView()
-        sv.alignment = .fill
-        sv.distribution = .fill
-        sv.spacing = 8
-        sv.axis = .vertical
-        return sv
-    }()
-    
-    override func createViews() {
+    override open func createViews() {
+        imageview = UIImageView()
+        imageview.tintColor = .lightGray
+        imageview.contentMode = .scaleAspectFit
+        
+        headingLabel = UILabel()
+        headingLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        headingLabel.textColor = .black
+        headingLabel.textAlignment = .center
+        
+        stackview = UIStackView()
+        stackview.alignment = .fill
+        stackview.distribution = .fill
+        stackview.spacing = 8
+        stackview.axis = .vertical
+        
         messageLabel = UILabel()
         messageLabel.font = UIFont.systemFont(ofSize: 14)
         messageLabel.textColor = .lightGray
@@ -126,7 +121,7 @@ class MNkEmptyCVCell:MNkCollectionViewCell{
         retryButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    override func insertAndLayoutSubviews() {
+    override open func insertAndLayoutSubviews() {
         addSubview(stackview)
         stackview.addArrangedSubview(imageview)
         stackview.addArrangedSubview(headingLabel)
@@ -146,7 +141,7 @@ class MNkEmptyCVCell:MNkCollectionViewCell{
                                                                       constant: 20)])
     }
     
-    override func config() {
+    override open func config() {
         clipsToBounds = true
     }
 }

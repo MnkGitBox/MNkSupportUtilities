@@ -31,11 +31,6 @@ open class MNkTableViewController_Parameter<T>:MNkTableViewController{
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-//    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableview.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MNkTVCell_Parameter<T>
-//        cell.data = data[indexPath.item]
-//        return cell
-//    }
 }
 
 open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITableViewDelegate{
@@ -92,7 +87,7 @@ public protocol TableViewEmptyCellDataSource{
     func tableViewSetData(toEmpty cell:MNkEmptyTVCell,at indexPath:IndexPath)->MNkEmptyTVCell
 }
 
-open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkEmptyTVCell>:MNkTVC_Cell_EmpEmptyCellType<T,E>{
+open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkEmptyTVCell>:MNkTVC_Parameter_EmptyCellType<T,E>{
     
     public var emptyCellDataSource:TableViewEmptyCellDataSource?
     
@@ -118,7 +113,7 @@ open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkE
     open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
 }
 
-open class MNkTVC_Cell_EmpEmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellType<E>{
+open class MNkTVC_Parameter_EmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellType<E>{
     public var data:[T] = [] {didSet{updateUIWithNewData()}}
 
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
