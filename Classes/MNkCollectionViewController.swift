@@ -17,7 +17,7 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
     public var collectionView:UICollectionView!
     
     open override func createViews() {
-        collectionView = UICollectionView(frame:.zero, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame:self.view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .white
@@ -25,7 +25,6 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(collectionView)
-        collectionView.activateLayouts(to: self.view,true)
     }
     
     open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}
