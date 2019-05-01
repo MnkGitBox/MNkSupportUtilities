@@ -11,22 +11,21 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
     open var layout:UICollectionViewLayout = UICollectionViewFlowLayout()
     
     public var cellID:String = "GenericCellID \(arc4random())"
+    public var emptyCellID:String = "EmptyCellID \(arc4random())"
     
-    public lazy var collectionView:UICollectionView = {
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.dataSource = self
-        cv.delegate = self
-        cv.backgroundColor = .white
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        return cv
-    }()
+    
+    public var collectionView:UICollectionView!
+    
+    open override func createViews() {
+        collectionView = UICollectionView(frame:.zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.backgroundColor = .white
+    }
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(collectionView)
-        NSLayoutConstraint.activate([collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                                     collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-                                     collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                                     collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
+        collectionView.activateLayouts(to: self.view,true)
     }
     
     open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}

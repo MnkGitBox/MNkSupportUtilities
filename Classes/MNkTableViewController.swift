@@ -43,25 +43,22 @@ open class MNkTableViewController_Parameter<T>:MNkTableViewController{
 
 
 
-
-
-
-
-
 open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITableViewDelegate{
     public var cellID:String =  "GenericCellID \(arc4random())"
+    public var emptyCellID:String = "EmptyCellID \(arc4random())"
     
-    public lazy var tableview:UITableView = {
-        let tv = UITableView.init(frame: self.view.bounds)
-        tv.delegate = self
-        tv.dataSource = self
-        tv.backgroundColor = .white
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
-    }()
+    public var tableview:UITableView!
+    
+    open override func createViews() {
+        tableview = UITableView()
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.backgroundColor = .white
+    }
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(tableview)
+        tableview.activateLayouts(to: self.view, true)
     }
     
     open override func config() {

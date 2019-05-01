@@ -9,25 +9,46 @@
 import UIKit
 import MNkSupportUtilities
 
-class ViewController:MNkViewController,MNkTextValidatable{
-    var validationData: [ValidationData]{
-        return [(textField,.normal)]
+//class ViewController:MNkViewController,MNkTextValidatable{
+//    var validationData: [ValidationData]{
+//        return [(textField,.normal)]
+//    }
+//
+//    var textField:MNkTextFieldWithError!
+//
+//    override func createViews() {
+//        textField = MNkTextFieldWithError()
+//        textField.textField.borders = [.bottom]
+//        textField.textField.borderColor = .green
+//    }
+//
+//    override func insertAndLayoutSubviews() {
+//        view.addSubview(textField)
+//        textField.activateLayouts(to: self.view, [.centerY:0,.centerX:0,.width:200])
+//    }
+//
+//    override func config() {
+//        textField.errorLabel?.text = "This is error...!"
+//    }
+//}
+
+class ViewController:MNkCollectionVC_Parameter_CellType<Test,Cell>{
+    
+    override func fetchData() {
+        data = [Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test(),Test()]
     }
     
-    var textField:MNkTextFieldWithError!
-    
-    override func createViews() {
-        textField = MNkTextFieldWithError()
-        textField.textField.borders = [.bottom]
-        textField.textField.borderColor = .green
-    }
-    
-    override func insertAndLayoutSubviews() {
-        view.addSubview(textField)
-        textField.activateLayouts(to: self.view, [.centerY:0,.centerX:0,.width:200])
-    }
-    
-    override func config() {
-        textField.errorLabel?.text = "This is error...!"
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: collectionView.bounds.size.width / 2,
+                           height: 80)
     }
 }
+
+
+class Cell:MNkCVCell_Parameter<Test>{
+    override func config() {
+        backgroundColor = .red
+    }
+}
+
+struct Test{}
