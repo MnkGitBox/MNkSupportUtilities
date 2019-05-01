@@ -83,13 +83,7 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
 /*...........................................................
  MARK:- MNkTableView controllers with empty cell type reload
  ............................................................*/
-public protocol TableViewEmptyCellDataSource{
-    func tableViewSetData(toEmpty cell:MNkEmptyTVCell,at indexPath:IndexPath)->MNkEmptyTVCell
-}
-
 open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkEmptyTVCell>:MNkTVC_Parameter_EmptyCellType<T,E>{
-    
-    public var emptyCellDataSource:TableViewEmptyCellDataSource?
     
     open override func config() {
         super.config()
@@ -103,14 +97,12 @@ open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkE
             cell.data = data[indexPath.item]
             return tableview(tableview, updateCellDataWhenReloadingAt: indexPath, of: cell)
         }
-        let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyCellID, for: indexPath) as! MNkEmptyTVCell
-        guard let _emptyCellDelegate = emptyCellDataSource else{
-            return emptyCell
-        }
-        return _emptyCellDelegate.tableViewSetData(toEmpty: emptyCell, at: indexPath)
+        let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyCellID, for: indexPath) as! E
+        return self.tableview(setEmptyCellData: emptyCell, at: indexPath)
     }
     
     open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
+    open func tableview(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
 }
 
 open class MNkTVC_Parameter_EmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellType<E>{

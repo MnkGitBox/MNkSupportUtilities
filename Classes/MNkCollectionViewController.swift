@@ -68,7 +68,7 @@ open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCo
 open class MNkCollectionVC_Parameter<T>:MNKCollectionViewController{
     public var data:[T] = []{didSet{updateUIWithNewData()}}
     
-    open  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return data.count}
+    open override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return data.count}
 }
 
 
@@ -77,14 +77,8 @@ open class MNkCollectionVC_Parameter<T>:MNKCollectionViewController{
 /*...........................................................
  MARK:- MNkTableView controllers with empty cell type reload
  ............................................................*/
-public protocol CollectionViewEmptyCellDataSource{
-    func collectionViewSetData(toEmpty cell:MNkEmptyCVCell,at indexPath:IndexPath)->MNkEmptyCVCell
-}
-
 open class MNkCVC_Parameter_Cell_EmptyCellType<T,C:MNkCVCell_Parameter<T>,E:MNkEmptyCVCell>:MNkCVC_Parameter_EmptyCellType<T,E>{
-    
-    public var emptyCellDataSource:CollectionViewEmptyCellDataSource?
-    
+
     open override func config() {
         super.config()
         collectionView.register(C.self, forCellWithReuseIdentifier: cellID)
@@ -97,14 +91,12 @@ open class MNkCVC_Parameter_Cell_EmptyCellType<T,C:MNkCVCell_Parameter<T>,E:MNkE
             cell.data = data[indexPath.item]
             return self.collectionView(collectionView,updateCellDataWhenReloadingAt: indexPath, of: cell)
         }
-        let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellID, for: indexPath) as! MNkEmptyCVCell
-        guard let _emptyCellDelegate = emptyCellDataSource else{
-            return emptyCell
-        }
-        return _emptyCellDelegate.collectionViewSetData(toEmpty: emptyCell, at: indexPath)
+        let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellID, for: indexPath) as! E
+        return self.collectionView(setEmptyCellData: emptyCell, at: indexPath)
     }
     
     open func collectionView(_ collectionView:UICollectionView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
+    open func collectionView(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
 }
 
 open class MNkCVC_Parameter_EmptyCellType<T,E:MNkEmptyCVCell>:MNkCVC_EmptyCellType<E>{
