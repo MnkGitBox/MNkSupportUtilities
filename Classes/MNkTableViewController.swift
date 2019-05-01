@@ -50,7 +50,7 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
     public var tableview:UITableView!
     
     open override func createViews() {
-        tableview = UITableView.init(frame: self.view.bounds)
+        tableview = UITableView()
         tableview.delegate = self
         tableview.dataSource = self
         tableview.backgroundColor = .white
@@ -58,6 +58,7 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
     
     open override func insertAndLayoutSubviews() {
         view.addSubview(tableview)
+        view.activateLayouts(to: self.view, true)
     }
     
     open override func config() {
