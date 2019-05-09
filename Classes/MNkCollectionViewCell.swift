@@ -55,9 +55,13 @@ open class MNkCollectionViewCell:UICollectionViewCell{
 
 
 
-
+public protocol EmptyCollectionViewDelegate{
+    func userDidTappedReloadData(_ button:UIButton,in cell:MNkEmptyCVCell)
+}
 
 open class MNkEmptyCVCell:MNkCollectionViewCell{
+    
+    var delegate:EmptyCollectionViewDelegate?
     
     public var message:String?{
         didSet{
@@ -113,6 +117,7 @@ open class MNkEmptyCVCell:MNkCollectionViewCell{
         messageLabel.lineBreakMode = .byCharWrapping
         
         retryButton = UIButton()
+        retryButton.addTarget(self, action: #selector(userDidtappedReloadButton(_:)), for: .touchUpInside)
         retryButton.setTitle("RETRY", for: .normal)
         retryButton.setTitleColor(.white, for: .normal)
         retryButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
@@ -143,5 +148,9 @@ open class MNkEmptyCVCell:MNkCollectionViewCell{
     
     override open func config() {
         clipsToBounds = true
+    }
+    
+    @objc private func userDidtappedReloadButton(_ button:UIButton){
+        delegate?.userDidTappedReloadData(button, in: self)
     }
 }

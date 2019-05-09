@@ -92,6 +92,7 @@ open class MNkCVC_Parameter_Cell_EmptyCellType<T,C:MNkCVCell_Parameter<T>,E:MNkE
             return self.collectionView(collectionView,updateCellDataWhenReloadingAt: indexPath, of: cell)
         }
         let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellID, for: indexPath) as! E
+        emptyCell.delegate = self
         return self.collectionView(setEmptyCellData: emptyCell, at: indexPath)
     }
     
@@ -107,6 +108,12 @@ open class MNkCVC_Parameter_EmptyCellType<T,E:MNkEmptyCVCell>:MNkCVC_EmptyCellTy
         return super.collectionView(collectionView, numberOfItemsInSection: section)
     }
 }
+
+extension MNkCVC_Parameter_Cell_EmptyCellType:EmptyCollectionViewDelegate{
+    public func userDidTappedReloadData(_ button: UIButton, in cell: MNkEmptyCVCell) {}
+}
+
+
 
 open class MNkCVC_EmptyCellType<E:MNkEmptyCVCell>:MNKCollectionViewController{
     open override func config() {

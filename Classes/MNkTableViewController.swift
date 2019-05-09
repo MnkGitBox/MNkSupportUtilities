@@ -98,12 +98,19 @@ open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkE
             return tableview(tableview, updateCellDataWhenReloadingAt: indexPath, of: cell)
         }
         let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyCellID, for: indexPath) as! E
+        emptyCell.delegate = self
         return self.tableview(setEmptyCellData: emptyCell, at: indexPath)
     }
     
     open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
     open func tableview(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
 }
+
+extension MNkTVC_Parameter_Cell_EmptyCellType:EmptyTableviewDelegate{
+    public func userDidTappedReloadData(_ button: UIButton, in cell: MNkEmptyTVCell) {}
+}
+
+
 
 open class MNkTVC_Parameter_EmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellType<E>{
     public var data:[T] = [] {didSet{updateUIWithNewData()}}

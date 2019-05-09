@@ -52,8 +52,13 @@ open class MNkTVCell_Parameter<T>:MNkTableViewCell{
 
 
 
+public protocol EmptyTableviewDelegate{
+    func userDidTappedReloadData(_ button:UIButton,in cell:MNkEmptyTVCell)
+}
 
 open class MNkEmptyTVCell:MNkTableViewCell{
+    
+    public var delegate:EmptyTableviewDelegate?
     
     public var message:String?{
         didSet{
@@ -109,6 +114,7 @@ open class MNkEmptyTVCell:MNkTableViewCell{
         messageLabel.lineBreakMode = .byCharWrapping
         
         retryButton = UIButton()
+        retryButton.addTarget(self, action: #selector(userDidtappedReloadButton(_:)), for: .touchUpInside)
         retryButton.setTitle("RETRY", for: .normal)
         retryButton.setTitleColor(.white, for: .normal)
         retryButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
@@ -140,6 +146,10 @@ open class MNkEmptyTVCell:MNkTableViewCell{
     
     override open func config() {
         clipsToBounds = true
+    }
+    
+    @objc private func userDidtappedReloadButton(_ button:UIButton){
+        delegate?.userDidTappedReloadData(button, in: self)
     }
 }
 
