@@ -61,7 +61,7 @@ public protocol EmptyCollectionViewDelegate{
 
 open class MNkEmptyCVCell:MNkCollectionViewCell{
     
-    var delegate:EmptyCollectionViewDelegate?
+    public var delegate:EmptyCollectionViewDelegate?
     
     public var message:String?{
         didSet{
