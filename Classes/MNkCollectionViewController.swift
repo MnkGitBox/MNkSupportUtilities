@@ -6,11 +6,20 @@
 //
 
 import UIKit
-/*............................................................
-MARK:- MNkTableView controllers with normal cell type reload
-............................................................*/
-open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
-    
+
+public enum PageDisplayPoint{
+    case leftEdge
+    case centerEdge
+    case none
+}
+/*...................................................................
+ MARK:- MNkCollectionv view controllers with normal cell type reload
+ ...................................................................*/
+open class MNKCollectionViewController:MNkViewController,
+    UICollectionViewDelegateFlowLayout,
+    UICollectionViewDataSource,
+    CarouselEffectControl,
+ScrollPageControl{
     open var layout:UICollectionViewLayout = UICollectionViewFlowLayout()
     
     public var cellID:String = "GenericCellID \(arc4random())"
@@ -39,8 +48,14 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
         collectionView.activateLayouts(to: self.view)
     }
     
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setPosition(of: collectionView)
+    }
+    
     open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}
     open  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         return UICollectionViewCell()
     }
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {return .zero}
@@ -49,8 +64,53 @@ open class MNKCollectionViewController:MNkViewController,UICollectionViewDelegat
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {return .zero}
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {return .zero}
     
-    open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard isActiveCarousel else{return}
+        setCellCarosel(to: cell, at: indexPath, in: collectionView)
+    }
+    
+    /*..............................................................
+     MARK:- CollectionViewController ambeded with 'Carousel Effect'
+     - When you isActiveCarousel set to true, collectionview cell
+     will animate to carousel way.
+     ...............................................................*/
+    open var isActiveCarousel:Bool{
+        return false
+    }
+    open var isPaginEnable:Bool{
+        return false
+    }
+    open var pageDisplayPoint: PageDisplayPoint{
+        return .none
+    }
+    open var carouselMinPreAlpha: CGFloat {
+        return 0.5
+    }
+    open var carouselMinScalePreVal: CGFloat {
+        return 0.2
+    }
+    open var carouselOpenPoint: CGFloat {
+        return self.view.bounds.size.width/2
+    }
+    
+    open var currActiveCell: UICollectionViewCell?
+    
+    /*.........................................................................................
+     MARK:- Controll carousel through scrollview embeded in collectionview controller.
+     ..........................................................................................*/
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard isActiveCarousel else{return}
+        playCarosel(in: collectionView)
+    }
+    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard isActiveCarousel else{return}
+        targetContentOffset.pointee = scrollView.contentOffset
+    }
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        currActiveCell = setCurrPage(in: collectionView)
+    }
 }
+
 
 open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCollectionVC_Parameter<T>{
     
@@ -78,7 +138,7 @@ open class MNkCollectionVC_Parameter<T>:MNKCollectionViewController{
  MARK:- MNkTableView controllers with empty cell type reload
  ............................................................*/
 open class MNkCVC_Parameter_Cell_EmptyCellType<T,C:MNkCVCell_Parameter<T>,E:MNkEmptyCVCell>:MNkCVC_Parameter_EmptyCellType<T,E>{
-
+    
     open override func config() {
         super.config()
         collectionView.register(C.self, forCellWithReuseIdentifier: cellID)

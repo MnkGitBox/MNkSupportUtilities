@@ -128,3 +128,12 @@ extension UIImageView{
     }
 }
 
+/*.................................
+ MARK:- UICollectionView extensions
+ ..........................................*/
+extension UICollectionView{
+    func attributeFrame(forCellAt indexPath:IndexPath)->CGRect?{
+        let attrib = self.layoutAttributesForItem(at: indexPath)
+        return attrib?.frame
+    }
+}
