@@ -51,6 +51,7 @@ ScrollPageControl{
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setPosition(of: collectionView)
+        currActiveCell = setCurrPage(in: collectionView)
     }
     
     open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}
@@ -64,9 +65,10 @@ ScrollPageControl{
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {return .zero}
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {return .zero}
     
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard isActiveCarousel else{return}
         setCellCarosel(to: cell, at: indexPath, in: collectionView)
+        currActiveCell = setCurrPage(in: collectionView)
     }
     
     /*..............................................................
@@ -151,13 +153,10 @@ open class MNkCVC_Parameter_Cell_EmptyCellType<T,C:MNkCVCell_Parameter<T>,E:MNkE
             cell.data = data[indexPath.item]
             return self.collectionView(collectionView,updateCellDataWhenReloadingAt: indexPath, of: cell)
         }
-        let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellID, for: indexPath) as! E
-        emptyCell.delegate = self
-        return self.collectionView(setEmptyCellData: emptyCell, at: indexPath)
+        return super.collectionView(collectionView, cellForItemAt: indexPath)
     }
     
     open func collectionView(_ collectionView:UICollectionView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
-    open func collectionView(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
 }
 
 open class MNkCVC_Parameter_EmptyCellType<T,E:MNkEmptyCVCell>:MNkCVC_EmptyCellType<E>{
@@ -169,11 +168,6 @@ open class MNkCVC_Parameter_EmptyCellType<T,E:MNkEmptyCVCell>:MNkCVC_EmptyCellTy
     }
 }
 
-extension MNkCVC_Parameter_Cell_EmptyCellType:EmptyCollectionViewDelegate{
-    public func userDidTappedReloadData(_ button: UIButton, in cell: MNkEmptyCVCell) {}
-}
-
-
 
 open class MNkCVC_EmptyCellType<E:MNkEmptyCVCell>:MNKCollectionViewController{
     open override func config() {
@@ -184,7 +178,20 @@ open class MNkCVC_EmptyCellType<E:MNkEmptyCVCell>:MNKCollectionViewController{
         return 1
     }
     
+    open override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellID, for: indexPath) as! E
+        emptyCell.delegate = self
+        return self.collectionView(setEmptyCellData: emptyCell, at: indexPath)
+    }
+    
     open override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellDisplayViewBounds.size
     }
+    
+    open func collectionView(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
+    
+    open func userDidTappedReloadData(_ button: UIButton, in cell: MNkEmptyCVCell) {}
 }
+
+
+extension MNkCVC_EmptyCellType:EmptyCollectionViewDelegate{}

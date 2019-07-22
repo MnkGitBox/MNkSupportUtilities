@@ -43,7 +43,7 @@ open class MNkTextFieldWithError:MNkView{
         stackview.addArrangedSubview(errLabel)
         
         stackview.activateLayouts(to: self)
-
+        
         textFieldHeightAnch = textField.heightAnchor.constraint(equalToConstant: textFieldHeight)
         textFieldHeightAnch?.isActive = true
     }

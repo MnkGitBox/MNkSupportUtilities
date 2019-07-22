@@ -27,7 +27,7 @@ extension MNkValidatableTextView{
 
 
 public protocol MNkTextValidatable{
-    var hasEmptyTextContainer:Bool{get}
+    //    var hasEmptyTextContainer:Bool{get}
     var validationData:[ValidationData]{get}
     var errorColor:UIColor{get}
     var defaultColor:UIColor{get}
@@ -42,7 +42,7 @@ extension MNkTextValidatable{
         return #colorLiteral(red: 1, green: 0.462745098, blue: 0.4588235294, alpha: 1)
     }
     public var defaultColor:UIColor{
-        return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        return .clear
     }
     public var textColor:UIColor{
         return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -56,19 +56,19 @@ extension MNkTextValidatable{
     }
     
     //MARK:- CHECK IS THERE ANY EMPTY TEXT FIELD
-    public var hasEmptyTextContainer:Bool{
-        return checkEmptyTextContainer()
-    }
+    //    public var hasEmptyTextContainer:Bool{
+    //        return checkEmptyTextContainer()
+    //    }
     
-    private func checkEmptyTextContainer()->Bool{
+    private func checkEmptyTextContainer(with defaultError:String)->Bool{
         var hasEmpty:Bool = false
         for data in validationData{
             
             let textContainer = data.textContainer
-            setTextContainer(toDefault: true, textContainer)
+            setTextContainer(toDefault: true, textContainer,defaultError)
             
             guard textContainer.textView.textString == "" else{continue}
-            setTextContainer(toDefault: false, textContainer)
+            setTextContainer(toDefault: false, textContainer,defaultError)
             
             hasEmpty = true
         }
@@ -120,9 +120,9 @@ extension MNkTextValidatable{
         var password:String!
         
         var validatedData = ValidatedData()
-
         
-        guard !hasEmptyTextContainer else{
+        
+        guard !checkEmptyTextContainer(with: defaultErrorMsg) else{
             validatedData.isValidate = false
             validatedData.commonError = defaultErrorMsg
             return validatedData
@@ -148,7 +148,25 @@ extension MNkTextValidatable{
             case .phoneNo:
                 let result = validatePhoneNo(in: _textContainer.textView)
                 let error = "Please enter valid phone number"
-                setTextContainer(toDefault: result, _textContainer,"Please enter valid phone number")
+                setTextContainer(toDefault: result, _textContainer,error)
+                if !result{
+                    validatedData.isValidate = false
+                    validatedData.errors.append(error)
+                }
+                continue
+            case .mobileDialog:
+                let result = validateMobileNo(in: _textContainer.textView, for: .dialog)
+                let error = "Please enter Dailog mobile number"
+                setTextContainer(toDefault: result, _textContainer,error)
+                if !result{
+                    validatedData.isValidate = false
+                    validatedData.errors.append(error)
+                }
+                continue
+            case .mobileMobitel:
+                let result = validateMobileNo(in: _textContainer.textView, for: .mobitel)
+                let error = "Please enter Mobitel mobile number"
+                setTextContainer(toDefault: result, _textContainer,error)
                 if !result{
                     validatedData.isValidate = false
                     validatedData.errors.append(error)
@@ -175,7 +193,6 @@ extension MNkTextValidatable{
                     }
                 }
                 continue
-                
             case .normal:
                 let text = data.textContainer.textView.textString
                 let result = text?.isEmpty ?? true
@@ -210,16 +227,55 @@ extension MNkTextValidatable{
         
         guard let text = textContainer.textString,text != "" else {return true}
         
-        var formattedPN = String(text.filter{ !" \n\t\r".contains($0)})
+        let formattedPN = formatPhoneNo(text)
+        
+        guard let _ = Int(formattedPN) else{return false}
+        guard formattedPN.count == 9 else{return false}
+        return true
+    }
+    
+    private func validateMobileNo(in textContainer:UIView,for carrierType:CarrierType)->Bool{
+        
+        guard let text = textContainer.textString,text != "" else {return true}
+        
+        guard validatePhoneNo(in: textContainer) else{return false}
+        
+        let mobileNo = formatPhoneNo(text)
+        
+        let prefex = String(mobileNo.prefix(2))
+        
+        var isPassed = false
+        
+        switch carrierType{
+        case .dialog:
+            switch prefex{
+            case "77","76":
+                isPassed = true
+            default:
+                isPassed = false
+            }
+        case .mobitel:
+            switch prefex{
+            case "71","70":
+                isPassed = true
+            default:
+                isPassed = false
+            }
+        }
+        return isPassed
+        
+    }
+    
+    public func formatPhoneNo(_ mobileNo:String)->String{
+        var formattedPN = String(mobileNo.filter{ !" \n\t\r".contains($0)})
         
         if let firtString = formattedPN.first?.description,
             firtString != " ",
             firtString == "0"{
-            formattedPN.remove(at: text.startIndex)
+            formattedPN.remove(at: mobileNo.startIndex)
         }
-        guard let _ = Int(formattedPN) else{return false}
-        guard formattedPN.count == 9 else{return false}
-        return true
+        
+        return formattedPN
     }
     
 }
@@ -231,6 +287,13 @@ public enum ValidationType {
     case phoneNo
     case password
     case conformPassword
+    case mobileDialog
+    case mobileMobitel
+}
+
+enum CarrierType{
+    case dialog
+    case mobitel
 }
 
 

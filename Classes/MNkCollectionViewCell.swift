@@ -16,7 +16,7 @@ open class MNkCVCell_Parameter<T>: MNkCollectionViewCell {
     }
     
     open func updateUI(with data:T){}
-
+    
 }
 
 
@@ -46,7 +46,7 @@ open class MNkCollectionViewCell:UICollectionViewCell{
         super.init(coder: aDecoder)
         doLoadThings()
     }
-
+    
     open override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         setAppSetting()

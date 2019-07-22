@@ -22,7 +22,7 @@ open class MNkTableViewCell:UITableViewCell{
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-       doLoadThings()
+        doLoadThings()
     }
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

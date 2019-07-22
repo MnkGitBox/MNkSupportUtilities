@@ -44,8 +44,8 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
         let bottomPadding = (tabBarController?.tabBar.frame.size.height ?? 0) + safeAreaEdgeInsets.bottom
         let mainSreenRect = UIScreen.main.bounds
         return CGRect.init(origin: .zero,
-                                     size: CGSize.init(width: mainSreenRect.width,
-                                                       height: mainSreenRect.height - topPadding - bottomPadding))
+                           size: CGSize.init(width: mainSreenRect.width,
+                                             height: mainSreenRect.height - topPadding - bottomPadding))
     }
     
     open override func createViews() {
@@ -114,7 +114,7 @@ extension MNkTVC_Parameter_Cell_EmptyCellType:EmptyTableviewDelegate{
 
 open class MNkTVC_Parameter_EmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellType<E>{
     public var data:[T] = [] {didSet{updateUIWithNewData()}}
-
+    
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard data.isEmpty else {return data.count}
         return super.tableView(tableView, numberOfRowsInSection: section)

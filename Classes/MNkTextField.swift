@@ -36,7 +36,7 @@ open class MNkTextField: UITextField{
     }
     
     private var borderViews:[UIView] = []
-
+    
     
     private func insertBorders(){
         for edge in borders{
@@ -74,7 +74,7 @@ open class MNkTextField: UITextField{
                                          border.bottomAnchor.constraint(equalTo: bottomAnchor)])
         }
         
-       
+        
     }
     
     private func removeBorders(){

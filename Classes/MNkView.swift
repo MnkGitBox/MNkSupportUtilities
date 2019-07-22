@@ -88,6 +88,7 @@ open class MNkView_TV_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>:MNkView,UIT
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {return 0}
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {return nil}
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {return 0}
+    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {}
 }
 
 
