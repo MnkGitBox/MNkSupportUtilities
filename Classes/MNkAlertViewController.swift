@@ -40,7 +40,7 @@ extension MNkAlertViewController:MNkAlertDelegate{
 
 
 
-public extension MNkViewController{
+public extension UIViewController{
     func showAlert(of alertVC:MNkAlertViewController,completed:((_ completedAction:MNkAlertView.MNkAlertAction)->())? = nil){
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext

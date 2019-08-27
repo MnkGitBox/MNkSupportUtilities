@@ -31,7 +31,6 @@
 		522F4BD57D5C42C596D3FA8949ACA21E /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 187351004E3F6054A9410D8CBAD04D66 /* SDWebImageDownloader.m */; };
 		558D069DEA4268E8989CBF2AE5A5D4E7 /* SDWebImageImageIOCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4BDE292BB00F4E814F68B2C2F75EF7 /* SDWebImageImageIOCoder.m */; };
 		565EAF8B3535EDEE71816A9EC0DEA537 /* SDImageCacheConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = AD594E84E49E0E8D28B5D0E9A1E2267A /* SDImageCacheConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56796BD811377B318F4DE3374262ED16 /* MNkTextViewNoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF819A70771648FFCBB728BDB2099F /* MNkTextViewNoPadding.swift */; };
 		5A9C1B9E39E05822DB6906F909B5A3AD /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B0462EC0CF5495E6F9909C42006DDACB /* UIImage+MultiFormat.m */; };
 		5C2D1B9D186B1E9C6CEF185F2D42EEB0 /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0906D08281D20DB090281EC2DEB64F37 /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D7E6739E1CA16B89111B17C4B9A6A38 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 413FADCDF24126D21DEE85687A9F2B30 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,16 +38,15 @@
 		62AC248E028BC1455F24860467E06EB2 /* SDWebImageCoderHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3343DA38013ACA3779FD4B4A2BB65C70 /* SDWebImageCoderHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6478D7F67CAD18944B6F5506CDDEBC30 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901C35B74FFB53AEF0BDC868F710834 /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		740611AB6CC3AB87FBF781C6C759F9D8 /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F9F609611642409A92A22C629F294F /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		771E34D622E5A3D500D50F53 /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E34D522E5A3D500D50F53 /* BadgeButton.swift */; };
-		771E34E322E5A54300D50F53 /* MNkAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E34E122E5A54300D50F53 /* MNkAlertView.swift */; };
-		771E34E422E5A54300D50F53 /* MNkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E34E222E5A54300D50F53 /* MNkAlertViewController.swift */; };
-		771E34E622E5A7D700D50F53 /* SearchContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E34E522E5A7D700D50F53 /* SearchContainer.swift */; };
 		771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EE9AD21B5263D007036CF /* MNkSeperator.swift */; };
 		7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770F08321BF72200003661D /* CoreDataSupport.swift */; };
 		77B40F4F2248F89C00F33D49 /* MNkTextValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B40F4E2248F89C00F33D49 /* MNkTextValidatable.swift */; };
-		77E85DD822A0FC43004EC08C /* CarouselEffectControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E85DD522A0FC43004EC08C /* CarouselEffectControl.swift */; };
-		77E85DD922A0FC43004EC08C /* OriginCellPointControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E85DD622A0FC43004EC08C /* OriginCellPointControl.swift */; };
-		77E85DDA22A0FC43004EC08C /* ScrollPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E85DD722A0FC43004EC08C /* ScrollPageControl.swift */; };
+		77D7964C23152B5800BA9944 /* MNkVerticalAlignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7964B23152B5800BA9944 /* MNkVerticalAlignButton.swift */; };
+		77D7964F23152ED700BA9944 /* MNkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7964D23152ED700BA9944 /* MNkAlertViewController.swift */; };
+		77D7965023152ED700BA9944 /* MNkAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7964E23152ED700BA9944 /* MNkAlertView.swift */; };
+		77D7965423152EFA00BA9944 /* MNkTextViewNoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7965123152EFA00BA9944 /* MNkTextViewNoPadding.swift */; };
+		77D7965523152EFA00BA9944 /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7965223152EFA00BA9944 /* BadgeButton.swift */; };
+		77D7965623152EFA00BA9944 /* SearchContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7965323152EFA00BA9944 /* SearchContainer.swift */; };
 		77EE308A21D4EDF100AB422C /* MNkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE308421D4EDF000AB422C /* MNkTableViewCell.swift */; };
 		77EE308B21D4EDF100AB422C /* MNkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE308521D4EDF000AB422C /* MNkView.swift */; };
 		77EE308C21D4EDF100AB422C /* MNkCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE308621D4EDF000AB422C /* MNkCollectionViewController.swift */; };
@@ -174,16 +172,15 @@
 		74D14B8810554BF0C524166FDD41C9FC /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		762FDA22A2618EA78A4A99A3F1F272C8 /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNkSupportUtilities_Example-dummy.m"; sourceTree = "<group>"; };
-		771E34D522E5A3D500D50F53 /* BadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
-		771E34E122E5A54300D50F53 /* MNkAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertView.swift; path = ../Classes/MNkAlertController/MNkAlertView.swift; sourceTree = "<group>"; };
-		771E34E222E5A54300D50F53 /* MNkAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertViewController.swift; path = ../Classes/MNkAlertController/MNkAlertViewController.swift; sourceTree = "<group>"; };
-		771E34E522E5A7D700D50F53 /* SearchContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContainer.swift; sourceTree = "<group>"; };
 		771EE9AD21B5263D007036CF /* MNkSeperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkSeperator.swift; path = Classes/MNkSeperator.swift; sourceTree = "<group>"; };
 		7770F08321BF72200003661D /* CoreDataSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataSupport.swift; path = Classes/CoreDataSupport.swift; sourceTree = "<group>"; };
 		77B40F4E2248F89C00F33D49 /* MNkTextValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextValidatable.swift; path = Classes/MNkTextValidatable.swift; sourceTree = "<group>"; };
-		77E85DD522A0FC43004EC08C /* CarouselEffectControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarouselEffectControl.swift; path = Classes/CarouselEffectControl.swift; sourceTree = "<group>"; };
-		77E85DD622A0FC43004EC08C /* OriginCellPointControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OriginCellPointControl.swift; path = Classes/OriginCellPointControl.swift; sourceTree = "<group>"; };
-		77E85DD722A0FC43004EC08C /* ScrollPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollPageControl.swift; path = Classes/ScrollPageControl.swift; sourceTree = "<group>"; };
+		77D7964B23152B5800BA9944 /* MNkVerticalAlignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkVerticalAlignButton.swift; path = Classes/MNkVerticalAlignButton.swift; sourceTree = "<group>"; };
+		77D7964D23152ED700BA9944 /* MNkAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertViewController.swift; path = Classes/MNkAlertViewController.swift; sourceTree = "<group>"; };
+		77D7964E23152ED700BA9944 /* MNkAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertView.swift; path = Classes/MNkAlertView.swift; sourceTree = "<group>"; };
+		77D7965123152EFA00BA9944 /* MNkTextViewNoPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextViewNoPadding.swift; path = Classes/MNkTextViewNoPadding.swift; sourceTree = "<group>"; };
+		77D7965223152EFA00BA9944 /* BadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BadgeButton.swift; path = Classes/BadgeButton.swift; sourceTree = "<group>"; };
+		77D7965323152EFA00BA9944 /* SearchContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchContainer.swift; path = Classes/SearchContainer.swift; sourceTree = "<group>"; };
 		77EE308421D4EDF000AB422C /* MNkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTableViewCell.swift; path = Classes/MNkTableViewCell.swift; sourceTree = "<group>"; };
 		77EE308521D4EDF000AB422C /* MNkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkView.swift; path = Classes/MNkView.swift; sourceTree = "<group>"; };
 		77EE308621D4EDF000AB422C /* MNkCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkCollectionViewController.swift; path = Classes/MNkCollectionViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +226,6 @@
 		D71C9A1CE70C55049350CBC0E5A89CE6 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
 		D777652FEAE2FBAF933A6BF0B4CCF528 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
 		D92D2E9FD083059DEB5EB83286E83D38 /* Pods-MNkSupportUtilities_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MNkSupportUtilities_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DDCF819A70771648FFCBB728BDB2099F /* MNkTextViewNoPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MNkTextViewNoPadding.swift; sourceTree = "<group>"; };
 		DE65A147F35745875119F153220DF196 /* Pods-MNkSupportUtilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNkSupportUtilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E398CF1CB81172808A4BC994DFCEC383 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
 		E3A4F923D4C314E45B7D0779B2E3A2C0 /* SDWebImageGIFCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageGIFCoder.h; path = SDWebImage/SDWebImageGIFCoder.h; sourceTree = "<group>"; };
@@ -361,15 +357,6 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		771E34E022E5A4F800D50F53 /* MNkAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				771E34E122E5A54300D50F53 /* MNkAlertView.swift */,
-				771E34E222E5A54300D50F53 /* MNkAlertViewController.swift */,
-			);
-			path = MNkAlertController;
-			sourceTree = "<group>";
-		};
 		778737FF0BD86A82CAFC9CF3C736CDE6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,7 +460,6 @@
 		C6D63D84CFFB1C89B8A2ED83E54428D5 /* MNkSupportUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				771E34E022E5A4F800D50F53 /* MNkAlertController */,
 				77EE308821D4EDF000AB422C /* MNkCollectionViewCell.swift */,
 				77EE308621D4EDF000AB422C /* MNkCollectionViewController.swift */,
 				77EE308421D4EDF000AB422C /* MNkTableViewCell.swift */,
@@ -481,31 +467,22 @@
 				77B40F4E2248F89C00F33D49 /* MNkTextValidatable.swift */,
 				77EE308521D4EDF000AB422C /* MNkView.swift */,
 				77EE308921D4EDF100AB422C /* MNkViewController.swift */,
+				77D7965223152EFA00BA9944 /* BadgeButton.swift */,
+				77D7965123152EFA00BA9944 /* MNkTextViewNoPadding.swift */,
+				77D7965323152EFA00BA9944 /* SearchContainer.swift */,
 				96E3BB3B1B0D21A324B952C6CBFED8EE /* Extensions.swift */,
 				7770F08321BF72200003661D /* CoreDataSupport.swift */,
 				771EE9AD21B5263D007036CF /* MNkSeperator.swift */,
 				82B24D1322462D3600E80641 /* MNkTextField.swift */,
 				82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */,
-				77E85DD522A0FC43004EC08C /* CarouselEffectControl.swift */,
-				77E85DD622A0FC43004EC08C /* OriginCellPointControl.swift */,
-				77E85DD722A0FC43004EC08C /* ScrollPageControl.swift */,
+				77D7964B23152B5800BA9944 /* MNkVerticalAlignButton.swift */,
+				77D7964E23152ED700BA9944 /* MNkAlertView.swift */,
+				77D7964D23152ED700BA9944 /* MNkAlertViewController.swift */,
 				45F899E77F724C096F3764D6C72561C7 /* Pod */,
 				E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */,
-				C7E7CBD6F798F44275061A6415F1BEC2 /* SupportSubviewClasses */,
 			);
 			name = MNkSupportUtilities;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		C7E7CBD6F798F44275061A6415F1BEC2 /* SupportSubviewClasses */ = {
-			isa = PBXGroup;
-			children = (
-				DDCF819A70771648FFCBB728BDB2099F /* MNkTextViewNoPadding.swift */,
-				771E34D522E5A3D500D50F53 /* BadgeButton.swift */,
-				771E34E522E5A7D700D50F53 /* SearchContainer.swift */,
-			);
-			name = SupportSubviewClasses;
-			path = Classes/SupportSubviewClasses;
 			sourceTree = "<group>";
 		};
 		E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */ = {
@@ -693,7 +670,7 @@
 						LastSwiftMigration = 1020;
 					};
 					D8726A036E9EEB34E1036B94F8B0E8B4 = {
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -775,25 +752,23 @@
 			files = (
 				77EE308B21D4EDF100AB422C /* MNkView.swift in Sources */,
 				77EE308E21D4EDF100AB422C /* MNkCollectionViewCell.swift in Sources */,
-				77E85DD822A0FC43004EC08C /* CarouselEffectControl.swift in Sources */,
+				77D7965423152EFA00BA9944 /* MNkTextViewNoPadding.swift in Sources */,
 				77EE308A21D4EDF100AB422C /* MNkTableViewCell.swift in Sources */,
 				82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */,
 				77EE308D21D4EDF100AB422C /* MNkTableViewController.swift in Sources */,
 				CAF44DD37D1B4AB55A963D1F872A83D8 /* Extensions.swift in Sources */,
 				771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */,
 				82B24D1522462D3700E80641 /* MNkTextField.swift in Sources */,
+				77D7964F23152ED700BA9944 /* MNkAlertViewController.swift in Sources */,
 				7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */,
-				77E85DDA22A0FC43004EC08C /* ScrollPageControl.swift in Sources */,
-				771E34E622E5A7D700D50F53 /* SearchContainer.swift in Sources */,
-				77E85DD922A0FC43004EC08C /* OriginCellPointControl.swift in Sources */,
-				771E34E422E5A54300D50F53 /* MNkAlertViewController.swift in Sources */,
 				77B40F4F2248F89C00F33D49 /* MNkTextValidatable.swift in Sources */,
+				77D7964C23152B5800BA9944 /* MNkVerticalAlignButton.swift in Sources */,
+				77D7965623152EFA00BA9944 /* SearchContainer.swift in Sources */,
 				D02CCDBFF3E9E26C2101A3D85CAE4347 /* MNkSupportUtilities-dummy.m in Sources */,
-				56796BD811377B318F4DE3374262ED16 /* MNkTextViewNoPadding.swift in Sources */,
-				771E34D622E5A3D500D50F53 /* BadgeButton.swift in Sources */,
 				77EE308C21D4EDF100AB422C /* MNkCollectionViewController.swift in Sources */,
+				77D7965523152EFA00BA9944 /* BadgeButton.swift in Sources */,
 				77EE308F21D4EDF100AB422C /* MNkViewController.swift in Sources */,
-				771E34E322E5A54300D50F53 /* MNkAlertView.swift in Sources */,
+				77D7965023152ED700BA9944 /* MNkAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -147,7 +147,6 @@ open class MNkAlertView:MNkView{
         mainStackView.axis = .vertical
         mainStackView.distribution = .equalSpacing
         mainStackView.alignment = .center
-        mainStackView.spacing = 4
     }
     
     
@@ -188,12 +187,12 @@ open class MNkAlertView:MNkView{
     ///    You can choose what type of your alert need to be by seting type. Single and multilple, Single only show ok button and action be default hide
     ///    By changing properties you can change button title -> text, color, background color like things.
     ///    And using action clouser, you can catch any action perform by user and give action you want.
-    public func show(in targetView:UIView,perform buttonAction:@escaping ((MNkAlertAction)->Void)){
+    open func show(in targetView:UIView,perform buttonAction:@escaping ((MNkAlertAction)->Void)){
         
         setPrivateProperties()
         
-        titleLabel.text = title?.capitalized
-        messageLabel.text = message?.capitalized
+        titleLabel.text = title
+        messageLabel.text = message
         leftActionButton.isHidden = type == .single ? true : false
         
         self.alpha = 0
