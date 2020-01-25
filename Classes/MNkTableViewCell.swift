@@ -35,10 +35,6 @@ open class MNkTableViewCell:UITableViewCell{
     }
 }
 
-
-
-
-
 open class MNkTVCell_Parameter<T>:MNkTableViewCell{
     
     open var data:T?{
@@ -49,7 +45,6 @@ open class MNkTVCell_Parameter<T>:MNkTableViewCell{
     }
     open func updateUI(with data:T){}
 }
-
 
 
 public protocol EmptyTableviewDelegate{
@@ -83,6 +78,14 @@ open class MNkEmptyTVCell:MNkTableViewCell{
             retryButton.isHidden = isHideButton
         }
     }
+    
+    public var height:CGFloat = 250{
+        didSet{
+            heightCons?.constant = height
+        }
+    }
+    
+    private var heightCons:NSLayoutConstraint?
     
     public var imageview:UIImageView!
     public var headingLabel:UILabel!
@@ -141,7 +144,8 @@ open class MNkEmptyTVCell:MNkTableViewCell{
                                                                         multiplier: 0.4),
                                      retryButton.topAnchor.constraint(equalTo: stackview.bottomAnchor,
                                                                       constant: 20)])
-        
+        heightCons = self.heightAnchor.constraint(equalToConstant: height)
+        heightCons?.isActive = true
     }
     
     override open func config() {

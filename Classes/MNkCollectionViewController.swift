@@ -11,7 +11,8 @@ import UIKit
  ...................................................................*/
 open class MNKCollectionViewController:MNkViewController,
     UICollectionViewDelegateFlowLayout,
-    UICollectionViewDataSource{
+UICollectionViewDataSource{
+    
     open var layout:UICollectionViewLayout = UICollectionViewFlowLayout()
     
     public var cellID:String = "GenericCellID \(arc4random())"
@@ -49,9 +50,21 @@ open class MNKCollectionViewController:MNkViewController,
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {return UICollectionReusableView()}
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {return .zero}
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {return .zero}
+    open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {return .zero}
+    
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
+    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {}
+    open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {}
+    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
+    open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {}
+    open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {}
+    open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {}
 }
 
-
+//MARK:- COLLECTIONVIEW CONTROLLER WITH CELL TYPE AND AND PARAMETER
 open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCollectionVC_Parameter<T>{
     
     open override func config() {
@@ -65,14 +78,12 @@ open class MNkCollectionVC_Parameter_CellType<T,C:MNkCVCell_Parameter<T>>: MNkCo
     }
 }
 
+//MARK:- COLLRCTIONVIEW CONTROLLER WITH PARAMETER
 open class MNkCollectionVC_Parameter<T>:MNKCollectionViewController{
     public var data:[T] = []{didSet{updateUIWithNewData()}}
     
     open override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return data.count}
 }
-
-
-
 
 /*...........................................................
  MARK:- MNkTableView controllers with empty cell type reload

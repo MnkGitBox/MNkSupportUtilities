@@ -19,10 +19,7 @@ open class MNkCVCell_Parameter<T>: MNkCollectionViewCell {
     
 }
 
-
-
-
-
+//MARK:- BASED COLLECTIONVIEW CELL
 open class MNkCollectionViewCell:UICollectionViewCell{
     open func createViews(){}
     open func insertAndLayoutSubviews(){}
@@ -54,7 +51,7 @@ open class MNkCollectionViewCell:UICollectionViewCell{
 }
 
 
-
+//MARK:- EMPTY COLLECTIONVIEW CELL
 public protocol EmptyCollectionViewDelegate{
     func userDidTappedReloadData(_ button:UIButton,in cell:MNkEmptyCVCell)
 }

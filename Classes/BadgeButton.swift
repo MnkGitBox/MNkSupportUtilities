@@ -24,8 +24,6 @@ open class BadgeButton:MNkView{
     private lazy var button:UIButton = {
         let btn = UIButton()
         btn.addTarget(self, action: #selector(userTappedButton), for: .touchUpInside)
-        let image = #imageLiteral(resourceName: "tabbar_cart").withRenderingMode(.alwaysTemplate)
-        btn.setImage(image, for: .normal)
         btn.tintColor = UIColor.blue
         btn.imageView?.contentMode = .scaleAspectFit
         btn.translatesAutoresizingMaskIntoConstraints = false

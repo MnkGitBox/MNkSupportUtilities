@@ -5,163 +5,55 @@
 //  Created by MNk_Dev on 9/11/18.
 //
 import UIKit
-open class MNkVerticalAlignButton: UIView {
+open class MNkVerticalAlignButton: MNkView {
     
-    
-    
-    public  var imageEdgeInset:UIEdgeInsets = .zero{
+    public var contentEdgeInset:UIEdgeInsets = UIEdgeInsets.init(top:4, left:4, bottom:4, right:4){
         didSet{
-            setInsert()
+            vStack.layoutMargins = contentEdgeInset
         }
     }
     
-    public var contentEdgeInset:UIEdgeInsets = .zero{
-        didSet{
-            setContentInset()
-        }
-    }
+    public var imageView:UIImageView!
+    public var titleLabel:UILabel!
     
-    public var titleHeightConstant:CGFloat = 0.0{
-        didSet{
-            titleHeightAnchor?.constant = titleHeightConstant
-        }
-    }
-    
-    @IBInspectable public var image:UIImage?{
-        didSet{
-            imageView.image = image
-        }
-    }
-    @IBInspectable public  var title:String? = "Custom Button"{
-        didSet{
-            titleLabel.text = title?.capitalized
-        }
-    }
-    @IBInspectable public var titleFontColor:UIColor = .white{
-        didSet{
-            titleLabel.textColor = titleFontColor
-        }
-    }
-    
-    @IBInspectable public var titleFont:UIFont = UIFont.systemFont(ofSize: 14){
-        didSet{
-            titleLabel.font = titleFont
-        }
-    }
-    
-    @IBInspectable public var imageTintColor:UIColor = .white{
-        didSet{
-            imageView.tintColor = imageTintColor
-        }
-    }
-    public func setImage(from url:URL?,_ tintColor:UIColor? = nil,_ placeHolder:UIImage? = nil){
-        imageView.setImage(with: url, tintColor: tintColor, plaseHolder: placeHolder)
-    }
-    
-    private var titleHeightAnchor:NSLayoutConstraint?
-    
-    private var imageContainer:UIView = {
-        let view = UIView()
-        return view
-    }()
-    
-    private lazy var imageView:UIImageView = {
-        let iv = UIImageView()
-        iv.tintColor = imageTintColor
-        iv.image = image
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFit
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
-    }()
-    
-    private lazy var titleLabel:UILabel = {
-        let label = UILabel()
-        label.text = title?.capitalized
-        label.font = titleFont
-        label.textColor = titleFontColor
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private var vStack:UIStackView!
     
     private var tapGestureRecognizer = UITapGestureRecognizer()
     
-    private var imageLeftConstant:NSLayoutConstraint?
-    private var imageRightConstant:NSLayoutConstraint?
-    private var imageTopConstant:NSLayoutConstraint?
-    private var imageBottomConstant:NSLayoutConstraint?
-    
-    private var svLeadingAnchor:NSLayoutConstraint?
-    private var svTralingAnchor:NSLayoutConstraint?
-    private var svTopAnchor:NSLayoutConstraint?
-    private var svBottomAnchor:NSLayoutConstraint?
-    
-    public func insertAndLayoutSubViews(){
+    open override func createViews() {
+        imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        titleLabel = UILabel()
+        titleLabel.numberOfLines = 2
+        titleLabel.textAlignment = .center
+        titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
-        imageContainer.addSubview(imageView)
-        imageLeftConstant = imageView.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor,
-                                                               constant:imageEdgeInset.left)
-        imageRightConstant = imageView.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor,
-                                                                 constant:-imageEdgeInset.right)
-        imageTopConstant = imageView.topAnchor.constraint(equalTo: imageContainer.topAnchor,
-                                                          constant:imageEdgeInset.top)
-        imageBottomConstant = imageView.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor,
-                                                                constant:-imageEdgeInset.bottom)
+        tapGestureRecognizer = UITapGestureRecognizer()
+        tapGestureRecognizer.delegate = self
         
-        imageLeftConstant?.isActive = true
-        imageRightConstant?.isActive = true
-        imageTopConstant?.isActive = true
-        imageBottomConstant?.isActive = true
-        
-        
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 4
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        stackView.addArrangedSubview(imageContainer)
-        stackView.addArrangedSubview(titleLabel)
-        
-        self.addSubview(stackView)
-        
-        svLeadingAnchor = stackView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 8)
-        svTralingAnchor = stackView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -8)
-        svTopAnchor = stackView.topAnchor.constraint(equalTo: topAnchor,constant:  8)
-        svBottomAnchor = stackView.bottomAnchor.constraint(equalTo: bottomAnchor,constant:-8)
-        
-        svLeadingAnchor?.isActive = true
-        svTralingAnchor?.isActive = true
-        svTopAnchor?.isActive = true
-        svBottomAnchor?.isActive = true
-        
-        
-        titleHeightAnchor = titleLabel.heightAnchor.constraint(equalToConstant: 34)
-        titleHeightAnchor?.isActive = true
-        
-        
+        vStack = UIStackView.init(arrangedSubviews: [imageView,titleLabel])
+        vStack.axis = .vertical
+        vStack.spacing = 4
+        vStack.layoutMargins = contentEdgeInset
+        vStack.isLayoutMarginsRelativeArrangement = true
     }
     
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        doInitialWork()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        doInitialWork()
-    }
-    
-    private func doInitialWork(){
+    open override func insertAndLayoutSubviews() {
         self.addGestureRecognizer(tapGestureRecognizer)
-        self.tapGestureRecognizer.delegate = self
-        insertAndLayoutSubViews()
+        self.addSubview(vStack)
+        vStack.activateLayouts(to: self)
+        NSLayoutConstraint.activate([imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor,
+                                                                       multiplier: 1)])
     }
     
-    func addTarget(target:Any,_ selector:Selector){
+    open override func config() {
+        backgroundColor = .clear
+    }
+    
+    public func addTarget(target:Any,_ selector:Selector){
         self.tapGestureRecognizer.addTarget(target, action: selector)
     }
     
@@ -178,21 +70,6 @@ open class MNkVerticalAlignButton: UIView {
             
         }, completion: nil)
     }
-    
-    private func setInsert(){
-        imageLeftConstant?.constant = imageEdgeInset.left
-        imageRightConstant?.constant = -imageEdgeInset.right
-        imageBottomConstant?.constant = -imageEdgeInset.bottom
-        imageTopConstant?.constant = imageEdgeInset.top
-    }
-    
-    private func setContentInset(){
-        svLeadingAnchor?.constant = contentEdgeInset.left
-        svTralingAnchor?.constant = -contentEdgeInset.right
-        svTopAnchor?.constant = contentEdgeInset.top
-        svBottomAnchor?.constant = -contentEdgeInset.bottom
-    }
-    
 }
 
 extension MNkVerticalAlignButton:UIGestureRecognizerDelegate{

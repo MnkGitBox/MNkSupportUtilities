@@ -55,11 +55,6 @@ extension MNkTextValidatable{
         return .backgroundOnly
     }
     
-    //MARK:- CHECK IS THERE ANY EMPTY TEXT FIELD
-    //    public var hasEmptyTextContainer:Bool{
-    //        return checkEmptyTextContainer()
-    //    }
-    
     private func checkEmptyTextContainer(with defaultError:String)->Bool{
         var hasEmpty:Bool = false
         for data in validationData{

@@ -11,8 +11,8 @@ import Foundation
 //UIView Extenstions
 //-------------------------------------------//
 public extension UIView{
-    func activeShadow(using opacity:Float = 0.1,shadowRadius:CGFloat = 8,_ offSet:CGSize = CGSize(width: 0, height: 1)){
-        self.layer.shadowColor = UIColor.black.cgColor
+    func activeShadow(using color:UIColor,opacity:Float = 0.1,shadowRadius:CGFloat = 8,_ offSet:CGSize = CGSize(width: 0, height: 1)){
+        self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = offSet
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = opacity
@@ -135,5 +135,88 @@ extension UICollectionView{
     func attributeFrame(forCellAt indexPath:IndexPath)->CGRect?{
         let attrib = self.layoutAttributesForItem(at: indexPath)
         return attrib?.frame
+    }
+}
+
+//MARK:- STRING EXTENSIONS
+extension String{
+   public var removingAllWhitespacesAndNewlines: Self {
+        return filter { !$0.isNewline && !$0.isWhitespace }
+    }
+}
+
+//MARK:- DOUBLE EXTENSIONS
+extension Double{
+    public func stringWithDoubDecimalPlace()->String{
+          return String(format: "%.2f", self)
+       }
+       
+       var formatCurreny:String?{
+           let numberFormatter = NumberFormatter()
+           numberFormatter.usesGroupingSeparator = true
+           numberFormatter.numberStyle = .currency
+           numberFormatter.currencySymbol = "LKR "
+           
+           guard let formattedPrice = numberFormatter.string(from: NSNumber.init(value: self))
+               else{
+                   return nil
+           }
+           return formattedPrice
+       }
+}
+
+//MARK:- UINAVIGATION ITEM EXTENSION
+extension UINavigationItem{
+    public func setEmptyBackButton(){
+        self.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
+
+//MARK:- UINAVIGATION BAR EXTENSION
+extension UINavigationBar{
+    func activeTransparentNavBar(_ isActive:Bool){
+        setBackgroundImage(isActive ? UIImage() : nil, for: .default)
+        shadowImage = isActive ? UIImage() : nil
+    }
+}
+
+//MARK:- UISTACKVIEW EXTENSION
+extension UIStackView{
+    func removeAllArrangeSubViews(){
+        for view in arrangedSubviews{
+            self.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+    }
+    
+    func addArrangeSubViews(_ views:[UIView]){
+        for index in 0..<views.count{
+            self.addArrangedSubview(views[index])
+        }
+    }
+}
+
+//MARK:- UITEXTFIELD  EXTENSION
+extension UITextField{
+    var isEmpty:Bool{
+        return (self.text == nil || self.text == "")
+    }
+}
+
+//MARK:- UITEXTVIEW EXTENSION
+extension UITextView{
+    func limitText(to maxCharCount:Int)->(validRangetext:String,remainNumber:String){
+        let text = self.text
+        let validRangeString = String(text?.prefix(maxCharCount) ?? "")
+        let textCount = validRangeString.count
+        self.text = validRangeString
+        return (validRangeString,"\(textCount)/\(maxCharCount)")
+    }
+}
+
+//MARK:- Int EXTENSION
+extension Int{
+    var withLeadingZero:String{
+        return self < 10 ? "0"+"\(self)" : "\(self)"
     }
 }

@@ -91,39 +91,45 @@ open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkE
     }
     
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard data.isEmpty else
-        {
+        guard setEmptyCell else{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! C
             cell.data = data[indexPath.item]
             return tableview(tableview, updateCellDataWhenReloadingAt: indexPath, of: cell)
         }
-        let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyCellID, for: indexPath) as! E
-        emptyCell.delegate = self
-        return self.tableview(setEmptyCellData: emptyCell, at: indexPath)
+        return super.tableView(tableView, cellForRowAt: indexPath)
     }
     
     open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
-    open func tableview(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
 }
-
-extension MNkTVC_Parameter_Cell_EmptyCellType:EmptyTableviewDelegate{
-    public func userDidTappedReloadData(_ button: UIButton, in cell: MNkEmptyTVCell) {}
-}
-
 
 
 open class MNkTVC_Parameter_EmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellType<E>{
-    public var data:[T] = [] {didSet{updateUIWithNewData()}}
+    public private(set) var setEmptyCell = false
     
+    public var data:[T] = [] {
+        didSet{
+            setEmptyCell = data.isEmpty
+            updateUIWithNewData()
+        }
+    }
+   
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard data.isEmpty else {return data.count}
+        guard setEmptyCell else {return data.count}
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
-    open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard data.isEmpty else{return UITableView.automaticDimension}
-        return super.tableView(tableView, heightForRowAt: indexPath)
+    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyCellID, for: indexPath) as! E
+        emptyCell.delegate = self
+        emptyCell.height = cellDisplayViewBounds.size.height
+        return self.tableview(setEmptyCellData: emptyCell, at: indexPath)
     }
+    
+    open func tableview(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
+}
+
+extension MNkTVC_Parameter_EmptyCellType:EmptyTableviewDelegate{
+    public func userDidTappedReloadData(_ button: UIButton, in cell: MNkEmptyTVCell) {}
 }
 
 open class MNkTVC_EmptyCellType<E:MNkEmptyTVCell>:MNkTableViewController{
@@ -131,12 +137,8 @@ open class MNkTVC_EmptyCellType<E:MNkEmptyTVCell>:MNkTableViewController{
         super.config()
         tableview.register(E.self, forCellReuseIdentifier: emptyCellID)
     }
-    
+
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-    }
-    
-    open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellDisplayViewBounds.size.height
     }
 }
