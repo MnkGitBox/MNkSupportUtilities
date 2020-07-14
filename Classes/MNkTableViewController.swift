@@ -16,19 +16,19 @@ open class MNkTableViewController_Parameter_CellType<T,C:MNkTVCell_Parameter<T>>
         tableview.register(C.self, forCellReuseIdentifier: cellID)
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    dynamic open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! C
         cell.data = data[indexPath.item]
         return tableview(tableview, updateCellDataWhenReloadingAt: indexPath, of: cell)
     }
-    open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
+    dynamic open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
 }
 
 open class MNkTableViewController_Parameter<T>:MNkTableViewController{
     
     public var data:[T] = [] {didSet{updateUIWithNewData()}}
     
-    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    dynamic open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 }
@@ -64,16 +64,16 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
         tableview.tableFooterView = UIView()
     }
     
-    open func numberOfSections(in tableView: UITableView) -> Int {
+    dynamic open func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return 0}
-    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {return UITableViewCell()}
+    dynamic open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return 0}
+    dynamic open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {return UITableViewCell()}
     
-    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {return nil}
-    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {return 0}
-    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return UITableView.automaticDimension}
+    dynamic open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {return nil}
+    dynamic open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {return 0}
+    dynamic open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return UITableView.automaticDimension}
 }
 
 
@@ -85,12 +85,12 @@ open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITabl
  ............................................................*/
 open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkEmptyTVCell>:MNkTVC_Parameter_EmptyCellType<T,E>{
     
-    open override func config() {
+    dynamic open override func config() {
         super.config()
         tableview.register(C.self, forCellReuseIdentifier: cellID)
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    dynamic open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard setEmptyCell else{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! C
             cell.data = data[indexPath.item]
@@ -99,7 +99,7 @@ open class MNkTVC_Parameter_Cell_EmptyCellType<T,C:MNkTVCell_Parameter<T>,E:MNkE
         return super.tableView(tableView, cellForRowAt: indexPath)
     }
     
-    open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
+    dynamic open func tableview(_ tableview:UITableView,updateCellDataWhenReloadingAt indexPath:IndexPath,of cell:C)->C{return cell}
 }
 
 
@@ -113,19 +113,19 @@ open class MNkTVC_Parameter_EmptyCellType<T,E:MNkEmptyTVCell>:MNkTVC_EmptyCellTy
         }
     }
    
-    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    dynamic open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard setEmptyCell else {return data.count}
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    dynamic open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let emptyCell = tableView.dequeueReusableCell(withIdentifier: emptyCellID, for: indexPath) as! E
         emptyCell.delegate = self
         emptyCell.height = cellDisplayViewBounds.size.height
         return self.tableview(setEmptyCellData: emptyCell, at: indexPath)
     }
     
-    open func tableview(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
+    dynamic open func tableview(setEmptyCellData emptyCell:E,at indexPath:IndexPath)->E{return emptyCell}
 }
 
 extension MNkTVC_Parameter_EmptyCellType:EmptyTableviewDelegate{
@@ -138,7 +138,7 @@ open class MNkTVC_EmptyCellType<E:MNkEmptyTVCell>:MNkTableViewController{
         tableview.register(E.self, forCellReuseIdentifier: emptyCellID)
     }
 
-    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    dynamic open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 }

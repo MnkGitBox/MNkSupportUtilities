@@ -22,10 +22,14 @@ open class MNkViewController: UIViewController {
     
     private func doLoadThings(){
         view.backgroundColor = .white
-        createViews()
-        insertAndLayoutSubviews()
         config()
         fetchData()
+    }
+    
+    open override func loadView() {
+        super.loadView()
+        createViews()
+        insertAndLayoutSubviews()
     }
     
     open override func viewDidLoad() {

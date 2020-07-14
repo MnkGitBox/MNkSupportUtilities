@@ -5,9 +5,12 @@
 //  Copyright © 2018 Malith Nadeeshan. All rights reserved.
 //
 
+import UIKit
+import Foundation
 
-public protocol MNkAlertDelegate{
-    func userPerformAlertAction(_ action:MNkAlertView.MNkAlertAction)
+
+@objc public protocol MNkAlertDelegate: NSObjectProtocol {
+    @objc optional func userPerformAlertAction(_ action: MNkAlertView.MNkAlertAction, aditional data: Any?)
 }
 
 open class MNkAlertView:MNkView{
@@ -16,9 +19,14 @@ open class MNkAlertView:MNkView{
         case single
         case multi
     }
-    public enum MNkAlertAction{
+    
+    @objc public enum MNkAlertAction: Int {
         case accept
         case cancel
+        
+        public init(_ rawValue: Int) {
+            self = rawValue == 0 ? .accept : .cancel
+        }
     }
     ///Alert properies to config alert view.
     public enum AlertPropertyKeys{
@@ -41,7 +49,7 @@ open class MNkAlertView:MNkView{
         case center
     }
     
-    public var delegate:MNkAlertDelegate?
+    public var delegate: MNkAlertDelegate?
     
     public var title:String?
     public var message:String?
@@ -187,7 +195,7 @@ open class MNkAlertView:MNkView{
     ///    You can choose what type of your alert need to be by seting type. Single and multilple, Single only show ok button and action be default hide
     ///    By changing properties you can change button title -> text, color, background color like things.
     ///    And using action clouser, you can catch any action perform by user and give action you want.
-    open func show(in targetView:UIView,perform buttonAction:@escaping ((MNkAlertAction)->Void)){
+    open func show(in targetView:UIView, perform buttonAction:@escaping ((MNkAlertAction)->Void)){
         
         setPrivateProperties()
         
@@ -200,7 +208,7 @@ open class MNkAlertView:MNkView{
         self.frame = targetView.bounds
         self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             self.alpha = 1
             self.transform = .identity
         }, completion: nil)
@@ -208,26 +216,31 @@ open class MNkAlertView:MNkView{
         
         if type == .single || type == .multi{
             rightActionButton.addtargetClouser {[weak self]_ in
-                self?.dismiss({ _ in
-                    buttonAction(.accept)
+                self?.dismiss({ completed in
+                    if completed {
+                        buttonAction(.accept)
+                    }
                 })
             }
         }
         
         if type == .multi{
             leftActionButton.addtargetClouser {[weak self]_ in
-                self?.dismiss({ _ in
-                    buttonAction(.cancel)
+                self?.dismiss({ completed in
+                    if completed {
+                        buttonAction(.cancel)
+                    }
                 })
             }
         }
     }
     
     public func dismiss(_ completed:@escaping(Bool)->Void){
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             self.alpha = 0
             self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }) { isCompleted in
+            self.transform = .identity
             self.removeFromSuperview()
             completed(isCompleted)
         }
