@@ -29,9 +29,14 @@ class ViewController:MNkCollectionVC_Parameter_CellType<Test,Cell>{
 class Cell:MNkCVCell_Parameter<Test>{
     override func config() {
         backgroundColor = .red
+//        let btn = UIButton.init(with: .menu)
     }
 }
 
 struct Test{}
 
-
+extension AppSymbolNames {
+    static var menu: AppSymbolNameType {
+        return .init(rawValue: "Menu")
+    }
+}

@@ -247,6 +247,8 @@ public extension String{
     var removeWhiteSpace:Self{
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
+    static var uniqueID: String { UUID().uuidString }
 }
 
 //MARK:- DOUBLE EXTENSIONS
@@ -319,8 +321,67 @@ public extension UITextView{
 }
 
 //MARK:- Int EXTENSION
-public extension Int{
-    var withLeadingZero:String{
+public extension Int {
+    var withLeadingZero: String {
         return self < 10 ? "0"+"\(self)" : "\(self)"
     }
 }
+
+//MARK: - UISCROLLVIEW
+public extension UIScrollView {
+    func  isNearBottomEdge(edgeOffset: CGFloat = 20) -> Bool {
+        return self.contentOffset.y + self.frame.size.height + edgeOffset > self.contentSize.height
+    }
+}
+
+//MARK: - ARRAY
+public extension Array {
+    mutating func move(from: Int, _ to : Int) {
+        guard to >= 0, to < self.count,
+            from >= 0, from < self.count else { return }
+        let element = self.remove(at: from)
+        self.insert(element, at: to)
+    }
+}
+
+//MARK: - UIONTROL
+public extension UIControl {
+    func activeLoad(_ isLoad: Bool, on position: Position) {
+        let tag = 920130
+        if isLoad {
+            self.isEnabled = false
+            self.alpha = 0.5
+            let activityIndicator = UIActivityIndicatorView.init(style: .white)
+            let leading = self.bounds.width * position.multipication
+            activityIndicator.center = .init(x: leading, y: self.bounds.height * 0.5)
+            activityIndicator.tag = tag
+            self.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+        } else {
+            self.isEnabled = true
+            self.alpha = 1
+            if let indicator = self.viewWithTag(tag) as? UIActivityIndicatorView {
+                indicator.stopAnimating()
+                indicator.removeFromSuperview()
+            }
+        }
+    }
+    
+    enum Position {
+        case leading, middle, traling
+        
+        var multipication: CGFloat {
+            switch self {
+            case .leading:
+                return 0.25
+                
+            case .middle:
+                return 0.5
+                
+            case .traling:
+                return 0.75
+            }
+        }
+    }
+}
+

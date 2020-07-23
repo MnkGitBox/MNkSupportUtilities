@@ -70,6 +70,12 @@
 		7DA1B07E9DFA141B8DEF825DC861ABF9 /* SDAnimatedImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = C2ED1B72DE451BFC1B87C557E6BBC04F /* SDAnimatedImageRep.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DE13E2C36BE888CA6A032B552E24C5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4479C8599476854863894A2C35EB8342 /* Foundation.framework */; };
 		801464283D7571E4534934D2E46DD45D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4479C8599476854863894A2C35EB8342 /* Foundation.framework */; };
+		82A4D58924C9128100FF7CC0 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4D58824C9128100FF7CC0 /* AppSymbol.swift */; };
+		82A4D58B24C9165300FF7CC0 /* AppSymbolNameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4D58A24C9165300FF7CC0 /* AppSymbolNameType.swift */; };
+		82A4D58D24C9167B00FF7CC0 /* AppSymbol+UIimageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4D58C24C9167B00FF7CC0 /* AppSymbol+UIimageView.swift */; };
+		82A4D58F24C9169A00FF7CC0 /* AppSymbol+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4D58E24C9169A00FF7CC0 /* AppSymbol+UIButton.swift */; };
+		82A4D59124C916BA00FF7CC0 /* AppSymbol+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4D59024C916BA00FF7CC0 /* AppSymbol+UIBarButtonItem.swift */; };
+		82A4D59324C91AD900FF7CC0 /* Helper+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4D59224C91AD900FF7CC0 /* Helper+Protocol.swift */; };
 		82B24D1522462D3700E80641 /* MNkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B24D1322462D3600E80641 /* MNkTextField.swift */; };
 		82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */; };
 		878E83566AB3106B2BBF7E07EA6786F9 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38D14CEE1017CC1DE8F8BFE438B9C /* UIView+WebCache.m */; };
@@ -215,6 +221,12 @@
 		77EE308921D4EDF100AB422C /* MNkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkViewController.swift; path = Classes/MNkViewController.swift; sourceTree = "<group>"; };
 		7E7AD208AFFA020F6489D0D3A6361374 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MNkSupportUtilities.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8282929CCF36A9E7F871E7843D578686 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		82A4D58824C9128100FF7CC0 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
+		82A4D58A24C9165300FF7CC0 /* AppSymbolNameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbolNameType.swift; sourceTree = "<group>"; };
+		82A4D58C24C9167B00FF7CC0 /* AppSymbol+UIimageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSymbol+UIimageView.swift"; sourceTree = "<group>"; };
+		82A4D58E24C9169A00FF7CC0 /* AppSymbol+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSymbol+UIButton.swift"; sourceTree = "<group>"; };
+		82A4D59024C916BA00FF7CC0 /* AppSymbol+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSymbol+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		82A4D59224C91AD900FF7CC0 /* Helper+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+Protocol.swift"; sourceTree = "<group>"; };
 		82B24D1322462D3600E80641 /* MNkTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextField.swift; path = Classes/MNkTextField.swift; sourceTree = "<group>"; };
 		82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextFieldWithError.swift; path = Classes/MNkTextFieldWithError.swift; sourceTree = "<group>"; };
 		84901522DF4EC4268C426E6146D988D5 /* MNkSupportUtilities.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNkSupportUtilities.xcconfig; sourceTree = "<group>"; };
@@ -229,7 +241,7 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		957DE53A94031623728D3DF3AB2C4433 /* SDWebImageTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageTransition.m; path = SDWebImage/SDWebImageTransition.m; sourceTree = "<group>"; };
 		95A11F746B4DCE995CCE1EC1841DB1CE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96E3BB3B1B0D21A324B952C6CBFED8EE /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Classes/Extensions.swift; sourceTree = "<group>"; };
+		96E3BB3B1B0D21A324B952C6CBFED8EE /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A0BFADA7BEA6198A1D63AFA6EEAD22C1 /* SDWebImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageFrame.h; path = SDWebImage/SDWebImageFrame.h; sourceTree = "<group>"; };
 		A12B318B021B527679B28E53E43B6D8D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A56A3F7DF847B8D9A7E3C86D43EAEEAC /* MNkSupportUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNkSupportUtilities.modulemap; sourceTree = "<group>"; };
@@ -475,6 +487,27 @@
 			);
 			sourceTree = "<group>";
 		};
+		82A4D58724C9124E00FF7CC0 /* App_Symbol */ = {
+			isa = PBXGroup;
+			children = (
+				82A4D58824C9128100FF7CC0 /* AppSymbol.swift */,
+				82A4D58A24C9165300FF7CC0 /* AppSymbolNameType.swift */,
+				82A4D58C24C9167B00FF7CC0 /* AppSymbol+UIimageView.swift */,
+				82A4D58E24C9169A00FF7CC0 /* AppSymbol+UIButton.swift */,
+				82A4D59024C916BA00FF7CC0 /* AppSymbol+UIBarButtonItem.swift */,
+			);
+			path = App_Symbol;
+			sourceTree = "<group>";
+		};
+		82A4D59424C91AE800FF7CC0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				96E3BB3B1B0D21A324B952C6CBFED8EE /* Extensions.swift */,
+				82A4D59224C91AD900FF7CC0 /* Helper+Protocol.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A8B63D2BF77131646CE607CB3C7EE5C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +539,7 @@
 		C6D63D84CFFB1C89B8A2ED83E54428D5 /* MNkSupportUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				82A4D58724C9124E00FF7CC0 /* App_Symbol */,
 				77EE308821D4EDF000AB422C /* MNkCollectionViewCell.swift */,
 				77EE308621D4EDF000AB422C /* MNkCollectionViewController.swift */,
 				77EE308421D4EDF000AB422C /* MNkTableViewCell.swift */,
@@ -516,7 +550,7 @@
 				77D7965223152EFA00BA9944 /* BadgeButton.swift */,
 				77D7965123152EFA00BA9944 /* MNkTextViewNoPadding.swift */,
 				77D7965323152EFA00BA9944 /* SearchContainer.swift */,
-				96E3BB3B1B0D21A324B952C6CBFED8EE /* Extensions.swift */,
+				82A4D59424C91AE800FF7CC0 /* Helper */,
 				7770F08321BF72200003661D /* CoreDataSupport.swift */,
 				771EE9AD21B5263D007036CF /* MNkSeperator.swift */,
 				82B24D1322462D3600E80641 /* MNkTextField.swift */,
@@ -804,9 +838,11 @@
 				77EE308A21D4EDF100AB422C /* MNkTableViewCell.swift in Sources */,
 				77B9787D24BD76C80092B9B2 /* UISegmentedController+Chain.swift in Sources */,
 				77B9788524BD77810092B9B2 /* UIScrollView+Chain.swift in Sources */,
+				82A4D58D24C9167B00FF7CC0 /* AppSymbol+UIimageView.swift in Sources */,
 				82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */,
 				77B9786F24BD755E0092B9B2 /*  UIImageView+Chain.swift in Sources */,
 				77B9787724BD76210092B9B2 /* MNkSeperator+Chain.swift in Sources */,
+				82A4D58924C9128100FF7CC0 /* AppSymbol.swift in Sources */,
 				77EE308D21D4EDF100AB422C /* MNkTableViewController.swift in Sources */,
 				CAF44DD37D1B4AB55A963D1F872A83D8 /* Extensions.swift in Sources */,
 				771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */,
@@ -816,6 +852,7 @@
 				77B9787B24BD76A70092B9B2 /*  UITextView+Chain.swift in Sources */,
 				77B9788124BD76FF0092B9B2 /*  UITableView+Chain.swift in Sources */,
 				7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */,
+				82A4D58B24C9165300FF7CC0 /* AppSymbolNameType.swift in Sources */,
 				77B40F4F2248F89C00F33D49 /* MNkTextValidatable.swift in Sources */,
 				77B9786D24BD75350092B9B2 /* UILabelExtension+Chain.swift in Sources */,
 				77B9786B24BD73EF0092B9B2 /* UIKitChain.swift in Sources */,
@@ -823,8 +860,11 @@
 				77D7965623152EFA00BA9944 /* SearchContainer.swift in Sources */,
 				77B9787124BD75760092B9B2 /* UIStackView+Chain.swift in Sources */,
 				77B9787324BD75C90092B9B2 /* UICollectionView+Chain.swift in Sources */,
+				82A4D59324C91AD900FF7CC0 /* Helper+Protocol.swift in Sources */,
 				77B9788724BD779A0092B9B2 /* MNkAlertView+Chain.swift in Sources */,
+				82A4D59124C916BA00FF7CC0 /* AppSymbol+UIBarButtonItem.swift in Sources */,
 				D02CCDBFF3E9E26C2101A3D85CAE4347 /* MNkSupportUtilities-dummy.m in Sources */,
+				82A4D58F24C9169A00FF7CC0 /* AppSymbol+UIButton.swift in Sources */,
 				77EE308C21D4EDF100AB422C /* MNkCollectionViewController.swift in Sources */,
 				77D7965523152EFA00BA9944 /* BadgeButton.swift in Sources */,
 				77EE308F21D4EDF100AB422C /* MNkViewController.swift in Sources */,
