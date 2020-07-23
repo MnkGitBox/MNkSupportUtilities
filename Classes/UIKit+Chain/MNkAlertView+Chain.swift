@@ -6,7 +6,6 @@
 //  Copyright © 2020 Malith Nadeeshan. All rights reserved.
 //
 
-import MNkSupportUtilities
 
 extension UIKitChain where Component : MNkAlertView {
     

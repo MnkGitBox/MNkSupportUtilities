@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Foundation
-
 
 @objc public protocol MNkAlertDelegate: NSObjectProtocol {
     @objc optional func userPerformAlertAction(_ action: MNkAlertView.MNkAlertAction, aditional data: Any?)
@@ -169,7 +167,7 @@ open class MNkAlertView:MNkView{
         self.addSubview(alertContainer)
         alertContainer.addSubview(mainStackView)
         
-        mainStackView.activateLayouts(to: alertContainer, [.leading:0,.traling:0,.top:10,.bottom:0])
+        mainStackView.activateLayouts([.leading:0,.traling:0,.top:10,.bottom:0])
         
         NSLayoutConstraint.activate([alertContainer.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                                      alertContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
