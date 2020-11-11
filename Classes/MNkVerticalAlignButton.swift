@@ -13,6 +13,20 @@ open class MNkVerticalAlignButton: MNkView {
         }
     }
     
+    public var spacing: CGFloat = 4 {
+        didSet {
+            vStack.spacing = spacing
+        }
+    }
+    
+    public var imageEdgeInset: UIEdgeInsets = .zero {
+        didSet {
+            imageView.removeAllConstraints()
+            imageView.activateLayouts([.top: imageEdgeInset.top, .bottom: -imageEdgeInset.bottom, .leading: imageEdgeInset.left, .traling: -imageEdgeInset.right])
+            self.setNeedsDisplay()
+        }
+    }
+    
     public var imageView:UIImageView!
     public var titleLabel:UILabel!
     
@@ -20,23 +34,29 @@ open class MNkVerticalAlignButton: MNkView {
     
     private var tapGestureRecognizer = UITapGestureRecognizer()
     
+    
     open override func createViews() {
         imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.setContentHuggingPriority(.defaultLow, for: .vertical)
 
         titleLabel = UILabel()
-        titleLabel.numberOfLines = 2
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
         titleLabel.textAlignment = .center
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         tapGestureRecognizer = UITapGestureRecognizer()
         tapGestureRecognizer.delegate = self
         
-        vStack = UIStackView.init(arrangedSubviews: [imageView,titleLabel])
+        let imageViewContainer = UIView()
+        imageViewContainer.addSubview(imageView)
+        imageView.activateLayouts([.top: imageEdgeInset.top, .bottom: -imageEdgeInset.bottom, .leading: imageEdgeInset.left, .traling: -imageEdgeInset.right])
+        
+        vStack = UIStackView.init(arrangedSubviews: [imageViewContainer,titleLabel])
         vStack.axis = .vertical
-        vStack.spacing = 4
+        vStack.spacing = spacing
         vStack.layoutMargins = contentEdgeInset
         vStack.isLayoutMarginsRelativeArrangement = true
     }
@@ -45,8 +65,6 @@ open class MNkVerticalAlignButton: MNkView {
         self.addGestureRecognizer(tapGestureRecognizer)
         self.addSubview(vStack)
         vStack.activateLayouts(to: self)
-        NSLayoutConstraint.activate([imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor,
-                                                                       multiplier: 1)])
     }
     
     open override func config() {
@@ -78,3 +96,4 @@ extension MNkVerticalAlignButton:UIGestureRecognizerDelegate{
         return true
     }
 }
+

@@ -39,4 +39,10 @@ extension UIKitChain where Component:UITextView{
         component.keyboardType = type
         return self
     }
+    
+    @discardableResult
+    public func textAlignment(_ alignment: NSTextAlignment) -> Self {
+        component.textAlignment = alignment
+        return self
+    }
 }

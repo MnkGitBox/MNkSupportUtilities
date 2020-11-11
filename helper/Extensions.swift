@@ -131,6 +131,83 @@ public extension UIView{
         case width
     }
     
+    ///Add borders to specific corners
+    @discardableResult
+    func addBorders(edges: UIRectEdge,
+                    color: UIColor,
+                    inset: CGFloat = 0.0,
+                    thickness: CGFloat = 1.0) -> [UIView] {
+
+        var borders = [UIView]()
+
+        @discardableResult
+        func addBorder(formats: String...) -> UIView {
+            let border = UIView(frame: .zero)
+            border.backgroundColor = color
+            border.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(border)
+            addConstraints(formats.flatMap {
+                NSLayoutConstraint.constraints(withVisualFormat: $0,
+                                               options: [],
+                                               metrics: ["inset": inset, "thickness": thickness],
+                                               views: ["border": border]) })
+            borders.append(border)
+            return border
+        }
+
+
+        if edges.contains(.top) || edges.contains(.all) {
+            addBorder(formats: "V:|-0-[border(==thickness)]", "H:|-inset-[border]-inset-|")
+        }
+
+        if edges.contains(.bottom) || edges.contains(.all) {
+            addBorder(formats: "V:[border(==thickness)]-0-|", "H:|-inset-[border]-inset-|")
+        }
+
+        if edges.contains(.left) || edges.contains(.all) {
+            addBorder(formats: "V:|-inset-[border]-inset-|", "H:|-0-[border(==thickness)]")
+        }
+
+        if edges.contains(.right) || edges.contains(.all) {
+            addBorder(formats: "V:|-inset-[border]-inset-|", "H:[border(==thickness)]-0-|")
+        }
+
+        return borders
+    }
+
+    ///Inser gradient layer to view
+    func insertGradientLayer(top topColor: UIColor, bottom bottomColor: UIColor) {
+        let layer = CAGradientLayer()
+        layer.colors = [topColor.cgColor, bottomColor.cgColor]
+        layer.locations = [0.0,1.0]
+        layer.frame = self.bounds
+        
+        self.layer.insertSublayer(layer, at: 0)
+    }
+    
+    ///Remove all constraint
+    func removeAllConstraints() {
+        var _superview = self.superview
+        
+        while let superview = _superview {
+            for constraint in superview.constraints {
+                
+                if let first = constraint.firstItem as? UIView, first == self {
+                    superview.removeConstraint(constraint)
+                }
+                
+                if let second = constraint.secondItem as? UIView, second == self {
+                    superview.removeConstraint(constraint)
+                }
+            }
+            
+            _superview = superview.superview
+        }
+        
+        self.removeConstraints(self.constraints)
+        self.translatesAutoresizingMaskIntoConstraints = true
+    }
+    
 }
 
 //-------------------------------------------//
@@ -160,10 +237,18 @@ public extension UICollectionView{
         let attrib = self.layoutAttributesForItem(at: indexPath)
         return attrib?.frame
     }
+    
+    ///UICollectionViewFlowLayout will assign to collection view object with given frame
+    convenience init(_ frame:CGRect = .zero) {
+        let layout = UICollectionViewFlowLayout()
+        
+        self.init(frame: frame, collectionViewLayout: layout)
+    }
 }
 
 //MARK:- STRING EXTENSIONS
 public extension String{
+    
     func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat{
         let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
@@ -249,6 +334,31 @@ public extension String{
     }
     
     static var uniqueID: String { UUID().uuidString }
+    
+    func toDate(withFormat format: String = "yyyy-MM-dd") -> Date {
+        let dateFormatter = DateFormatter()
+        let dateString = self.split(separator: "T").first ?? ""
+        dateFormatter.dateFormat = format
+        guard let date = dateFormatter.date(from: dateString.description) else {
+            return Date()
+        }
+        return date
+    }
+    
+    var underLine: NSMutableAttributedString {
+        let underLineString = NSMutableAttributedString.init(string: self)
+        underLineString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange.init(location: 0, length: self.count))
+        
+        return underLineString
+    }
+}
+
+public extension NSMutableAttributedString {
+    @discardableResult
+    func underLine() -> Self {
+        self.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange.init(location: 0, length: self.string.count))
+        return self
+    }
 }
 
 //MARK:- DOUBLE EXTENSIONS
@@ -325,6 +435,8 @@ public extension Int {
     var withLeadingZero: String {
         return self < 10 ? "0"+"\(self)" : "\(self)"
     }
+    
+    
 }
 
 //MARK: - UISCROLLVIEW
@@ -342,17 +454,48 @@ public extension Array {
         let element = self.remove(at: from)
         self.insert(element, at: to)
     }
+    
+    mutating func replace(new element: Element, equal: (Element) -> Bool ) {
+        guard let index = self.firstIndex(where: equal) else { return }
+        self[index] = element
+    }
+}
+
+public extension BidirectionalCollection where Element: StringProtocol {
+    var list: String {
+        guard let `last` = last else { return "" }
+        return count <= 1 ? joined(separator: "") : dropLast().joined(separator: "\n") + last
+    }
 }
 
 //MARK: - UIONTROL
 public extension UIControl {
-    func activeLoad(_ isLoad: Bool, on position: Position) {
+    enum AnimationPosition {
+        case left
+        case middle
+        case right
+        
+        var multipy: CGFloat {
+            switch self {
+            case .left:
+                return 0.2
+                
+            case .middle:
+                return 0.5
+                
+            case .right:
+                return 0.8
+            }
+        }
+    }
+    
+    func activeLoad(_ isLoad: Bool, at position: AnimationPosition = .left, style indicatorStyle:UIActivityIndicatorView.Style = .white ) {
         let tag = 920130
         if isLoad {
             self.isEnabled = false
             self.alpha = 0.5
-            let activityIndicator = UIActivityIndicatorView.init(style: .white)
-            let leading = self.bounds.width * position.multipication
+            let activityIndicator = UIActivityIndicatorView.init(style: indicatorStyle)
+            let leading = self.bounds.width * position.multipy
             activityIndicator.center = .init(x: leading, y: self.bounds.height * 0.5)
             activityIndicator.tag = tag
             self.addSubview(activityIndicator)
@@ -366,22 +509,35 @@ public extension UIControl {
             }
         }
     }
-    
-    enum Position {
-        case leading, middle, traling
+}
+
+
+public extension UIWindow {
+    static func visibleWindow() -> UIWindow? {
+        var currentWindow = UIApplication.shared.keyWindow
         
-        var multipication: CGFloat {
-            switch self {
-            case .leading:
-                return 0.25
-                
-            case .middle:
-                return 0.5
-                
-            case .traling:
-                return 0.75
+        if currentWindow == nil {
+            let frontToBackWindows = Array(UIApplication.shared.windows.reversed())
+            
+            for window in frontToBackWindows {
+                if window.windowLevel == UIWindow.Level.normal {
+                    currentWindow = window
+                    break
+                }
             }
         }
+        
+        return currentWindow
     }
 }
 
+public extension TimeInterval {
+    var formatInterval: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.year, .month, .weekday, .day, .hour, .minute, .second]
+        formatter.unitsStyle = .short
+        formatter.maximumUnitCount = 1
+
+        return formatter.string(from: self)!
+    }
+}

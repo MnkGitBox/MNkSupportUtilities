@@ -46,6 +46,20 @@ extension UIKitChain where Component : UILabel {
         return self
     }
     
+    @discardableResult
+    public func minScale(_ factor: CGFloat) -> Self {
+        component.minimumScaleFactor = factor
+        component.sizeToFit()
+        return self
+    }
+    
+    public var body : Self {
+        self.font(UIFont.systemFont(ofSize: 14))
+        self.textColor(UIColor.white.withAlphaComponent(0.92))
+        self.numberOfLines(0)
+        return self
+    }
+    
 }
 
 

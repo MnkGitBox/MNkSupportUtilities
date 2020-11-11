@@ -24,3 +24,9 @@ extension UIBarButtonItem {
     }
 }
 
+extension UIBarButtonItem {
+    public convenience init(_ image: UIImage) {
+        self.init()
+        self.image = image
+    }
+}

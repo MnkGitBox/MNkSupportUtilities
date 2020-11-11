@@ -36,6 +36,12 @@ extension UIKitChain where Component : UITableView{
     }
     
     @discardableResult
+    public func register(_ nib: UINib?, with identifier: String) -> Self {
+        component.register(nib, forCellReuseIdentifier: identifier)
+        return self
+    }
+    
+    @discardableResult
     public func registerHeader(_ headerClass:AnyClass?,_ identifier:String) -> Self {
         component.register(headerClass, forHeaderFooterViewReuseIdentifier: identifier)
         return self

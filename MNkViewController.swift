@@ -8,6 +8,16 @@ import UIKit
 
 open class MNkViewController: UIViewController {
     
+    public enum RepeatState {
+        case once, always
+    }
+    
+    public var fetchingState: RepeatState {
+        .once
+    }
+    
+    public private(set)var isDisplayOnce = false
+    
     public var safeAreaEdgeInsets:UIEdgeInsets{
         guard let window = UIApplication.shared.windows.first else{return .zero}
         return window.safeAreaInsets
@@ -23,7 +33,6 @@ open class MNkViewController: UIViewController {
     private func doLoadThings(){
         view.backgroundColor = .white
         config()
-        fetchData()
     }
     
     open override func loadView() {
@@ -39,7 +48,17 @@ open class MNkViewController: UIViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setAppSetting()
+        switch fetchingState {
+        case .once:
+            setAppSetting()
+            guard !isDisplayOnce else { return }
+            fetchData()
+            
+        case .always:
+            fetchData()
+        }
+        
+        isDisplayOnce = true
     }
 }
 

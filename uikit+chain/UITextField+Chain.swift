@@ -56,4 +56,10 @@ extension UIKitChain where Component:UITextField {
         component.textAlignment = aligment
         return self
     }
+    
+    @discardableResult
+    public func returnKeyType(_ type: UIReturnKeyType) -> Self {
+        component.returnKeyType = type
+        return self
+    }
 }

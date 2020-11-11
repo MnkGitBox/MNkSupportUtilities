@@ -26,4 +26,10 @@ extension UIKitChain where Component : UIScrollView {
         component.contentInsetAdjustmentBehavior = behavior
         return self
     }
+    
+    @discardableResult
+    public func contentInset(_ inset: UIEdgeInsets) -> Self {
+        component.contentInset = .init(top: 0, left: 0, bottom: 20, right: 0)
+        return self
+    }
 }
