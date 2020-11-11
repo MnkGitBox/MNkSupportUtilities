@@ -38,48 +38,48 @@
 		62AC248E028BC1455F24860467E06EB2 /* SDWebImageCoderHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3343DA38013ACA3779FD4B4A2BB65C70 /* SDWebImageCoderHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6478D7F67CAD18944B6F5506CDDEBC30 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901C35B74FFB53AEF0BDC868F710834 /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		740611AB6CC3AB87FBF781C6C759F9D8 /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F9F609611642409A92A22C629F294F /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771EE9AD21B5263D007036CF /* MNkSeperator.swift */; };
-		7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770F08321BF72200003661D /* CoreDataSupport.swift */; };
-		77D7964C23152B5800BA9944 /* MNkVerticalAlignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7964B23152B5800BA9944 /* MNkVerticalAlignButton.swift */; };
-		77D7964F23152ED700BA9944 /* MNkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7964D23152ED700BA9944 /* MNkAlertViewController.swift */; };
-		77D7965023152ED700BA9944 /* MNkAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7964E23152ED700BA9944 /* MNkAlertView.swift */; };
 		7AF762424983B0A7329951E5A20442E3 /* SDWebImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9F654B1721CC52C147286614CD7DBF /* SDWebImageCoder.m */; };
 		7DA1B07E9DFA141B8DEF825DC861ABF9 /* SDAnimatedImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = C2ED1B72DE451BFC1B87C557E6BBC04F /* SDAnimatedImageRep.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DE13E2C36BE888CA6A032B552E24C5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4479C8599476854863894A2C35EB8342 /* Foundation.framework */; };
 		801464283D7571E4534934D2E46DD45D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4479C8599476854863894A2C35EB8342 /* Foundation.framework */; };
-		82B24D1522462D3700E80641 /* MNkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B24D1322462D3600E80641 /* MNkTextField.swift */; };
-		82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */; };
-		82DCB86C255B8AF9007087EF /* MNkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB86B255B8AF9007087EF /* MNkCollectionViewCell.swift */; };
-		82DCB874255B8B3E007087EF /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB873255B8B3E007087EF /* BadgeButton.swift */; };
-		82DCB87A255B8BB0007087EF /* MNkCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB879255B8BB0007087EF /* MNkCollectionViewController.swift */; };
-		82DCB880255B8BC8007087EF /* MNkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB87F255B8BC8007087EF /* MNkTableViewCell.swift */; };
-		82DCB886255B8BD7007087EF /* MNkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB885255B8BD7007087EF /* MNkTableViewController.swift */; };
-		82DCB88C255B8BE2007087EF /* MNkTextValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB88B255B8BE2007087EF /* MNkTextValidatable.swift */; };
-		82DCB892255B8BF0007087EF /* MNkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB891255B8BF0007087EF /* MNkView.swift */; };
-		82DCB898255B8BFA007087EF /* MNkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB897255B8BFA007087EF /* MNkViewController.swift */; };
-		82DCB8A2255B8C0D007087EF /* MNkTextViewNoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8A1255B8C0C007087EF /* MNkTextViewNoPadding.swift */; };
-		82DCB8A8255B8C28007087EF /* SearchContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8A7255B8C28007087EF /* SearchContainer.swift */; };
-		82DCB8DB255B8DDA007087EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8D9255B8DD9007087EF /* Extensions.swift */; };
-		82DCB8DC255B8DDA007087EF /* Helper+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8DA255B8DD9007087EF /* Helper+Protocol.swift */; };
-		82DCB8E7255B8E0B007087EF /* AppSymbol+UIimageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8E2255B8E0B007087EF /* AppSymbol+UIimageView.swift */; };
-		82DCB8E8255B8E0B007087EF /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8E3255B8E0B007087EF /* AppSymbol.swift */; };
-		82DCB8E9255B8E0B007087EF /* AppSymbol+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8E4255B8E0B007087EF /* AppSymbol+UIButton.swift */; };
-		82DCB8EA255B8E0B007087EF /* AppSymbol+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8E5255B8E0B007087EF /* AppSymbol+UIBarButtonItem.swift */; };
-		82DCB8EB255B8E0B007087EF /* AppSymbolNameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8E6255B8E0B007087EF /* AppSymbolNameType.swift */; };
-		82DCB8FF255B8E1D007087EF /* MNkSeperator+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F1255B8E1D007087EF /* MNkSeperator+Chain.swift */; };
-		82DCB900255B8E1D007087EF /* UILabelExtension+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F2255B8E1D007087EF /* UILabelExtension+Chain.swift */; };
-		82DCB901255B8E1D007087EF /* UISegmentedController+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F3255B8E1D007087EF /* UISegmentedController+Chain.swift */; };
-		82DCB902255B8E1D007087EF /* UITextField+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F4255B8E1D007087EF /* UITextField+Chain.swift */; };
-		82DCB903255B8E1D007087EF /*  UITableView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F5255B8E1D007087EF /*  UITableView+Chain.swift */; };
-		82DCB904255B8E1D007087EF /* UIButton+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F6255B8E1D007087EF /* UIButton+Chain.swift */; };
-		82DCB905255B8E1D007087EF /* MNkVerticalAlignButton+UIKitChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F7255B8E1D007087EF /* MNkVerticalAlignButton+UIKitChain.swift */; };
-		82DCB906255B8E1D007087EF /* MNkAlertView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F8255B8E1D007087EF /* MNkAlertView+Chain.swift */; };
-		82DCB907255B8E1D007087EF /*  UIImageView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8F9255B8E1D007087EF /*  UIImageView+Chain.swift */; };
-		82DCB908255B8E1D007087EF /* UICollectionView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8FA255B8E1D007087EF /* UICollectionView+Chain.swift */; };
-		82DCB909255B8E1D007087EF /* UIScrollView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8FB255B8E1D007087EF /* UIScrollView+Chain.swift */; };
-		82DCB90A255B8E1D007087EF /* UIStackView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8FC255B8E1D007087EF /* UIStackView+Chain.swift */; };
-		82DCB90B255B8E1D007087EF /* UIKitChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8FD255B8E1D007087EF /* UIKitChain.swift */; };
-		82DCB90C255B8E1D007087EF /*  UITextView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB8FE255B8E1D007087EF /*  UITextView+Chain.swift */; };
+		82DCB949255B9046007087EF /* MNkCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB923255B9044007087EF /* MNkCollectionViewController.swift */; };
+		82DCB94A255B9046007087EF /* UISegmentedController+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB924255B9044007087EF /* UISegmentedController+Chain.swift */; };
+		82DCB94B255B9046007087EF /* MNkVerticalAlignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB925255B9044007087EF /* MNkVerticalAlignButton.swift */; };
+		82DCB94C255B9046007087EF /* MNkAlertView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB926255B9044007087EF /* MNkAlertView+Chain.swift */; };
+		82DCB94D255B9046007087EF /* UIKitChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB927255B9045007087EF /* UIKitChain.swift */; };
+		82DCB94E255B9046007087EF /* MNkTextFieldWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB928255B9045007087EF /* MNkTextFieldWithError.swift */; };
+		82DCB94F255B9046007087EF /* MNkVerticalAlignButton+UIKitChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB929255B9045007087EF /* MNkVerticalAlignButton+UIKitChain.swift */; };
+		82DCB950255B9046007087EF /* MNkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB92A255B9045007087EF /* MNkTextField.swift */; };
+		82DCB951255B9046007087EF /* UILabelExtension+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB92B255B9045007087EF /* UILabelExtension+Chain.swift */; };
+		82DCB952255B9046007087EF /* MNkAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB92C255B9045007087EF /* MNkAlertView.swift */; };
+		82DCB953255B9046007087EF /* UICollectionView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB92D255B9045007087EF /* UICollectionView+Chain.swift */; };
+		82DCB954255B9046007087EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB92E255B9045007087EF /* Extensions.swift */; };
+		82DCB955255B9046007087EF /* AppSymbol+UIimageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB92F255B9045007087EF /* AppSymbol+UIimageView.swift */; };
+		82DCB956255B9046007087EF /* AppSymbol+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB930255B9045007087EF /* AppSymbol+UIBarButtonItem.swift */; };
+		82DCB957255B9046007087EF /*  UIImageView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB931255B9045007087EF /*  UIImageView+Chain.swift */; };
+		82DCB958255B9046007087EF /* MNkAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB932255B9045007087EF /* MNkAlertViewController.swift */; };
+		82DCB959255B9046007087EF /* MNkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB933255B9045007087EF /* MNkView.swift */; };
+		82DCB95A255B9046007087EF /* Helper+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB934255B9045007087EF /* Helper+Protocol.swift */; };
+		82DCB95B255B9046007087EF /* SearchContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB935255B9045007087EF /* SearchContainer.swift */; };
+		82DCB95C255B9046007087EF /* AppSymbolNameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB936255B9045007087EF /* AppSymbolNameType.swift */; };
+		82DCB95D255B9046007087EF /*  UITableView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB937255B9045007087EF /*  UITableView+Chain.swift */; };
+		82DCB95E255B9046007087EF /* MNkTextValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB938255B9045007087EF /* MNkTextValidatable.swift */; };
+		82DCB95F255B9046007087EF /* AppSymbol+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB939255B9045007087EF /* AppSymbol+UIButton.swift */; };
+		82DCB960255B9046007087EF /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB93A255B9045007087EF /* AppSymbol.swift */; };
+		82DCB961255B9046007087EF /* MNkSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB93B255B9045007087EF /* MNkSeperator.swift */; };
+		82DCB962255B9046007087EF /* MNkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB93C255B9045007087EF /* MNkCollectionViewCell.swift */; };
+		82DCB963255B9046007087EF /* UIScrollView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB93D255B9045007087EF /* UIScrollView+Chain.swift */; };
+		82DCB964255B9046007087EF /* MNkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB93E255B9045007087EF /* MNkTableViewCell.swift */; };
+		82DCB965255B9046007087EF /* CoreDataSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB93F255B9046007087EF /* CoreDataSupport.swift */; };
+		82DCB966255B9046007087EF /*  UITextView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB940255B9046007087EF /*  UITextView+Chain.swift */; };
+		82DCB967255B9046007087EF /* UIStackView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB941255B9046007087EF /* UIStackView+Chain.swift */; };
+		82DCB968255B9046007087EF /* MNkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB942255B9046007087EF /* MNkTableViewController.swift */; };
+		82DCB969255B9046007087EF /* MNkSeperator+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB943255B9046007087EF /* MNkSeperator+Chain.swift */; };
+		82DCB96A255B9046007087EF /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB944255B9046007087EF /* BadgeButton.swift */; };
+		82DCB96B255B9046007087EF /* UITextField+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB945255B9046007087EF /* UITextField+Chain.swift */; };
+		82DCB96C255B9046007087EF /* UIButton+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB946255B9046007087EF /* UIButton+Chain.swift */; };
+		82DCB96D255B9046007087EF /* MNkTextViewNoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB947255B9046007087EF /* MNkTextViewNoPadding.swift */; };
+		82DCB96E255B9046007087EF /* MNkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DCB948255B9046007087EF /* MNkViewController.swift */; };
 		878E83566AB3106B2BBF7E07EA6786F9 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38D14CEE1017CC1DE8F8BFE438B9C /* UIView+WebCache.m */; };
 		89ECCB3AD2D9F7A190C69A8E44DBA699 /* Pods-MNkSupportUtilities_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */; };
 		90EEDCEB1703E65946C410EC0FAEE394 /* SDWebImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A526FB1CE6377077D60EE4C6148515 /* SDWebImageCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -192,46 +192,46 @@
 		74D14B8810554BF0C524166FDD41C9FC /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		762FDA22A2618EA78A4A99A3F1F272C8 /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		7719481F153E2046F22B9D540AF53DAE /* Pods-MNkSupportUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MNkSupportUtilities_Example-dummy.m"; sourceTree = "<group>"; };
-		771EE9AD21B5263D007036CF /* MNkSeperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkSeperator.swift; path = Classes/MNkSeperator.swift; sourceTree = "<group>"; };
-		7770F08321BF72200003661D /* CoreDataSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataSupport.swift; path = Classes/CoreDataSupport.swift; sourceTree = "<group>"; };
-		77D7964B23152B5800BA9944 /* MNkVerticalAlignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkVerticalAlignButton.swift; path = Classes/MNkVerticalAlignButton.swift; sourceTree = "<group>"; };
-		77D7964D23152ED700BA9944 /* MNkAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertViewController.swift; path = Classes/MNkAlertViewController.swift; sourceTree = "<group>"; };
-		77D7964E23152ED700BA9944 /* MNkAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertView.swift; path = Classes/MNkAlertView.swift; sourceTree = "<group>"; };
 		7E7AD208AFFA020F6489D0D3A6361374 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MNkSupportUtilities.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8282929CCF36A9E7F871E7843D578686 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		82B24D1322462D3600E80641 /* MNkTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextField.swift; path = Classes/MNkTextField.swift; sourceTree = "<group>"; };
-		82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextFieldWithError.swift; path = Classes/MNkTextFieldWithError.swift; sourceTree = "<group>"; };
-		82DCB86B255B8AF9007087EF /* MNkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkCollectionViewCell.swift; path = Classes/MNkCollectionViewCell.swift; sourceTree = "<group>"; };
-		82DCB873255B8B3E007087EF /* BadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BadgeButton.swift; path = Classes/BadgeButton.swift; sourceTree = "<group>"; };
-		82DCB879255B8BB0007087EF /* MNkCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkCollectionViewController.swift; path = Classes/MNkCollectionViewController.swift; sourceTree = "<group>"; };
-		82DCB87F255B8BC8007087EF /* MNkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTableViewCell.swift; path = Classes/MNkTableViewCell.swift; sourceTree = "<group>"; };
-		82DCB885255B8BD7007087EF /* MNkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTableViewController.swift; path = Classes/MNkTableViewController.swift; sourceTree = "<group>"; };
-		82DCB88B255B8BE2007087EF /* MNkTextValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextValidatable.swift; path = Classes/MNkTextValidatable.swift; sourceTree = "<group>"; };
-		82DCB891255B8BF0007087EF /* MNkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkView.swift; path = Classes/MNkView.swift; sourceTree = "<group>"; };
-		82DCB897255B8BFA007087EF /* MNkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkViewController.swift; path = Classes/MNkViewController.swift; sourceTree = "<group>"; };
-		82DCB8A1255B8C0C007087EF /* MNkTextViewNoPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextViewNoPadding.swift; path = Classes/MNkTextViewNoPadding.swift; sourceTree = "<group>"; };
-		82DCB8A7255B8C28007087EF /* SearchContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchContainer.swift; path = Classes/SearchContainer.swift; sourceTree = "<group>"; };
-		82DCB8D9255B8DD9007087EF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		82DCB8DA255B8DD9007087EF /* Helper+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper+Protocol.swift"; sourceTree = "<group>"; };
-		82DCB8E2255B8E0B007087EF /* AppSymbol+UIimageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppSymbol+UIimageView.swift"; sourceTree = "<group>"; };
-		82DCB8E3255B8E0B007087EF /* AppSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
-		82DCB8E4255B8E0B007087EF /* AppSymbol+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppSymbol+UIButton.swift"; sourceTree = "<group>"; };
-		82DCB8E5255B8E0B007087EF /* AppSymbol+UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppSymbol+UIBarButtonItem.swift"; sourceTree = "<group>"; };
-		82DCB8E6255B8E0B007087EF /* AppSymbolNameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSymbolNameType.swift; sourceTree = "<group>"; };
-		82DCB8F1255B8E1D007087EF /* MNkSeperator+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MNkSeperator+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F2255B8E1D007087EF /* UILabelExtension+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabelExtension+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F3255B8E1D007087EF /* UISegmentedController+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedController+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F4255B8E1D007087EF /* UITextField+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F5255B8E1D007087EF /*  UITableView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " UITableView+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F6255B8E1D007087EF /* UIButton+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F7255B8E1D007087EF /* MNkVerticalAlignButton+UIKitChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MNkVerticalAlignButton+UIKitChain.swift"; sourceTree = "<group>"; };
-		82DCB8F8255B8E1D007087EF /* MNkAlertView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MNkAlertView+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8F9255B8E1D007087EF /*  UIImageView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " UIImageView+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8FA255B8E1D007087EF /* UICollectionView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8FB255B8E1D007087EF /* UIScrollView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8FC255B8E1D007087EF /* UIStackView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Chain.swift"; sourceTree = "<group>"; };
-		82DCB8FD255B8E1D007087EF /* UIKitChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitChain.swift; sourceTree = "<group>"; };
-		82DCB8FE255B8E1D007087EF /*  UITextView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " UITextView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB923255B9044007087EF /* MNkCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkCollectionViewController.swift; path = Classes/MNkCollectionViewController.swift; sourceTree = "<group>"; };
+		82DCB924255B9044007087EF /* UISegmentedController+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISegmentedController+Chain.swift"; path = "Classes/UISegmentedController+Chain.swift"; sourceTree = "<group>"; };
+		82DCB925255B9044007087EF /* MNkVerticalAlignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkVerticalAlignButton.swift; path = Classes/MNkVerticalAlignButton.swift; sourceTree = "<group>"; };
+		82DCB926255B9044007087EF /* MNkAlertView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MNkAlertView+Chain.swift"; path = "Classes/MNkAlertView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB927255B9045007087EF /* UIKitChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitChain.swift; path = Classes/UIKitChain.swift; sourceTree = "<group>"; };
+		82DCB928255B9045007087EF /* MNkTextFieldWithError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextFieldWithError.swift; path = Classes/MNkTextFieldWithError.swift; sourceTree = "<group>"; };
+		82DCB929255B9045007087EF /* MNkVerticalAlignButton+UIKitChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MNkVerticalAlignButton+UIKitChain.swift"; path = "Classes/MNkVerticalAlignButton+UIKitChain.swift"; sourceTree = "<group>"; };
+		82DCB92A255B9045007087EF /* MNkTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextField.swift; path = Classes/MNkTextField.swift; sourceTree = "<group>"; };
+		82DCB92B255B9045007087EF /* UILabelExtension+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabelExtension+Chain.swift"; path = "Classes/UILabelExtension+Chain.swift"; sourceTree = "<group>"; };
+		82DCB92C255B9045007087EF /* MNkAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertView.swift; path = Classes/MNkAlertView.swift; sourceTree = "<group>"; };
+		82DCB92D255B9045007087EF /* UICollectionView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Chain.swift"; path = "Classes/UICollectionView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB92E255B9045007087EF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Classes/Extensions.swift; sourceTree = "<group>"; };
+		82DCB92F255B9045007087EF /* AppSymbol+UIimageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppSymbol+UIimageView.swift"; path = "Classes/AppSymbol+UIimageView.swift"; sourceTree = "<group>"; };
+		82DCB930255B9045007087EF /* AppSymbol+UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppSymbol+UIBarButtonItem.swift"; path = "Classes/AppSymbol+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		82DCB931255B9045007087EF /*  UIImageView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = " UIImageView+Chain.swift"; path = "Classes/ UIImageView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB932255B9045007087EF /* MNkAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkAlertViewController.swift; path = Classes/MNkAlertViewController.swift; sourceTree = "<group>"; };
+		82DCB933255B9045007087EF /* MNkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkView.swift; path = Classes/MNkView.swift; sourceTree = "<group>"; };
+		82DCB934255B9045007087EF /* Helper+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Helper+Protocol.swift"; path = "Classes/Helper+Protocol.swift"; sourceTree = "<group>"; };
+		82DCB935255B9045007087EF /* SearchContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchContainer.swift; path = Classes/SearchContainer.swift; sourceTree = "<group>"; };
+		82DCB936255B9045007087EF /* AppSymbolNameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSymbolNameType.swift; path = Classes/AppSymbolNameType.swift; sourceTree = "<group>"; };
+		82DCB937255B9045007087EF /*  UITableView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = " UITableView+Chain.swift"; path = "Classes/ UITableView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB938255B9045007087EF /* MNkTextValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextValidatable.swift; path = Classes/MNkTextValidatable.swift; sourceTree = "<group>"; };
+		82DCB939255B9045007087EF /* AppSymbol+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppSymbol+UIButton.swift"; path = "Classes/AppSymbol+UIButton.swift"; sourceTree = "<group>"; };
+		82DCB93A255B9045007087EF /* AppSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSymbol.swift; path = Classes/AppSymbol.swift; sourceTree = "<group>"; };
+		82DCB93B255B9045007087EF /* MNkSeperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkSeperator.swift; path = Classes/MNkSeperator.swift; sourceTree = "<group>"; };
+		82DCB93C255B9045007087EF /* MNkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkCollectionViewCell.swift; path = Classes/MNkCollectionViewCell.swift; sourceTree = "<group>"; };
+		82DCB93D255B9045007087EF /* UIScrollView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Chain.swift"; path = "Classes/UIScrollView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB93E255B9045007087EF /* MNkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTableViewCell.swift; path = Classes/MNkTableViewCell.swift; sourceTree = "<group>"; };
+		82DCB93F255B9046007087EF /* CoreDataSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataSupport.swift; path = Classes/CoreDataSupport.swift; sourceTree = "<group>"; };
+		82DCB940255B9046007087EF /*  UITextView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = " UITextView+Chain.swift"; path = "Classes/ UITextView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB941255B9046007087EF /* UIStackView+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIStackView+Chain.swift"; path = "Classes/UIStackView+Chain.swift"; sourceTree = "<group>"; };
+		82DCB942255B9046007087EF /* MNkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTableViewController.swift; path = Classes/MNkTableViewController.swift; sourceTree = "<group>"; };
+		82DCB943255B9046007087EF /* MNkSeperator+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MNkSeperator+Chain.swift"; path = "Classes/MNkSeperator+Chain.swift"; sourceTree = "<group>"; };
+		82DCB944255B9046007087EF /* BadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BadgeButton.swift; path = Classes/BadgeButton.swift; sourceTree = "<group>"; };
+		82DCB945255B9046007087EF /* UITextField+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Chain.swift"; path = "Classes/UITextField+Chain.swift"; sourceTree = "<group>"; };
+		82DCB946255B9046007087EF /* UIButton+Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Chain.swift"; path = "Classes/UIButton+Chain.swift"; sourceTree = "<group>"; };
+		82DCB947255B9046007087EF /* MNkTextViewNoPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkTextViewNoPadding.swift; path = Classes/MNkTextViewNoPadding.swift; sourceTree = "<group>"; };
+		82DCB948255B9046007087EF /* MNkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNkViewController.swift; path = Classes/MNkViewController.swift; sourceTree = "<group>"; };
 		84901522DF4EC4268C426E6146D988D5 /* MNkSupportUtilities.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MNkSupportUtilities.xcconfig; sourceTree = "<group>"; };
 		89BA415E13FFBC2A72994E1206CF42B0 /* Pods-MNkSupportUtilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MNkSupportUtilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D9205063853923A43BEA78F70A9881C /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
@@ -469,51 +469,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		82DCB8D8255B8DD9007087EF /* helper */ = {
-			isa = PBXGroup;
-			children = (
-				82DCB8D9255B8DD9007087EF /* Extensions.swift */,
-				82DCB8DA255B8DD9007087EF /* Helper+Protocol.swift */,
-			);
-			name = helper;
-			path = Classes/helper;
-			sourceTree = "<group>";
-		};
-		82DCB8E1255B8E0B007087EF /* app_symbols */ = {
-			isa = PBXGroup;
-			children = (
-				82DCB8E2255B8E0B007087EF /* AppSymbol+UIimageView.swift */,
-				82DCB8E3255B8E0B007087EF /* AppSymbol.swift */,
-				82DCB8E4255B8E0B007087EF /* AppSymbol+UIButton.swift */,
-				82DCB8E5255B8E0B007087EF /* AppSymbol+UIBarButtonItem.swift */,
-				82DCB8E6255B8E0B007087EF /* AppSymbolNameType.swift */,
-			);
-			name = app_symbols;
-			path = Classes/app_symbols;
-			sourceTree = "<group>";
-		};
-		82DCB8F0255B8E1D007087EF /* uikit+chain */ = {
-			isa = PBXGroup;
-			children = (
-				82DCB8F1255B8E1D007087EF /* MNkSeperator+Chain.swift */,
-				82DCB8F2255B8E1D007087EF /* UILabelExtension+Chain.swift */,
-				82DCB8F3255B8E1D007087EF /* UISegmentedController+Chain.swift */,
-				82DCB8F4255B8E1D007087EF /* UITextField+Chain.swift */,
-				82DCB8F5255B8E1D007087EF /*  UITableView+Chain.swift */,
-				82DCB8F6255B8E1D007087EF /* UIButton+Chain.swift */,
-				82DCB8F7255B8E1D007087EF /* MNkVerticalAlignButton+UIKitChain.swift */,
-				82DCB8F8255B8E1D007087EF /* MNkAlertView+Chain.swift */,
-				82DCB8F9255B8E1D007087EF /*  UIImageView+Chain.swift */,
-				82DCB8FA255B8E1D007087EF /* UICollectionView+Chain.swift */,
-				82DCB8FB255B8E1D007087EF /* UIScrollView+Chain.swift */,
-				82DCB8FC255B8E1D007087EF /* UIStackView+Chain.swift */,
-				82DCB8FD255B8E1D007087EF /* UIKitChain.swift */,
-				82DCB8FE255B8E1D007087EF /*  UITextView+Chain.swift */,
-			);
-			name = "uikit+chain";
-			path = "Classes/uikit+chain";
-			sourceTree = "<group>";
-		};
 		A8B63D2BF77131646CE607CB3C7EE5C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,26 +500,44 @@
 		C6D63D84CFFB1C89B8A2ED83E54428D5 /* MNkSupportUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				82DCB8F0255B8E1D007087EF /* uikit+chain */,
-				82DCB8E1255B8E0B007087EF /* app_symbols */,
-				82DCB8D8255B8DD9007087EF /* helper */,
-				82DCB879255B8BB0007087EF /* MNkCollectionViewController.swift */,
-				82DCB86B255B8AF9007087EF /* MNkCollectionViewCell.swift */,
-				82DCB87F255B8BC8007087EF /* MNkTableViewCell.swift */,
-				82DCB885255B8BD7007087EF /* MNkTableViewController.swift */,
-				82DCB88B255B8BE2007087EF /* MNkTextValidatable.swift */,
-				82DCB891255B8BF0007087EF /* MNkView.swift */,
-				82DCB897255B8BFA007087EF /* MNkViewController.swift */,
-				82DCB873255B8B3E007087EF /* BadgeButton.swift */,
-				82DCB8A1255B8C0C007087EF /* MNkTextViewNoPadding.swift */,
-				82DCB8A7255B8C28007087EF /* SearchContainer.swift */,
-				7770F08321BF72200003661D /* CoreDataSupport.swift */,
-				771EE9AD21B5263D007036CF /* MNkSeperator.swift */,
-				82B24D1322462D3600E80641 /* MNkTextField.swift */,
-				82B24D1422462D3600E80641 /* MNkTextFieldWithError.swift */,
-				77D7964B23152B5800BA9944 /* MNkVerticalAlignButton.swift */,
-				77D7964E23152ED700BA9944 /* MNkAlertView.swift */,
-				77D7964D23152ED700BA9944 /* MNkAlertViewController.swift */,
+				82DCB931255B9045007087EF /*  UIImageView+Chain.swift */,
+				82DCB937255B9045007087EF /*  UITableView+Chain.swift */,
+				82DCB940255B9046007087EF /*  UITextView+Chain.swift */,
+				82DCB93A255B9045007087EF /* AppSymbol.swift */,
+				82DCB930255B9045007087EF /* AppSymbol+UIBarButtonItem.swift */,
+				82DCB939255B9045007087EF /* AppSymbol+UIButton.swift */,
+				82DCB92F255B9045007087EF /* AppSymbol+UIimageView.swift */,
+				82DCB936255B9045007087EF /* AppSymbolNameType.swift */,
+				82DCB944255B9046007087EF /* BadgeButton.swift */,
+				82DCB93F255B9046007087EF /* CoreDataSupport.swift */,
+				82DCB92E255B9045007087EF /* Extensions.swift */,
+				82DCB934255B9045007087EF /* Helper+Protocol.swift */,
+				82DCB92C255B9045007087EF /* MNkAlertView.swift */,
+				82DCB926255B9044007087EF /* MNkAlertView+Chain.swift */,
+				82DCB932255B9045007087EF /* MNkAlertViewController.swift */,
+				82DCB93C255B9045007087EF /* MNkCollectionViewCell.swift */,
+				82DCB923255B9044007087EF /* MNkCollectionViewController.swift */,
+				82DCB93B255B9045007087EF /* MNkSeperator.swift */,
+				82DCB943255B9046007087EF /* MNkSeperator+Chain.swift */,
+				82DCB93E255B9045007087EF /* MNkTableViewCell.swift */,
+				82DCB942255B9046007087EF /* MNkTableViewController.swift */,
+				82DCB92A255B9045007087EF /* MNkTextField.swift */,
+				82DCB928255B9045007087EF /* MNkTextFieldWithError.swift */,
+				82DCB938255B9045007087EF /* MNkTextValidatable.swift */,
+				82DCB947255B9046007087EF /* MNkTextViewNoPadding.swift */,
+				82DCB925255B9044007087EF /* MNkVerticalAlignButton.swift */,
+				82DCB929255B9045007087EF /* MNkVerticalAlignButton+UIKitChain.swift */,
+				82DCB933255B9045007087EF /* MNkView.swift */,
+				82DCB948255B9046007087EF /* MNkViewController.swift */,
+				82DCB935255B9045007087EF /* SearchContainer.swift */,
+				82DCB946255B9046007087EF /* UIButton+Chain.swift */,
+				82DCB92D255B9045007087EF /* UICollectionView+Chain.swift */,
+				82DCB927255B9045007087EF /* UIKitChain.swift */,
+				82DCB92B255B9045007087EF /* UILabelExtension+Chain.swift */,
+				82DCB93D255B9045007087EF /* UIScrollView+Chain.swift */,
+				82DCB924255B9044007087EF /* UISegmentedController+Chain.swift */,
+				82DCB941255B9046007087EF /* UIStackView+Chain.swift */,
+				82DCB945255B9046007087EF /* UITextField+Chain.swift */,
 				45F899E77F724C096F3764D6C72561C7 /* Pod */,
 				E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */,
 			);
@@ -754,7 +727,7 @@
 						LastSwiftMigration = 1020;
 					};
 					1EDBE227E30473E97DDEDB54E8CACB31 = {
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1210;
 					};
 					D8726A036E9EEB34E1036B94F8B0E8B4 = {
 						LastSwiftMigration = 1030;
@@ -837,45 +810,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82B24D1622462D3700E80641 /* MNkTextFieldWithError.swift in Sources */,
-				82DCB8DC255B8DDA007087EF /* Helper+Protocol.swift in Sources */,
-				82DCB8EA255B8E0B007087EF /* AppSymbol+UIBarButtonItem.swift in Sources */,
-				82DCB902255B8E1D007087EF /* UITextField+Chain.swift in Sources */,
-				82DCB8EB255B8E0B007087EF /* AppSymbolNameType.swift in Sources */,
-				82DCB901255B8E1D007087EF /* UISegmentedController+Chain.swift in Sources */,
-				82DCB8E9255B8E0B007087EF /* AppSymbol+UIButton.swift in Sources */,
-				82DCB90C255B8E1D007087EF /*  UITextView+Chain.swift in Sources */,
-				82DCB904255B8E1D007087EF /* UIButton+Chain.swift in Sources */,
-				82DCB86C255B8AF9007087EF /* MNkCollectionViewCell.swift in Sources */,
-				82DCB8FF255B8E1D007087EF /* MNkSeperator+Chain.swift in Sources */,
-				82DCB886255B8BD7007087EF /* MNkTableViewController.swift in Sources */,
-				771EE9AE21B5263E007036CF /* MNkSeperator.swift in Sources */,
-				82DCB90B255B8E1D007087EF /* UIKitChain.swift in Sources */,
-				82DCB898255B8BFA007087EF /* MNkViewController.swift in Sources */,
-				82DCB909255B8E1D007087EF /* UIScrollView+Chain.swift in Sources */,
-				82B24D1522462D3700E80641 /* MNkTextField.swift in Sources */,
-				82DCB8E7255B8E0B007087EF /* AppSymbol+UIimageView.swift in Sources */,
-				82DCB906255B8E1D007087EF /* MNkAlertView+Chain.swift in Sources */,
-				82DCB892255B8BF0007087EF /* MNkView.swift in Sources */,
-				82DCB8DB255B8DDA007087EF /* Extensions.swift in Sources */,
-				82DCB903255B8E1D007087EF /*  UITableView+Chain.swift in Sources */,
-				77D7964F23152ED700BA9944 /* MNkAlertViewController.swift in Sources */,
-				82DCB900255B8E1D007087EF /* UILabelExtension+Chain.swift in Sources */,
-				7770F08421BF72210003661D /* CoreDataSupport.swift in Sources */,
-				82DCB87A255B8BB0007087EF /* MNkCollectionViewController.swift in Sources */,
-				82DCB88C255B8BE2007087EF /* MNkTextValidatable.swift in Sources */,
-				77D7964C23152B5800BA9944 /* MNkVerticalAlignButton.swift in Sources */,
-				82DCB907255B8E1D007087EF /*  UIImageView+Chain.swift in Sources */,
-				82DCB874255B8B3E007087EF /* BadgeButton.swift in Sources */,
-				82DCB8A2255B8C0D007087EF /* MNkTextViewNoPadding.swift in Sources */,
-				82DCB8A8255B8C28007087EF /* SearchContainer.swift in Sources */,
+				82DCB96E255B9046007087EF /* MNkViewController.swift in Sources */,
+				82DCB958255B9046007087EF /* MNkAlertViewController.swift in Sources */,
+				82DCB95C255B9046007087EF /* AppSymbolNameType.swift in Sources */,
+				82DCB96A255B9046007087EF /* BadgeButton.swift in Sources */,
+				82DCB955255B9046007087EF /* AppSymbol+UIimageView.swift in Sources */,
+				82DCB94D255B9046007087EF /* UIKitChain.swift in Sources */,
 				D02CCDBFF3E9E26C2101A3D85CAE4347 /* MNkSupportUtilities-dummy.m in Sources */,
-				82DCB880255B8BC8007087EF /* MNkTableViewCell.swift in Sources */,
-				82DCB908255B8E1D007087EF /* UICollectionView+Chain.swift in Sources */,
-				82DCB905255B8E1D007087EF /* MNkVerticalAlignButton+UIKitChain.swift in Sources */,
-				82DCB90A255B8E1D007087EF /* UIStackView+Chain.swift in Sources */,
-				77D7965023152ED700BA9944 /* MNkAlertView.swift in Sources */,
-				82DCB8E8255B8E0B007087EF /* AppSymbol.swift in Sources */,
+				82DCB963255B9046007087EF /* UIScrollView+Chain.swift in Sources */,
+				82DCB969255B9046007087EF /* MNkSeperator+Chain.swift in Sources */,
+				82DCB94A255B9046007087EF /* UISegmentedController+Chain.swift in Sources */,
+				82DCB961255B9046007087EF /* MNkSeperator.swift in Sources */,
+				82DCB94C255B9046007087EF /* MNkAlertView+Chain.swift in Sources */,
+				82DCB95F255B9046007087EF /* AppSymbol+UIButton.swift in Sources */,
+				82DCB956255B9046007087EF /* AppSymbol+UIBarButtonItem.swift in Sources */,
+				82DCB95E255B9046007087EF /* MNkTextValidatable.swift in Sources */,
+				82DCB951255B9046007087EF /* UILabelExtension+Chain.swift in Sources */,
+				82DCB950255B9046007087EF /* MNkTextField.swift in Sources */,
+				82DCB959255B9046007087EF /* MNkView.swift in Sources */,
+				82DCB967255B9046007087EF /* UIStackView+Chain.swift in Sources */,
+				82DCB964255B9046007087EF /* MNkTableViewCell.swift in Sources */,
+				82DCB96C255B9046007087EF /* UIButton+Chain.swift in Sources */,
+				82DCB960255B9046007087EF /* AppSymbol.swift in Sources */,
+				82DCB95A255B9046007087EF /* Helper+Protocol.swift in Sources */,
+				82DCB953255B9046007087EF /* UICollectionView+Chain.swift in Sources */,
+				82DCB968255B9046007087EF /* MNkTableViewController.swift in Sources */,
+				82DCB96B255B9046007087EF /* UITextField+Chain.swift in Sources */,
+				82DCB94B255B9046007087EF /* MNkVerticalAlignButton.swift in Sources */,
+				82DCB95B255B9046007087EF /* SearchContainer.swift in Sources */,
+				82DCB954255B9046007087EF /* Extensions.swift in Sources */,
+				82DCB95D255B9046007087EF /*  UITableView+Chain.swift in Sources */,
+				82DCB96D255B9046007087EF /* MNkTextViewNoPadding.swift in Sources */,
+				82DCB94F255B9046007087EF /* MNkVerticalAlignButton+UIKitChain.swift in Sources */,
+				82DCB949255B9046007087EF /* MNkCollectionViewController.swift in Sources */,
+				82DCB962255B9046007087EF /* MNkCollectionViewCell.swift in Sources */,
+				82DCB957255B9046007087EF /*  UIImageView+Chain.swift in Sources */,
+				82DCB94E255B9046007087EF /* MNkTextFieldWithError.swift in Sources */,
+				82DCB965255B9046007087EF /* CoreDataSupport.swift in Sources */,
+				82DCB966255B9046007087EF /*  UITextView+Chain.swift in Sources */,
+				82DCB952255B9046007087EF /* MNkAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +946,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84901522DF4EC4268C426E6146D988D5 /* MNkSupportUtilities.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1039,6 +1013,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84901522DF4EC4268C426E6146D988D5 /* MNkSupportUtilities.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
