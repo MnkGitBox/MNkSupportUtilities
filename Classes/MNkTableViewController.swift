@@ -33,7 +33,9 @@ open class MNkTableViewController_Parameter<T>:MNkTableViewController{
     }
 }
 
-open class MNkTableViewController:MNkViewController,UITableViewDataSource,UITableViewDelegate{
+open class MNkTableViewController: MNkViewController,
+                                   UITableViewDataSource,
+                                   UITableViewDelegate {
     public var cellID:String =  "GenericCellID \(arc4random())"
     public var emptyCellID:String = "EmptyCellID \(arc4random())"
     

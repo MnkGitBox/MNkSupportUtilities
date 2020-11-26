@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension AppSymbol where Self: UIImageView {
+public extension AppSymbol where Self: UIImageView {
     
 ///    Will return symbol image for given symbol name.
 ///    This function never set symbol image to image view component

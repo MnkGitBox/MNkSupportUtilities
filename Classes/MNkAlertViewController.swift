@@ -8,32 +8,28 @@
 import Foundation
 import UIKit
 
-open class MNkAlertViewController:MNkViewController{
-    private var alertView = MNkAlertView()
+open class MNkAlertViewController: MNkViewController {
+    private var alertView: MNkAlertView!
     
     private var delegate: MNkAlertDelegate?
+    private var action: ((_ action: MNkAlertView.MNkAlertAction, _ data: Any?) -> Void)?
     
-    public func set(alertView:MNkAlertView){
+    public func set(alertView: MNkAlertView) {
         self.alertView = alertView
-        delegate = self.alertView.delegate
+        self.delegate = alertView.delegate
+        self.action = alertView.action
     }
     
     override open func config() {
         view.backgroundColor = .clear
     }
     
-    public func showAlert(in target:UIViewController, aditional data: Any?, _ complete:((MNkAlertView.MNkAlertAction)->Void)? = nil){
+    public func showAlert(in target: UIViewController, aditional data: Any?){
         target.present(self, animated: false) { [unowned self] in
             self.alertView.show(in: self.view) { [unowned self] actionType in
-                guard let _complete = complete else{
-                    self.dismiss(animated: false) { [unowned self] in
-                        self.delegate?.userPerformAlertAction?(actionType, aditional: data)
-                    }
-                    return
-                }
-                _complete(actionType)
                 self.dismiss(animated: false) { [unowned self] in
                     self.delegate?.userPerformAlertAction?(actionType, aditional: data)
+                    self.action?(actionType, data)
                 }
             }
         }
@@ -45,11 +41,11 @@ open class MNkAlertViewController:MNkViewController{
 }
 
 public extension UIViewController{
-    func showAlert(of alertVC:MNkAlertViewController, aditiona data: Any?, completed:((_ completedAction:MNkAlertView.MNkAlertAction)->())? = nil){
+    func showAlert(of alertVC:MNkAlertViewController, aditional data: Any?){
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext
         
-        alertVC.showAlert(in: self, aditional: data, completed)
+        alertVC.showAlert(in: self, aditional: data)
     }
 }
 

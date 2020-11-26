@@ -11,7 +11,7 @@ import UIKit
     @objc optional func userPerformAlertAction(_ action: MNkAlertView.MNkAlertAction, aditional data: Any?)
 }
 
-open class MNkAlertView:MNkView{
+open class MNkAlertView: MNkView {
     
     public enum MNkAlertType{
         case single
@@ -48,6 +48,7 @@ open class MNkAlertView:MNkView{
     }
     
     public var delegate: MNkAlertDelegate?
+    public var action: ((_ action: MNkAlertView.MNkAlertAction, _ data: Any?) -> Void)?
     
     public var title:String?
     public var message:String?
@@ -153,6 +154,7 @@ open class MNkAlertView:MNkView{
         mainStackView.axis = .vertical
         mainStackView.distribution = .equalSpacing
         mainStackView.alignment = .center
+        mainStackView.spacing = 8
     }
     
     
@@ -337,9 +339,9 @@ extension MNkAlertView{
 
 
 //MARK:- SUPPORT EXTENSION AND TYPEALISE FOR UIBUTTON CLOUSER ACTION
-typealias UIButtonTargetClouser = (UIButton) -> ()
+public typealias UIButtonTargetClouser = (UIButton) -> ()
 
-extension UIButton{
+public extension UIButton{
     private struct AssociateKeys{
         static var teargetClouser = "targetClouser"
     }
@@ -365,7 +367,6 @@ extension UIButton{
         _targetClouser(self)
     }
 }
-
 class ClouserWrapped:NSObject{
     let clouser:UIButtonTargetClouser
     init(_ clouser:@escaping UIButtonTargetClouser) {

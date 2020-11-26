@@ -17,6 +17,8 @@ class ViewController:MNkCollectionVC_Parameter_CellType<Test,Cell>{
     override func config() {
         super.config()
         print(safeAreaEdgeInsets)
+        
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

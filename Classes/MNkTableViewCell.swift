@@ -17,6 +17,7 @@ open class MNkTableViewCell:UITableViewCell{
         createViews()
         insertAndLayoutSubviews()
         backgroundColor = .white
+        contentView.isUserInteractionEnabled = false
         config()
     }
     

@@ -40,7 +40,7 @@ extension UIKitChainCompatable{
 
 import UIKit
 //MARK:- General Implimentaion
-extension UIKitChain where Component:UIView{
+extension UIKitChain where Component: UIView {
     
     @discardableResult
     public func bgColor(_ color:UIColor)->Self{

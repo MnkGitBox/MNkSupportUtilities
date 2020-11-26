@@ -50,6 +50,7 @@ extension UIKitChain where Component : UILabel {
     public func minScale(_ factor: CGFloat) -> Self {
         component.minimumScaleFactor = factor
         component.sizeToFit()
+        component.adjustsFontSizeToFitWidth = true
         return self
     }
     
@@ -59,7 +60,6 @@ extension UIKitChain where Component : UILabel {
         self.numberOfLines(0)
         return self
     }
-    
 }
 
 

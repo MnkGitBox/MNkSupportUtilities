@@ -351,6 +351,10 @@ public extension String{
         
         return underLineString
     }
+    
+    var withoutSpecialCharacters: String {
+        return self.components(separatedBy: CharacterSet.symbols).joined(separator: "")
+    }
 }
 
 public extension NSMutableAttributedString {
@@ -531,7 +535,9 @@ public extension UIWindow {
     }
 }
 
+//MARK: - TIME INTERVAL
 public extension TimeInterval {
+    ///Get time interval past to now. 'eg: - 2d ago'
     var formatInterval: String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.year, .month, .weekday, .day, .hour, .minute, .second]
@@ -539,5 +545,19 @@ public extension TimeInterval {
         formatter.maximumUnitCount = 1
 
         return formatter.string(from: self)!
+    }
+}
+
+
+//MARK: - DATE
+public extension Date {
+    ///Remaining days to future event. 'eg: - 2 more days'
+    var remainDaysFromNow: Int {
+        let now = Date()
+        let calender = Calendar.current
+        let startDate = calender.startOfDay(for: now)
+        let endDate = calender.startOfDay(for: self)
+        
+        return calender.dateComponents([.day], from: startDate, to: endDate).day ?? 0
     }
 }

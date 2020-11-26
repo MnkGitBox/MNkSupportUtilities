@@ -10,7 +10,7 @@ import UIKit
 //UIBarButtonItem Extension
 //init Systom icon or old school symbol file
 extension AppSymbol where Self : UIBarButtonItem {
-    func symbol(for name: AppSymbolNameType, _ font: UIFont) -> UIImage? {
+    public func symbol(for name: AppSymbolNameType, _ font: UIFont) -> UIImage? {
         return Self.symbol(for: name)
     }
 }

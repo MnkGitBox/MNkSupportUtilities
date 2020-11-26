@@ -11,7 +11,7 @@ import UIKit
 typealias SymbolConfiguration = (config: UIImage.SymbolConfiguration, symbol: UIImage?)
 
 
-protocol AppSymbol{
+public protocol AppSymbol{
     func symbol(for name: AppSymbolNameType, _ font: UIFont) -> UIImage?
 }
 

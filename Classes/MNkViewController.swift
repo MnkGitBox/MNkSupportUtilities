@@ -12,7 +12,7 @@ open class MNkViewController: UIViewController {
         case once, always
     }
     
-    public var fetchingState: RepeatState {
+    open var fetchingState: RepeatState {
         .once
     }
     
