@@ -9,10 +9,16 @@ import UIKit
 
 //MARK: - UINavigation bar
 //01
-public protocol NavigationBarTransparentCompitable {}
+public protocol NavigationBarTransparentCompitable {
+    var isSetHiddenNavigationBarBackground: Bool { get }
+}
 
-extension NavigationBarTransparentCompitable where Self: UIViewController {
-    public func setNavigationBarBackground( hidden isHidden: Bool) {
+public extension NavigationBarTransparentCompitable where Self: UIViewController {
+    var isSetHiddenNavigationBarBackground: Bool {
+        self.navigationController?.navigationBar.backgroundImage(for: .default) != nil
+    }
+    
+    func setNavigationBarBackground( hidden isHidden: Bool) {
         let bgImage = isHidden ? UIImage() : nil
         let shadowImage = isHidden ? UIImage() : nil
         self.navigationController?.navigationBar.isTranslucent = true
@@ -22,28 +28,39 @@ extension NavigationBarTransparentCompitable where Self: UIViewController {
 }
 
 //02
-public protocol NavBarBackButtonAccesable {
+public protocol NavBarBackButtonAccesable: class {
     
-    var backButtonItem: UIButton  { get set }
+    var navigationBackButton: UIButton! { get set }
     
-    func navigationBackActionConfiguration()
+    var backTitle: String { get }
+    
+    func configureNavigationCustomBackButton()
     
 }
 
-extension NavBarBackButtonAccesable where Self : UIViewController {
+public extension NavBarBackButtonAccesable where Self : UIViewController {
     
-    public var backSymbolImage: UIImage? { UIImage.init(named: "nav.back") }
+    private var backSymbolImage: UIImage? { UIImage.init(named: "nav.back") }
+    
+    var backTitle: String { "   " }
     
     ///Navigation bar default back action overide
-    public func navigationBackActionConfiguration() {
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    func configureNavigationCustomBackButton() {
         self.navigationItem.hidesBackButton = true
 
+        navigationBackButton = UIButton().chain
+            .setImage(backSymbolImage)
+            .title(backTitle)
+            .font(.systemFont(ofSize: 15))
+            .lineBreakingMode(.byTruncatingTail)
+            .component
+
         let buttonContainerView = UIView()
-        buttonContainerView.addSubview(backButtonItem)
-        backButtonItem.activateLayouts([.leading: -7, .top:0, .bottom: 0, .traling: 0])
+        buttonContainerView.addSubview(navigationBackButton)
+        navigationBackButton.activateLayouts([.leading: -7, .top: 2, .bottom: -2, .traling: 0])
+        NSLayoutConstraint.activate([navigationBackButton.widthAnchor.constraint(lessThanOrEqualToConstant: self.view.bounds.size.width*0.4)])
+
         let backBarButtonItem = UIBarButtonItem.init(customView: buttonContainerView)
         self.navigationItem.leftBarButtonItem = backBarButtonItem
     }
-    
 }

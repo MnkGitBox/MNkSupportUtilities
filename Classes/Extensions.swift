@@ -144,6 +144,7 @@ public extension UIView{
         func addBorder(formats: String...) -> UIView {
             let border = UIView(frame: .zero)
             border.backgroundColor = color
+            border.tag = 3002
             border.translatesAutoresizingMaskIntoConstraints = false
             addSubview(border)
             addConstraints(formats.flatMap {
@@ -533,6 +534,24 @@ public extension UIWindow {
         
         return currentWindow
     }
+    
+    var visibleViewController: UIViewController? {
+        return UIWindow.getVisibleViewControllerFrom(self.rootViewController)
+    }
+    
+    static func getVisibleViewControllerFrom(_ vc: UIViewController?) -> UIViewController? {
+        if let nc = vc as? UINavigationController {
+            return UIWindow.getVisibleViewControllerFrom(nc.visibleViewController)
+        } else if let tc = vc as? UITabBarController {
+            return UIWindow.getVisibleViewControllerFrom(tc.selectedViewController)
+        } else {
+            if let pvc = vc?.presentedViewController {
+                return UIWindow.getVisibleViewControllerFrom(pvc)
+            } else {
+                return vc
+            }
+        }
+    }
 }
 
 //MARK: - TIME INTERVAL
@@ -561,3 +580,11 @@ public extension Date {
         return calender.dateComponents([.day], from: startDate, to: endDate).day ?? 0
     }
 }
+
+//MARK: - NSObject
+public extension NSObject {
+    var nameString: String {
+        NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
+    }
+}
+

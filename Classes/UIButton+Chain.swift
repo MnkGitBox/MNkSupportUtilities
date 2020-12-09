@@ -41,6 +41,12 @@ public extension UIKitChain where Component: UIButton {
     }
     
     @discardableResult
+    func lineBreakingMode(_ mode: NSLineBreakMode) -> Self {
+        component.titleLabel?.lineBreakMode = mode
+        return self
+    }
+    
+    @discardableResult
     func font(_ font:UIFont) -> Self {
         component.titleLabel?.font = font
         return self

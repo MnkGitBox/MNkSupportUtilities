@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIKitChain where Component:UITextView{
+extension UIKitChain where Component: UITextView {
     
     @discardableResult
     public func textColor(_ color:UIColor) -> Self {
@@ -43,6 +43,24 @@ extension UIKitChain where Component:UITextView{
     @discardableResult
     public func textAlignment(_ alignment: NSTextAlignment) -> Self {
         component.textAlignment = alignment
+        return self
+    }
+    
+    @discardableResult
+    public func attribText(_ text: NSAttributedString) -> Self {
+        component.attributedText = text
+        return self
+    }
+    
+    @discardableResult
+    public func editable(_ isEditable: Bool) -> Self {
+        component.isEditable = isEditable
+        return self
+    }
+    
+    @discardableResult
+    public func selectable(_ selectable: Bool) -> Self {
+        component.isSelectable = selectable
         return self
     }
 }

@@ -116,6 +116,17 @@ extension UIKitChain where Component: UIView {
     }
     
     @discardableResult
+    public func removeLineBorders() -> Self {
+        component.subviews.forEach {
+            if $0.tag == 3002 {
+                $0.removeFromSuperview()
+            }
+        }
+        
+        return self
+    }
+    
+    @discardableResult
     public func activeAutoConstrant(_ isActive: Bool) -> Self {
         component.translatesAutoresizingMaskIntoConstraints = isActive
         return self
