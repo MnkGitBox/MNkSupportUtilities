@@ -63,4 +63,16 @@ extension UIKitChain where Component: UITextView {
         component.isSelectable = selectable
         return self
     }
+    
+    @discardableResult
+    public func autocorrectionType(_ type: UITextAutocorrectionType) -> Self {
+        component.autocorrectionType = type
+        return self
+    }
+    
+    @discardableResult
+    public func textContentType(_ type: UITextContentType) -> Self {
+        component.textContentType = type
+        return self
+    }
 }

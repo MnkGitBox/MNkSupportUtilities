@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIKitChain where Component:UITextField {
+extension UIKitChain where Component: UITextField {
     @discardableResult
     public func font(_ font:UIFont) -> Self {
         component.font = font
@@ -60,6 +60,33 @@ extension UIKitChain where Component:UITextField {
     @discardableResult
     public func returnKeyType(_ type: UIReturnKeyType) -> Self {
         component.returnKeyType = type
+        return self
+    }
+    
+    @discardableResult
+    public func autocorrectionType(_ type: UITextAutocorrectionType) -> Self {
+        component.autocorrectionType = type
+        return self
+    }
+    
+    @discardableResult
+    public func textContentType(_ type: UITextContentType) -> Self {
+        component.textContentType = type
+        return self
+    }
+}
+
+
+extension UIKitChain where Component: MNkTextField {
+    @discardableResult
+    public func borders(_ borders: [MNkTextField.Edge]) -> Self {
+        component.borders = borders
+        return self
+    }
+    
+    @discardableResult
+    public func txtBorderColor(_ color: UIColor) -> Self {
+        component.borderColor = color
         return self
     }
 }

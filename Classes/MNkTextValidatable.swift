@@ -7,9 +7,9 @@
 
 import Foundation
 
-public typealias ValidationData = (textContainer:MNkValidatableTextView,type:ValidationType)
+public typealias ValidationData = (textContainer: MNkValidatableTextView, type: ValidationType)
 
-public protocol MNkValidatableTextView{
+public protocol MNkValidatableTextView {
     var textView:UIView{get}
     var errorBorderView:UIView?{get}
     var errorLabel:UILabel?{get}
@@ -28,12 +28,17 @@ extension MNkValidatableTextView{
 
 public protocol MNkTextValidatable{
     //    var hasEmptyTextContainer:Bool{get}
-    var validationData:[ValidationData]{get}
-    var errorColor:UIColor{get}
-    var defaultColor:UIColor{get}
-    var textColor:UIColor{get}
-    var borderColor:UIColor{get}
-    var validationDisplayStyle:ValidationErrorDisplayType{get}
+    var validationData: [ValidationData] { get }
+    ///Color red
+    var errorColor: UIColor { get }
+    ///Color clear
+    var backgroundColor: UIColor { get }
+    ///Color white
+    var textColor: UIColor { get }
+     
+    var borderColor: UIColor { get }
+    
+    var validationDisplayStyle: ValidationErrorDisplayType { get }
 }
 
 extension MNkTextValidatable{
@@ -41,14 +46,14 @@ extension MNkTextValidatable{
     public var errorColor:UIColor{
         return #colorLiteral(red: 1, green: 0.462745098, blue: 0.4588235294, alpha: 1)
     }
-    public var defaultColor:UIColor{
+    public var backgroundColor:UIColor{
         return .clear
     }
     public var textColor:UIColor{
         return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     public var borderColor:UIColor{
-        return .lightGray
+        return .clear
     }
     
     public var validationDisplayStyle:ValidationErrorDisplayType{
@@ -79,10 +84,10 @@ extension MNkTextValidatable{
         return true
     }
     
-    private func setTextContainer(toDefault isDefault:Bool,_ textContainer:MNkValidatableTextView,_ error:String = "Need to fill required fields"){
+    private func setTextContainer(toDefault isDefault: Bool, _ textContainer: MNkValidatableTextView, _ error: String = "Need to fill required fields"){
         
         guard !isDefault else{
-            textContainer.textView.backgroundColor = defaultColor
+            textContainer.textView.backgroundColor = backgroundColor
             textContainer.textView.setTextColor(textColor)
             textContainer.errorLabel?.text = ""
             textContainer.errorBorderView?.backgroundColor = borderColor
@@ -92,19 +97,29 @@ extension MNkTextValidatable{
         switch validationDisplayStyle{
         case .backgroundOnly:
             textContainer.textView.backgroundColor =  errorColor
-            textContainer.textView.setTextColor(defaultColor)
+            textContainer.textView.setTextColor(backgroundColor)
+            
         case .backgroundErrorMessages:
             textContainer.textView.backgroundColor =  errorColor
-            textContainer.textView.setTextColor(defaultColor)
+            textContainer.textView.setTextColor(backgroundColor)
+            
+            textContainer.errorLabel?.textColor = errorColor
             textContainer.errorLabel?.text = isDefault ? "" : error
+            
         case .boderOnly:
             textContainer.errorBorderView?.backgroundColor = errorColor
+            
         case .borderErrorMessages:
             textContainer.errorBorderView?.backgroundColor = errorColor
+            textContainer.errorLabel?.textColor = errorColor
             textContainer.errorLabel?.text = isDefault ? "" : error
             
         case .text:
             textContainer.textView.setTextColor(errorColor)
+            
+        case .errorMessageOnly:
+            textContainer.errorLabel?.textColor = errorColor
+            textContainer.errorLabel?.text = isDefault ? "" : error
         }
         
     }
@@ -113,7 +128,8 @@ extension MNkTextValidatable{
     //MARK:- VALIDATE TEXT FIELD DATA ACORDING TO IT TYPE
     
     ///Validate data of given validatable text areas.
-    public func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields")->ValidatedData{
+    @discardableResult
+    public func validate(withDefaultErrorMsg defaultErrorMsg:String = "Need to fill required fields") -> ValidatedData {
         
         var password:String!
         
@@ -265,7 +281,7 @@ extension MNkTextValidatable{
     }
     
     public func formatPhoneNo(_ mobileNo:String)->String{
-        var formattedPN = String(mobileNo.filter{ !" \n\t\r".contains($0)})
+        var formattedPN = String(mobileNo.filter{ !" \n\t\r()-".contains($0)})
         
         if let firtString = formattedPN.first?.description,
             firtString != " ",
@@ -318,6 +334,7 @@ public enum ValidationErrorDisplayType{
     case boderOnly
     case borderErrorMessages
     case text
+    case errorMessageOnly
 }
 
 ///Data returned after validate called.
