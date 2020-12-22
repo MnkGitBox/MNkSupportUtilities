@@ -656,3 +656,23 @@ public extension UIImage.Orientation {
     }
 }
 
+
+//MARK: - CACORNERMASK EXTENSION TO SIMPLY SET RADIUS TO CORNERS
+public extension CACornerMask {
+    static var all: CACornerMask {
+        return [.layerMaxXMaxYCorner,
+                .layerMaxXMinYCorner,
+                .layerMinXMaxYCorner,
+                .layerMinXMinYCorner]
+    }
+    
+    static var right: CACornerMask {
+        return [.layerMaxXMaxYCorner,
+                .layerMaxXMinYCorner]
+    }
+    
+    static var left: CACornerMask {
+        return [.layerMinXMinYCorner,
+                .layerMinXMaxYCorner]
+    }
+}
