@@ -175,6 +175,12 @@ public extension UIView{
 
         return borders
     }
+    
+    func removeViewBorders() {
+        self.subviews.filter{ $0.tag == 3002 }.forEach {
+            $0.removeFromSuperview()
+        }
+    }
 
     ///Inser gradient layer to view
     func insertGradientLayer(top topColor: UIColor, bottom bottomColor: UIColor) {

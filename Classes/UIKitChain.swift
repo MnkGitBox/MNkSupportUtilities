@@ -143,5 +143,11 @@ extension UIKitChain where Component: UIView {
         component.isHidden = isHidden
         return self
     }
+    
+    @discardableResult
+    public func alpha(_ alpha: CGFloat) -> Self {
+        component.alpha = alpha
+        return self
+    }
 }
 

@@ -65,10 +65,10 @@ extension MNkTextValidatable{
         for data in validationData{
             
             let textContainer = data.textContainer
-            setTextContainer(toDefault: true, textContainer,defaultError)
+            setTextContainer(toDefault: true, textContainer, defaultError)
             
             guard textContainer.textView.textString == "" else{continue}
-            setTextContainer(toDefault: false, textContainer,defaultError)
+            setTextContainer(toDefault: false, textContainer, defaultError)
             
             hasEmpty = true
         }
