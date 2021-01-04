@@ -93,4 +93,10 @@ public extension UIKitChain where Component: UIButton {
         component.setBackgroundImage(image, for: controlState)
         return self
     }
+    
+    @discardableResult
+    func enable(_ isEnable: Bool) -> Self {
+        component.isEnabled = isEnable
+        return self
+    }
 }

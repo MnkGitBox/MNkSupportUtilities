@@ -28,6 +28,7 @@ open class MNkViewController: UIViewController {
     open func fetchData(){}
     open func updateUIWithNewData(){}
     open func config(){}
+    ///Call on viewWill Appear. Single exicution in UIViewController life cycle.
     open func setAppSetting(){}
     
     private func doLoadThings(){
@@ -50,12 +51,15 @@ open class MNkViewController: UIViewController {
         super.viewWillAppear(animated)
         switch fetchingState {
         case .once:
-            setAppSetting()
             guard !isDisplayOnce else { return }
             fetchData()
             
         case .always:
             fetchData()
+        }
+        
+        if !isDisplayOnce {
+            setAppSetting()
         }
         
         isDisplayOnce = true
