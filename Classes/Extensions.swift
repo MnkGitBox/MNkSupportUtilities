@@ -362,6 +362,14 @@ public extension String{
     var withoutSpecialCharacters: String {
         return self.components(separatedBy: CharacterSet.symbols).joined(separator: "")
     }
+
+}
+
+public extension Optional where Wrapped == String {
+    var isNan: Bool {
+        guard let text = self, text.isEmpty else { return false }
+        return true
+    }
 }
 
 public extension NSMutableAttributedString {

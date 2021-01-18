@@ -60,14 +60,14 @@ extension MNkTextValidatable{
         return .backgroundOnly
     }
     
-    private func checkEmptyTextContainer(with defaultError:String)->Bool{
+    private func checkEmptyTextContainer(with defaultError: String )->Bool{
         var hasEmpty:Bool = false
-        for data in validationData{
+        for data in validationData {
             
             let textContainer = data.textContainer
             setTextContainer(toDefault: true, textContainer, defaultError)
             
-            guard textContainer.textView.textString == "" else{continue}
+            guard ((textContainer.textView.textString?.isEmpty) != nil) else { continue }
             setTextContainer(toDefault: false, textContainer, defaultError)
             
             hasEmpty = true
@@ -136,17 +136,19 @@ extension MNkTextValidatable{
         var validatedData = ValidatedData()
         
         
-        guard !checkEmptyTextContainer(with: defaultErrorMsg) else{
-            validatedData.isValidate = false
-            validatedData.commonError = defaultErrorMsg
-            return validatedData
-        }
+//        guard !checkEmptyTextContainer(with: defaultErrorMsg) else{
+//            validatedData.isValidate = false
+//            validatedData.commonError = defaultErrorMsg
+//            return validatedData
+//        }
         
-        for data in validationData{
+        for data in validationData {
             
             let _textContainer = data.textContainer
             let _validationType = data.type
             
+            //Set to default
+            setTextContainer(toDefault: true, _textContainer)
             
             switch _validationType{
             case .email:
@@ -159,15 +161,18 @@ extension MNkTextValidatable{
                 }
                 continue
                 
-            case .phoneNo:
-                let result = validatePhoneNo(in: _textContainer.textView)
+            case let .phoneNo(required):
+                let result = validatePhoneNo(in: _textContainer.textView, isRequired: required)
                 let error = "Please enter valid phone number"
+                
                 setTextContainer(toDefault: result, _textContainer,error)
+                
                 if !result{
                     validatedData.isValidate = false
                     validatedData.errors.append(error)
                 }
                 continue
+                
             case .mobileDialog:
                 let result = validateMobileNo(in: _textContainer.textView, for: .dialog)
                 let error = "Please enter Dailog mobile number"
@@ -237,9 +242,11 @@ extension MNkTextValidatable{
         return emailPred.evaluate(with: emailTextContainer.textString)
     }
     
-    private func validatePhoneNo(in textContainer:UIView)->Bool{
+    private func validatePhoneNo(in textContainer: UIView, isRequired: Bool = true)->Bool{
         
-        guard let text = textContainer.textString,text != "" else {return true}
+        print("Validating.......: ", textContainer.textString)
+        
+        guard let text = textContainer.textString, text != "" else { return isRequired ? false : true }
         
         let formattedPN = formatPhoneNo(text)
         
@@ -298,7 +305,7 @@ extension MNkTextValidatable{
 public enum ValidationType {
     case normal
     case email
-    case phoneNo
+    case phoneNo(isRequired: Bool)
     case password
     case conformPassword
     case mobileDialog
