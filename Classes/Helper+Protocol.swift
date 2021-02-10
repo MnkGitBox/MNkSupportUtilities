@@ -49,16 +49,20 @@ public extension NavBarBackButtonAccesable where Self : UIViewController {
         self.navigationItem.hidesBackButton = true
 
         navigationBackButton = UIButton().chain
-            .setImage(backSymbolImage)
+            .setImage(backSymbolImage?.withRenderingMode(.alwaysTemplate))
             .title(backTitle)
-            .font(.systemFont(ofSize: 15))
+            .titleColor(UINavigationBar.appearance().tintColor)
+            .font(.systemFont(ofSize: 17))
+            .titleEdgeInsets(.init(top: 0, left: -12, bottom: 0, right: 0))
+            .imageEdgeInsets(.init(top: 0, left: -18, bottom: 0, right: 0))
             .lineBreakingMode(.byTruncatingTail)
+            .imageContentMode(.scaleAspectFit)
             .component
 
         let buttonContainerView = UIView()
         buttonContainerView.addSubview(navigationBackButton)
-        navigationBackButton.activateLayouts([.leading: -7, .top: 2, .bottom: -2, .traling: 0])
-        NSLayoutConstraint.activate([navigationBackButton.widthAnchor.constraint(lessThanOrEqualToConstant: self.view.bounds.size.width*0.4)])
+        navigationBackButton.activateLayouts([.leading: 0, .top: 0, .bottom: 0, .traling: 0, .height: 27])
+        NSLayoutConstraint.activate([navigationBackButton.widthAnchor.constraint(lessThanOrEqualToConstant: self.view.bounds.size.width*0.45)])
 
         let backBarButtonItem = UIBarButtonItem.init(customView: buttonContainerView)
         self.navigationItem.leftBarButtonItem = backBarButtonItem
