@@ -53,7 +53,7 @@ fileprivate extension UIImage {
     }
     
     @available(iOS 13.0, *)
-    convenience init?(systemSymbol named:AppSymbolNameType) {
+    convenience init?(systemSymbol named: AppSymbolNameType) {
         self.init(systemName: named.rawValue)
     }
 }

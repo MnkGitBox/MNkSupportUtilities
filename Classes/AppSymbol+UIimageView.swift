@@ -19,7 +19,7 @@ public extension AppSymbol where Self: UIImageView {
             return symbolConfig.symbol
             
         }else{
-            return UIImage.init(named: name.rawValue)
+            return UIImage.init(named: name.rawValue)?.withRenderingMode(.alwaysTemplate)
         }
     }
     
