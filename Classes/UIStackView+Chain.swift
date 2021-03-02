@@ -50,4 +50,11 @@ extension UIKitChain where Component:UIStackView{
         distribution(.fillEqually)
         return self
     }
+    
+    @discardableResult
+    public func layoutMargins(_ value: NSDirectionalEdgeInsets) -> Self {
+        component.isLayoutMarginsRelativeArrangement = true
+        component.directionalLayoutMargins = value
+        return self
+    }
 }

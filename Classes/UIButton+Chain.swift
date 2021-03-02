@@ -11,6 +11,12 @@ import UIKit
 public extension UIKitChain where Component: UIButton {
     
     @discardableResult
+    func action(_ target: Any?, _ selector: Selector, _ event: UIControl.Event) -> Self {
+        component.addTarget(target, action: selector, for: event)
+        return self
+    }
+    
+    @discardableResult
     func setImage(_ image:UIImage?,for state:UIControl.State = .normal) -> Self {
         component.setImage(image, for: state)
         return self
@@ -37,6 +43,12 @@ public extension UIKitChain where Component: UIButton {
     @discardableResult
     func titleAligment(_ aligment: NSTextAlignment) -> Self {
         component.titleLabel?.textAlignment = aligment
+        return self
+    }
+    
+    @discardableResult
+    func titleLines(_ number: Int) -> Self {
+        component.titleLabel?.numberOfLines = number
         return self
     }
     
