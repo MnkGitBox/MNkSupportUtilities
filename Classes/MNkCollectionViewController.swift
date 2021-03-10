@@ -41,29 +41,29 @@ UICollectionViewDataSource{
         collectionView.activateLayouts(to: self.view)
     }
     
-    open func numberOfSections(in collectionView: UICollectionView) -> Int {return 1}
+    dynamic open func numberOfSections(in collectionView: UICollectionView) -> Int {return 1}
     
-    open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}
-    open  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {return UICollectionViewCell()}
+    dynamic open  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return 0}
+    dynamic open  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {return UICollectionViewCell()}
     
     dynamic open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {return .zero}
     
-    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
-    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {return UICollectionReusableView()}
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {return .zero}
+    dynamic open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+    dynamic open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {return UICollectionReusableView()}
+    dynamic open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {return .zero}
     dynamic open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {return .zero}
-    open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {return .zero}
+    dynamic open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
+    dynamic open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {return .zero}
     
-    open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
-    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {}
-    open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {}
-    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
-    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
-    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
-    open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {}
-    open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {}
-    open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {}
+    dynamic open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {}
+    dynamic open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {}
+    dynamic open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {}
 }
 
 //MARK:- COLLECTIONVIEW CONTROLLER WITH CELL TYPE AND AND PARAMETER
