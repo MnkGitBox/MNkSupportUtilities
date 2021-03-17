@@ -53,6 +53,18 @@ public extension UIKitChain where Component: UIButton {
     }
     
     @discardableResult
+    func titleScaleFactor(_ value: CGFloat) -> Self {
+        component.titleLabel?.minimumScaleFactor = value
+        return self
+    }
+    
+    @discardableResult
+    func titleFontSizeToWidth(_ value: Bool) -> Self {
+        component.titleLabel?.adjustsFontSizeToFitWidth = value
+        return self
+    }
+    
+    @discardableResult
     func lineBreakingMode(_ mode: NSLineBreakMode) -> Self {
         component.titleLabel?.lineBreakMode = mode
         return self
