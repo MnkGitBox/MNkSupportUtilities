@@ -11,7 +11,7 @@ import UIKit
 open class MNkAlertViewController: MNkViewController {
     private var alertView: MNkAlertView!
     
-    private var delegate: MNkAlertDelegate?
+    private weak var delegate: MNkAlertDelegate?
     private var action: ((_ action: MNkAlertView.MNkAlertAction, _ data: Any?) -> Void)?
     
     public func set(alertView: MNkAlertView) {

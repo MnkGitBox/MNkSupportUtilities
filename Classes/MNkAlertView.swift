@@ -19,11 +19,24 @@ open class MNkAlertView: MNkView {
     }
     
     @objc public enum MNkAlertAction: Int {
+        ///Aggreed state. Ussually from right action button
         case accept
+        ///Dis-Aggreed state. Ussually from left action button
         case cancel
+        ///State is not from accept or Cancell
+        case none
         
         public init(_ rawValue: Int) {
-            self = rawValue == 0 ? .accept : .cancel
+            switch rawValue {
+            case 0:
+                self = .accept
+                
+            case 1:
+                self = .cancel
+                
+            default:
+                self = .none
+            }
         }
     }
     ///Alert properies to config alert view.
