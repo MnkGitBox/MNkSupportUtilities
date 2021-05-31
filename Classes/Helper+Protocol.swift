@@ -51,7 +51,8 @@ public extension NavBarBackButtonAccesable where Self : UIViewController {
         navigationBackButton = UIButton().chain
             .setImage(backSymbolImage?.withRenderingMode(.alwaysTemplate))
             .title(backTitle)
-            .titleColor(UINavigationBar.appearance().tintColor)
+            .titleColor(UINavigationBar.appearance().tintColor, for: .normal)
+            .titleColor(UIColor.gray, for: .disabled)
             .font(.systemFont(ofSize: 17))
             .titleEdgeInsets(.init(top: 0, left: -12, bottom: 0, right: 0))
             .imageEdgeInsets(.init(top: 0, left: -18, bottom: 0, right: 0))
