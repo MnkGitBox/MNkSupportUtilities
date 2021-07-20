@@ -11,6 +11,15 @@ import Foundation
 //UIView Extenstions
 //-------------------------------------------//
 public extension UIView{
+    ///Root view of the current view 
+    var rootView: UIView? {
+        var root: UIView? = self
+        while root?.superview != nil {
+            root = root?.superview
+        }
+        return root
+    }
+    
     func activeShadow(using color:UIColor,opacity:Float = 0.1,shadowRadius:CGFloat = 8,_ offSet:CGSize = CGSize(width: 0, height: 1)){
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = offSet
