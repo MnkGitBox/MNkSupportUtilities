@@ -47,9 +47,12 @@ open class MNkAlertView: MNkView {
         case rightActionBGColor
         case leftActionText
         case rightActionText
-        case aligment
         case titleColor
         case messageColor
+        
+        //aligment
+        case aligment
+        
     }
     
     public enum Aligment{
@@ -71,7 +74,8 @@ open class MNkAlertView: MNkView {
     //    --------------------------------------------------------
     //    MARK:- Create static veriables for default values of app
     //    --------------------------------------------------------
-    public var aligment:Aligment = .center
+    public var aligment: Aligment = .center 
+    
     public var titleFont:UIFont = UIFont.systemFont(ofSize: 18, weight: .medium){
         didSet{
             titleLabel.font = titleFont
@@ -289,9 +293,12 @@ open class MNkAlertView: MNkView {
         if let rightActionText = (properties[.rightActionText] as? String){
             rightActionButton.setTitle(rightActionText, for: .normal)
         }
+        
+        //Aligment
         if let aligment = (properties[.aligment] as? Aligment){
             setAligment(aligment)
         }
+        
     }
     
 }
@@ -344,7 +351,6 @@ extension MNkAlertView{
         
         leftActionButton.contentHorizontalAlignment = .center
         rightActionButton.contentHorizontalAlignment = .center
-        
     }
     
 }

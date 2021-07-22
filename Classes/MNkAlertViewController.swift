@@ -40,7 +40,7 @@ open class MNkAlertViewController: MNkViewController {
     }
 }
 
-public extension UIViewController{
+public extension UIViewController {
     func showAlert(of alertVC:MNkAlertViewController, aditional data: Any?){
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext

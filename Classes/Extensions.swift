@@ -362,9 +362,7 @@ public extension String{
     }
     
     var underLine: NSMutableAttributedString {
-        let underLineString = NSMutableAttributedString.init(string: self)
-        underLineString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange.init(location: 0, length: self.count))
-        
+        let underLineString = NSMutableAttributedString.init(string: self, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
         return underLineString
     }
     
