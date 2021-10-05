@@ -74,6 +74,14 @@ extension UIKitChain where Component: UITextField {
         component.textContentType = type
         return self
     }
+    
+    
+    @discardableResult
+    public func minFontSize(_ size: CGFloat) -> Self {
+        component.minimumFontSize = size
+        component.adjustsFontSizeToFitWidth = true
+        return self
+    }
 }
 
 

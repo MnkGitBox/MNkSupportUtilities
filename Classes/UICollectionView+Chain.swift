@@ -44,6 +44,12 @@ extension UIKitChain where Component:UICollectionView{
     }
     
     @discardableResult
+    public func register(_ nib:UINib?,with identifier: String) -> Self {
+        component.register(nib, forCellWithReuseIdentifier: identifier)
+        return self
+    }
+    
+    @discardableResult
     public func registerHeader(_ headerClass:AnyClass?,_ identifier:String) -> Self {
         component.register(headerClass,
                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,

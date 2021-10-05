@@ -113,6 +113,12 @@ public extension UIKitChain where Component: UIButton {
     }
     
     @discardableResult
+    func semanticContentAligment(_ atrib: UISemanticContentAttribute) -> Self {
+        component.semanticContentAttribute = atrib
+        return self
+    }
+    
+    @discardableResult
     func backgroundImage(_ image: UIImage?, for controlState: UIControl.State = .normal) -> Self {
         component.setBackgroundImage(image, for: controlState)
         return self

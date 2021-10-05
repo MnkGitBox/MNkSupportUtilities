@@ -32,4 +32,10 @@ extension UIKitChain where Component : UIScrollView {
         component.contentInset = .init(top: 0, left: 0, bottom: 20, right: 0)
         return self
     }
+    
+    @discardableResult
+    public func indicatorStyle(_ style: UIScrollView.IndicatorStyle) -> Self {
+        component.indicatorStyle = style
+        return self
+    }
 }

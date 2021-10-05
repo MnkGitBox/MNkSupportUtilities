@@ -598,6 +598,10 @@ public extension Date {
         let startDate = calender.startOfDay(for: now)
         let endDate = calender.startOfDay(for: self)
         
+        if startDate > endDate {
+            return -1
+        }
+        
         return calender.dateComponents([.day], from: startDate, to: endDate).day ?? 0
     }
 }

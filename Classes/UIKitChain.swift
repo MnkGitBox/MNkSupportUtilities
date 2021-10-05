@@ -103,6 +103,20 @@ extension UIKitChain where Component: UIView {
     }
     
     @discardableResult
+    public func shadowWithCornerRadius(shadow opacity:Float, shadowOffSet offSet:CGSize = .zero, shadowRadius:CGFloat = 4, shadowColor color: UIColor = UIColor.black, cornerRadius: CGFloat, to corners: CACornerMask = .all) -> Self {
+        component.layer.masksToBounds = false
+        component.layer.cornerRadius = cornerRadius
+        component.layer.maskedCorners = corners
+        
+        component.layer.shadowColor = color.cgColor
+        component.layer.shadowOffset = offSet
+        component.layer.shadowRadius = shadowRadius
+        component.layer.shadowOpacity = opacity
+        
+        return self
+    }
+    
+    @discardableResult
     public func border(_ color:UIColor,_ width:CGFloat = 0.5) -> Self {
         component.layer.borderColor = color.cgColor
         component.layer.borderWidth = width
@@ -147,6 +161,12 @@ extension UIKitChain where Component: UIView {
     @discardableResult
     public func alpha(_ alpha: CGFloat) -> Self {
         component.alpha = alpha
+        return self
+    }
+    
+    @discardableResult
+    public func tag(_ value: Int) -> Self {
+        component.tag = value
         return self
     }
 }

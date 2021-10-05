@@ -18,9 +18,21 @@ open class MNkViewController: UIViewController {
     
     public private(set)var isDisplayOnce = false
     
+    ///Edge Insets of the safeArea
     public var safeAreaEdgeInsets:UIEdgeInsets{
         guard let window = UIApplication.shared.windows.first else{return .zero}
         return window.safeAreaInsets
+    }
+    
+    ///Rectangle area frame of the safeArea
+    public var safeAreaRect: CGRect {
+        guard let window = UIApplication.shared.windows.first else{return .zero}
+        let frame = window.frame
+        let safeAreaRect = CGRect.init(origin: .init(x: (frame.origin.x + safeAreaEdgeInsets.left),
+                                                     y: (frame.origin.y + safeAreaEdgeInsets.top)),
+                                       size: .init(width: frame.width - (safeAreaEdgeInsets.left + safeAreaEdgeInsets.right),
+                                                   height: frame.height - (safeAreaEdgeInsets.top + safeAreaEdgeInsets.bottom)))
+        return safeAreaRect
     }
     
     open func createViews(){}

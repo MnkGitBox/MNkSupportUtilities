@@ -29,6 +29,13 @@ extension UIKitChain where Component : UILabel {
     }
     
     @discardableResult
+    public func lineBreakingMode(_ mode: NSLineBreakMode) -> Self {
+        component.lineBreakMode = mode
+        return self
+    }
+
+    
+    @discardableResult
     public func textColor(_ color:UIColor)->Self{
         component.textColor = color
         return self

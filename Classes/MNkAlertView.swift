@@ -20,19 +20,19 @@ open class MNkAlertView: MNkView {
     
     @objc public enum MNkAlertAction: Int {
         ///Aggreed state. Ussually from right action button
-        case accept
+        case rightClick
         ///Dis-Aggreed state. Ussually from left action button
-        case cancel
+        case leftClick
         ///State is not from accept or Cancell
         case none
         
         public init(_ rawValue: Int) {
             switch rawValue {
             case 0:
-                self = .accept
+                self = .rightClick
                 
             case 1:
-                self = .cancel
+                self = .leftClick
                 
             default:
                 self = .none
@@ -235,7 +235,7 @@ open class MNkAlertView: MNkView {
             rightActionButton.addtargetClouser {[weak self]_ in
                 self?.dismiss({ completed in
                     if completed {
-                        buttonAction(.accept)
+                        buttonAction(.rightClick)
                     }
                 })
             }
@@ -245,7 +245,7 @@ open class MNkAlertView: MNkView {
             leftActionButton.addtargetClouser {[weak self]_ in
                 self?.dismiss({ completed in
                     if completed {
-                        buttonAction(.cancel)
+                        buttonAction(.leftClick)
                     }
                 })
             }

@@ -136,12 +136,6 @@ extension MNkTextValidatable{
         var validatedData = ValidatedData()
         
         
-//        guard !checkEmptyTextContainer(with: defaultErrorMsg) else{
-//            validatedData.isValidate = false
-//            validatedData.commonError = defaultErrorMsg
-//            return validatedData
-//        }
-        
         for data in validationData {
             
             let _textContainer = data.textContainer

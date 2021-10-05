@@ -35,6 +35,12 @@ extension UIKitChain where Component: UITextView {
     }
     
     @discardableResult
+    public func lineBreaking(_ mode: NSLineBreakMode) -> Self {
+        component.textContainer.lineBreakMode = mode
+        return self
+    }
+    
+    @discardableResult
     public func keyBoardType(_ type: UIKeyboardType) -> Self {
         component.keyboardType = type
         return self

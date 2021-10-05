@@ -18,6 +18,12 @@ extension UIKitChain where Component : UITableView{
     }
     
     @discardableResult
+    public func indicatorStyle(_ style: UIScrollView.IndicatorStyle) -> Self {
+        component.indicatorStyle = style
+        return self
+    }
+    
+    @discardableResult
     public func enableScroll(_ isEnabled:Bool) -> Self {
         component.isScrollEnabled = isEnabled
         return self
@@ -76,6 +82,11 @@ extension UIKitChain where Component : UITableView{
     @discardableResult
     public func seperatorInset(_ inset: UIEdgeInsets) -> Self {
         component.separatorInset = inset
+        return self
+    }
+    
+    public var setEmptyFooter: Self {
+        component.tableFooterView = UIView()
         return self
     }
 }
