@@ -81,4 +81,10 @@ extension UIKitChain where Component: UITextView {
         component.textContentType = type
         return self
     }
+    
+    @discardableResult
+    public func delegate(_ target: UITextViewDelegate) -> Self {
+        component.delegate = target
+        return self
+    }
 }

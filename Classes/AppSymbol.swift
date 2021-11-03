@@ -12,7 +12,7 @@ typealias SymbolConfiguration = (config: UIImage.SymbolConfiguration, symbol: UI
 
 
 public protocol AppSymbol{
-    func symbol(for name: AppSymbolNameType, _ font: UIFont) -> UIImage?
+    func symbol(for name: AppSymbolNameType, _ font: UIFont, scale symbolScale: CustomSymbolScale) -> UIImage?
 }
 
 
@@ -34,9 +34,9 @@ extension AppSymbol{
     
     
     @available(iOS 13.0, *)
-    static func symbolWithConfiguration(for name: AppSymbolNameType,_ font: UIFont) -> SymbolConfiguration {
+    static func symbolWithConfiguration(for name: AppSymbolNameType,_ font: UIFont, scale symbolScale: UIImage.SymbolScale) -> SymbolConfiguration {
         let symbolResult = Self.symbol(for: name)
-        let config = UIImage.SymbolConfiguration.init(font: font)
+        let config = UIImage.SymbolConfiguration.init(font: font, scale: symbolScale)
         return (config, symbolResult)
     }
     
@@ -55,5 +55,26 @@ fileprivate extension UIImage {
     @available(iOS 13.0, *)
     convenience init?(systemSymbol named: AppSymbolNameType) {
         self.init(systemName: named.rawValue)
+    }
+}
+
+
+///This for helper enum to generate UIImage WIthout iOS version interaction
+@objc
+public enum CustomSymbolScale: Int {
+    case small, medium, large
+    
+    @available(iOS 13.0, *)
+    var originalImageScale: UIImage.SymbolScale {
+        switch self {
+        case .small:
+            return .small
+            
+        case .medium:
+            return .medium
+            
+        case .large:
+            return .large
+        }
     }
 }
