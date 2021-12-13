@@ -88,7 +88,7 @@ public extension UIView{
         }
     }
     
-    func activateLayout(to view:UIView?,_ layoutKey:MNkLayoutKeys,_ constant:CGFloat,_ isSafeAreaActivate:Bool = false){
+    func activateLayout(to view:UIView?,_ layoutKey: MNkLayoutKeys,_ constant:CGFloat,_ isSafeAreaActivate:Bool = false){
         
         var parentView:UIView!
         
@@ -98,31 +98,51 @@ public extension UIView{
             parentView = view
         }
         
-        guard parentView != nil else{
-            fatalError("First add \(self.description) to view hirachy before layout")
-        }
-        
         self.translatesAutoresizingMaskIntoConstraints = false
         
         switch layoutKey{
         case .traling:
+            guard parentView != nil else{
+                fatalError("First add \(self.description) to view hirachy before layout")
+            }
             self.trailingAnchor.constraint(equalTo: isSafeAreaActivate ? parentView.safeAreaLayoutGuide.trailingAnchor : parentView.trailingAnchor,
                                            constant: constant).isActive = true
+            
         case .leading:
+            guard parentView != nil else{
+                fatalError("First add \(self.description) to view hirachy before layout")
+            }
             self.leadingAnchor.constraint(equalTo: isSafeAreaActivate ? parentView.safeAreaLayoutGuide.leadingAnchor : parentView.leadingAnchor,
                                           constant: constant).isActive = true
+            
         case .top:
+            guard parentView != nil else{
+                fatalError("First add \(self.description) to view hirachy before layout")
+            }
             self.topAnchor.constraint(equalTo: isSafeAreaActivate ? parentView.safeAreaLayoutGuide.topAnchor : parentView.topAnchor,
                                       constant:constant).isActive = true
+            
         case .centerY:
+            guard parentView != nil else{
+                fatalError("First add \(self.description) to view hirachy before layout")
+            }
             self.centerYAnchor.constraint(equalTo: parentView.centerYAnchor, constant: constant).isActive = true
+            
         case .centerX:
+            guard parentView != nil else{
+                fatalError("First add \(self.description) to view hirachy before layout")
+            }
             self.centerXAnchor.constraint(equalTo: parentView.centerXAnchor, constant:constant).isActive = true
+            
         case .bottom:
+            guard parentView != nil else{
+                fatalError("First add \(self.description) to view hirachy before layout")
+            }
             self.bottomAnchor.constraint(equalTo: isSafeAreaActivate ? parentView.safeAreaLayoutGuide.bottomAnchor : parentView.bottomAnchor,
                                          constant:constant).isActive = true
         case .height:
             self.heightAnchor.constraint(equalToConstant: constant).isActive = true
+            
         case .width:
             self.widthAnchor.constraint(equalToConstant: constant).isActive = true
         }
@@ -336,6 +356,12 @@ public extension String{
         return filter { !$0.isNewline && !$0.isWhitespace }
     }
     
+    ///Check empty by removing all spaces and new lines
+    var isEmptyString: Bool {
+        let nonSpaceString = self.removingAllWhitespacesAndNewlines
+        return nonSpaceString.isEmpty
+    }
+    
     var price:Double?{
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -389,8 +415,8 @@ public extension NSMutableAttributedString {
 
 //MARK:- DOUBLE EXTENSIONS
 public extension Double {
-    func stringWithDoubDecimalPlace()->String{
-        return String(format: "%.2f", self)
+    func stringWithDecimalPlaces(_ places: Int = 2) -> String {
+        return String(format: "%.\(places)f", self)
     }
     
     var formatCurreny:String?{

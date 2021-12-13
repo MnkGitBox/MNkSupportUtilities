@@ -38,4 +38,22 @@ extension UIKitChain where Component : UIScrollView {
         component.indicatorStyle = style
         return self
     }
+    
+    @discardableResult
+    public func enableScrolling(_ isScrollEnable: Bool) -> Self {
+        component.isScrollEnabled = isScrollEnable
+        return self
+    }
+    
+    @discardableResult
+    public func delegate(_ delegate: UIScrollViewDelegate) -> Self {
+        component.delegate = delegate
+        return self
+    }
+    
+    @discardableResult
+    public func bounce(_ isEnable: Bool) -> Self {
+        component.bounces = isEnable
+        return self
+    }
 }

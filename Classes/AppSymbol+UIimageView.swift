@@ -12,9 +12,9 @@ public extension AppSymbol where Self: UIImageView {
 ///    Will return symbol image for given symbol name.
 ///    This function never set symbol image to image view component
 ///    Use "setSymbol(_ name:,_ font:)" or intilize with "init(_ name:,_ font:))".
-    func symbol(for name: AppSymbolNameType,_ font: UIFont) -> UIImage? {
+    func symbol(for name: AppSymbolNameType,_ font: UIFont, scale symbolScale: CustomSymbolScale = .medium) -> UIImage? {
         if #available(iOS 13.0, *){
-            let symbolConfig = Self.symbolWithConfiguration(for: name, font)
+            let symbolConfig = Self.symbolWithConfiguration(for: name, font, scale: symbolScale.originalImageScale)
             self.preferredSymbolConfiguration = symbolConfig.config
             return symbolConfig.symbol
             
@@ -24,17 +24,17 @@ public extension AppSymbol where Self: UIImageView {
     }
     
     ///Set symbol for given symbol name
-    func setSymbol(_ name:AppSymbolNameType,_ font:UIFont = .systemFont(ofSize: 22)){
-        self.image = symbol(for: name, font)
+    func setSymbol(_ name:AppSymbolNameType,_ font:UIFont = .systemFont(ofSize: 22), scale symbolScale: CustomSymbolScale = .medium){
+        self.image = symbol(for: name, font, scale: symbolScale)
     }
 }
 
 extension UIImageView : AppSymbol {}
 
 extension UIImageView {
-    public convenience init(_ name: AppSymbolNameType,_ font: UIFont = .systemFont(ofSize: 22)) {
+    public convenience init(_ name: AppSymbolNameType,_ font: UIFont = .systemFont(ofSize: 22), scale symbolScale: CustomSymbolScale = .medium) {
         self.init()
-        setSymbol(name, font)
+        setSymbol(name, font, scale: symbolScale)
     }
 
 }

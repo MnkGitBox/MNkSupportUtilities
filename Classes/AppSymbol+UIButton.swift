@@ -12,9 +12,9 @@ public extension AppSymbol where Self: UIButton {
     ///    Will return symbol image for given symbol name.
     ///    This function never set symbol image to image view component
     ///    Use setSymbol(_ symbolName:,to font:,for state:)
-    func symbol(for name: AppSymbolNameType,_ font: UIFont) -> UIImage? {
+    func symbol(for name: AppSymbolNameType,_ font: UIFont, scale symbolScale: CustomSymbolScale = .medium) -> UIImage? {
         if #available(iOS 13.0, *) {
-            let symbolConfig = Self.symbolWithConfiguration(for: name, font)
+            let symbolConfig = Self.symbolWithConfiguration(for: name, font, scale: symbolScale.originalImageScale)
             self.setPreferredSymbolConfiguration(symbolConfig.config, forImageIn: .normal)
             return symbolConfig.symbol
             
@@ -24,9 +24,12 @@ public extension AppSymbol where Self: UIButton {
     }
     
     ///    Sets the symbol image to use in specific state
-    func setSymbol(_ symbolName:AppSymbolNameType,to font: UIFont = .systemFont(ofSize: 22),
-                   for state: UIControl.State = .normal) {
-        let symbol = self.symbol(for: symbolName, font)
+    func setSymbol(_ symbolName:AppSymbolNameType,
+                   to font: UIFont = .systemFont(ofSize: 22),
+                   for state: UIControl.State = .normal,
+                   scale symbolScale: CustomSymbolScale = .medium) {
+        
+        let symbol = self.symbol(for: symbolName, font, scale: symbolScale)
         self.setImage(symbol, for: state)
     }
 }
@@ -35,8 +38,8 @@ extension UIButton : AppSymbol {}
 
 extension UIButton {
     public convenience init(with symbolName: AppSymbolNameType, to font:UIFont = .systemFont(ofSize: 22),
-                     for state: UIControl.State = .normal) {
+                     for state: UIControl.State = .normal, scale symbolScale: CustomSymbolScale = .medium) {
         self.init()
-        setSymbol(symbolName, to: font, for: state)
+        setSymbol(symbolName, to: font, for: state, scale: symbolScale)
     }
 }

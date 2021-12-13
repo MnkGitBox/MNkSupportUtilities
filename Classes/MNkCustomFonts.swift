@@ -18,32 +18,35 @@ public class MNkCustomFonts: NSObject {
     //private / internal
     private var customFontsWithDynamicStyles = [UIFont.TextStyle : UIFont]()
     
+    private var systemFontsWithCustomDynamicStyles = [UIFont.TextStyle : UIFont]()
+    
     private var customFontsStyles = [CustomFontTextStyle : UIFont]()
     
     private let fontScaleSize: CustomFontSizeScale
     
-    internal func deviceScaledSizedDynamicFont(for style: UIFont.TextStyle, _ supportDeviceBaseScale: Bool) -> UIFont {
+    internal func customFontCustomDynamicScale(for style: UIFont.TextStyle) -> UIFont {
         guard let font = customFontsWithDynamicStyles[style] else {
             fatalError("Please set font for style in first place before access. <<'\(style.name)' font is missing>>")
         }
 
-        let metrics = UIFontMetrics(forTextStyle: style)
-        var scaledFont = metrics.scaledFont(for: font)
-        
-        if supportDeviceBaseScale {
-            scaledFont = scaledFont.withSize(scaledFont.pointSize +  fontScaleSize.resizingPoint)
-        }
+        let scaledFont = UIFontMetrics(forTextStyle: style).scaledFont(for: font)
 
         return scaledFont
     }
     
-    internal func customFont(for style: CustomFontTextStyle, _ supportDeviceBaseScale: Bool) -> UIFont {
-        guard var font = customFontsStyles[style] else {
+    internal func systemFontCustomDynamicScales(for style: UIFont.TextStyle) -> UIFont {
+        guard let font = systemFontsWithCustomDynamicStyles[style] else {
             fatalError("Please set font for style in first place before access. <<'\(style.name)' font is missing>>")
         }
 
-        if supportDeviceBaseScale {
-            font = font.withSize(font.pointSize +  fontScaleSize.resizingPoint)
+        let scaledFont = UIFontMetrics(forTextStyle: style).scaledFont(for: font)
+        
+        return scaledFont
+    }
+    
+    internal func customFont(for style: CustomFontTextStyle) -> UIFont {
+        guard let font = customFontsStyles[style] else {
+            fatalError("Please set font for style in first place before access. <<'\(style.name)' font is missing>>")
         }
 
         return font
@@ -53,29 +56,102 @@ public class MNkCustomFonts: NSObject {
     //public
     
     ///Set custom fonts with dynamic style to support font scale changes in device
-    public func setDynamicStyles(_ fontStyles: [UIFont.TextStyle : UIFont]) {
-        customFontsWithDynamicStyles = fontStyles
+    public func setDynamicScale(_ fontStyles: [UIFont.TextStyle : UIFont], deviceBaseScale supportDeviceBaseScale: Bool = false) {
+        
+        var styleDic = fontStyles
+        
+        if supportDeviceBaseScale {
+            for (key, value) in styleDic {
+                styleDic[key] = value.withSize(value.pointSize + fontScaleSize.resizingPoint)
+            }
+        }
+        
+        customFontsWithDynamicStyles = styleDic
     }
     
-    public func setCustomStyles(_ fontStyles: [CustomFontTextStyle : UIFont]) {
-        customFontsStyles = fontStyles
+    public func setCustomDynamicScaleForSystemFont(_ fontStyles: [UIFont.TextStyle : UIFont], deviceBaseScale supportDeviceBaseScale: Bool = false) {
+        
+        var styleDic = fontStyles
+        
+        if supportDeviceBaseScale {
+            for (key, value) in styleDic {
+                styleDic[key] = value.withSize(value.pointSize + fontScaleSize.resizingPoint)
+            }
+        }
+        
+        systemFontsWithCustomDynamicStyles = styleDic
+    }
+    
+    public func setCustomStyles(_ fontStyles: [CustomFontTextStyle : UIFont], deviceBaseScale supportDeviceBaseScale: Bool = false) {
+        var styleDic = fontStyles
+        
+        if supportDeviceBaseScale {
+            for (key, value) in styleDic {
+                styleDic[key] = value.withSize(value.pointSize + fontScaleSize.resizingPoint)
+            }
+        }
+        customFontsStyles = styleDic
     }
     
 }
 
 //MARK: - EXTENSION TO UIFONT
 public extension UIFont {
-    class func customFont(forTextStyle style: UIFont.TextStyle, deviceBaseScale supportDeviceBaseScale: Bool = true) -> UIFont {
-        return MNkCustomFonts.shared.deviceScaledSizedDynamicFont(for: style, supportDeviceBaseScale)
+    class func customFont(forTextStyle style: UIFont.TextStyle) -> UIFont {
+        return MNkCustomFonts.shared.customFontCustomDynamicScale(for: style)
     }
     
-    class func customFont(forTextStyle style: CustomFontTextStyle, deviceBaseScale supportDeviceBaseScale: Bool = true) -> UIFont {
-        return MNkCustomFonts.shared.customFont(for: style, supportDeviceBaseScale)
+    class func customFont(forFontTextStyle style: CustomFontTextStyle) -> UIFont {
+        return MNkCustomFonts.shared.customFont(for: style)
+    }
+    
+    class func systemFontCustomDynamicScale(forTextStyle style:  UIFont.TextStyle) -> UIFont {
+        return MNkCustomFonts.shared.systemFontCustomDynamicScales(for: style)
     }
 }
 
 //MARK: - EXTENSION TO UIFONT.TEXTSTYLE
 public extension UIFont.TextStyle {
+    init(_ name: String) {
+        switch name {
+        case "largeTitle":
+            self = .largeTitle
+            
+        case "caption2":
+            self = .caption2
+            
+        case "caption1":
+            self = .caption1
+            
+        case "footnote":
+            self = .footnote
+            
+        case "callout":
+            self = .callout
+            
+        case "body":
+            self = .body
+            
+        case "subheadline":
+            self = .subheadline
+            
+        case "headline":
+            self = .headline
+            
+        case "title1":
+            self = .title1
+            
+        case "title2":
+            self = .title2
+            
+        case "title3":
+            self = .title3
+            
+        default:
+            self = .body
+        }
+    }
+    
     var name: String {
         switch self {
         case .largeTitle:

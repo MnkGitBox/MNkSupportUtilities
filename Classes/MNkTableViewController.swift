@@ -81,6 +81,7 @@ open class MNkTableViewController: MNkViewController,
     dynamic open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? { nil }
     dynamic open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {0}
     
+    dynamic open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 }
 
 

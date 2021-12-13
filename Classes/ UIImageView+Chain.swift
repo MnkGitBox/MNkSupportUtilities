@@ -28,4 +28,10 @@ extension UIKitChain where Component: UIImageView {
         component.sd_setImage(with: url, completed: nil)
         return self
     }
+    
+    ///When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility content size category.
+    public func adjustsImageSizeForAccessibilityContentSizeCategory(_ value: Bool) -> Self {
+        component.adjustsImageSizeForAccessibilityContentSizeCategory = value
+        return self
+    }
 }
