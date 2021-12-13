@@ -30,7 +30,11 @@ open class SymbolButton: MNkView {
     
     private var symbolName: AppSymbolNameType = .init(rawValue: "star")
     private var symbolScale: CustomSymbolScale = .medium
-    private var textStyle: UIFont.TextStyle = .body
+    public  var textStyle: UIFont.TextStyle = .body {
+        didSet {
+            imageView?.setSymbol(symbolName, .preferredFont(forTextStyle: textStyle), scale: symbolScale)
+        }
+    }
     
     @IBInspectable public var symolNameString: String = "star" {
         didSet {
