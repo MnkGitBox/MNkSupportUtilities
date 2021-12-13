@@ -23,7 +23,7 @@ open class BlurButton: MNkView {
     }
     
     open override func config() {
-        backgroundColor = .clear
+        backgroundColor = .clear 
     }
     
     public init(_ button: UIButton, _ effect: UIBlurEffect.Style = .light) {
