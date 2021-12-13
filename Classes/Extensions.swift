@@ -336,6 +336,12 @@ public extension String{
         return filter { !$0.isNewline && !$0.isWhitespace }
     }
     
+    ///Check empty by removing all spaces and new lines
+    var isEmptyString: Bool {
+        let nonSpaceString = self.removingAllWhitespacesAndNewlines
+        return nonSpaceString.isEmpty
+    }
+    
     var price:Double?{
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -389,8 +395,8 @@ public extension NSMutableAttributedString {
 
 //MARK:- DOUBLE EXTENSIONS
 public extension Double {
-    func stringWithDoubDecimalPlace()->String{
-        return String(format: "%.2f", self)
+    func stringWithDecimalPlaces(_ places: Int = 2) -> String {
+        return String(format: "%.\(places)f", self)
     }
     
     var formatCurreny:String?{

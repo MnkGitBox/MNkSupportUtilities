@@ -153,6 +153,12 @@ extension UIKitChain where Component: UIView {
     }
     
     @discardableResult
+    public func contentResistancePriority(_ priority: UILayoutPriority, _ axis: NSLayoutConstraint.Axis) -> Self {
+        component.setContentCompressionResistancePriority(priority, for: axis)
+        return self
+    }
+    
+    @discardableResult
     public func hidden(_ isHidden: Bool) -> Self {
         component.isHidden = isHidden
         return self

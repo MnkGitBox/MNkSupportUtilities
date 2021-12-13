@@ -7,8 +7,26 @@
 
 import UIKit
 
+public protocol SymbolButtonDelegate: AnyObject {
+    func didTapSymbolButton(_ button: SymbolButton)
+}
+
 @IBDesignable
 open class SymbolButton: MNkView {
+    
+    public weak var delegate: SymbolButtonDelegate? {
+        didSet {
+            if delegate == nil {
+                gesture.removeTarget(self, action: #selector(didTapDelegateTarget))
+                
+            } else {
+                gesture.addTarget(self, action: #selector(didTapDelegateTarget))
+            }
+        }
+    }
+    
+    ///Set Any data you want to retrive later.
+    public var data: Any?
     
     private var symbolName: AppSymbolNameType = .init(rawValue: "star")
     private var symbolScale: CustomSymbolScale = .medium
@@ -55,10 +73,6 @@ open class SymbolButton: MNkView {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-//        self.padding = 20
-//        self.symbolName = AppSymbolNameType.init(rawValue: "star")
-//        self.textStyle = .body
-//        self.symbolScale = .medium
         super.init(coder: aDecoder)
     }
     
@@ -103,6 +117,11 @@ open class SymbolButton: MNkView {
         self.layer.cornerRadius = size/2
         
         print("log_ maxButtonSize \(symbolName.rawValue): ", size, UIFontMetrics.init(forTextStyle: textStyle).scaledValue(for: padding))
+    }
+    
+    //This will call when delegate set
+    @objc private func didTapDelegateTarget() {
+        delegate?.didTapSymbolButton(self)
     }
     
     open override func config() {

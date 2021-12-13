@@ -12,6 +12,9 @@ open class MNkView:UIView{
     open func updateUIWithNewData(){}
     open func setAppSetting(){}
     
+    ///Put some id to complare view in view life cycle
+    public var identifier = ""
+    
     private func doLoadThings(){
         backgroundColor = .white
         createViews()
