@@ -66,8 +66,8 @@ open class MNkAlertView: MNkView {
     public var delegate: MNkAlertDelegate?
     public var action: ((_ action: MNkAlertView.MNkAlertAction, _ data: Any?) -> Void)?
     
-    public var title:String?
-    public var message:String?
+    open var title:String?
+    open var message:String?
     public var type:MNkAlertType = .single
     public var properties:[AlertPropertyKeys:Any] = [:]
     
