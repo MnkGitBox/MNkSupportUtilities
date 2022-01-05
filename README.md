@@ -5,20 +5,22 @@
 [![License](https://img.shields.io/cocoapods/l/MNkSupportUtilities.svg?style=flat)](https://cocoapods.org/pods/MNkSupportUtilities)
 [![Platform](https://img.shields.io/cocoapods/p/MNkSupportUtilities.svg?style=flat)](https://cocoapods.org/pods/MNkSupportUtilities)
 
-## Example
+## What is MNkSupportUtilities?
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+MnkSupportUtilities contains different kinds of custom UI elements, subclasses, methods, and extensions to maintain a more organized, clear, and reusable codebase in your Swift project. 
 
-## Requirements
+## Components
 
-## Installation
+## Getting started
 
-MNkSupportUtilities is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+#### CocoaPods
+If you use [CocoaPods](https://cocoapods.org) to manage your dependencies, simply add *MNkSupportUtilities* to your `Podfile`:
 
 ```ruby
 pod 'MNkSupportUtilities'
 ```
+
+## Separate Component Libraries
 
 ## Author
 
