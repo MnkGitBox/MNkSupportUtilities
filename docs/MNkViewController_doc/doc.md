@@ -68,11 +68,11 @@ open class MNkViewController: UIViewController {
 
 -   #### `fetchingState: RepeatState`
 
-    > You can set the `fetchingState: RepeatState` state to '.once' or '.always'.  If you set it '.once', it will call only once when the 'viewWillAppear'.  When it has set to '.always', `fetchData()` will call every `viewWillAppear(_ animated: Bool)` call in viewController life circle.
+    > You can set the `fetchingState: RepeatState` state to `.once` or `.always`.  If you set it `.once`, it will call only once when the `viewWillAppear(_ animated: Bool)`.  When it has set to `.always`, `fetchData()` will call every `viewWillAppear(_ animated: Bool)` call in *viewController life circle*.
 
 -   #### `isDisplayOnce: Bool`
 
-    > You can identify whether is it is an initial appearance or not while using this variable.
+    > You can identify whether is it is an *initial appearance* or not while using this variable.
 
 -   #### `safeAreaEdgeInsets: UIEdgeInsets`
     > This will return the safe are edge inset values of your viewController. 
