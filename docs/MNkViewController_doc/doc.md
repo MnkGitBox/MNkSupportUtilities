@@ -1,7 +1,7 @@
 <br>
 
 # MNKViewController
-> A ViewController that has built on top of the UIViewController.
+A ViewController that has built on top of the UIViewController.
 
 <br>
 
