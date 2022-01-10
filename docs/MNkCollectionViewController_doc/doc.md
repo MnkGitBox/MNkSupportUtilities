@@ -52,8 +52,13 @@ override func updateUI(with data: UserData) {
      profileImageView.image = data.profileImage
 }
 ```
+**You can build the bellow screen using a small number of lines. Let's review the [source code]().**
+
+![build screenshot](build_screenshot.png) 
+
 <br>
 
+---
 ## Other Helpful Classes
 
 - This will show given empty cell when the data array is empty.
