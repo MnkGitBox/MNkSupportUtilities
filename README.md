@@ -10,6 +10,7 @@
 MnkSupportUtilities contains different kinds of custom UI elements, subclasses, methods, and extensions to maintain a more organized, clear, and reusable codebase in your Swift project. 
 
 ## Components
+- [MNkViewController](docs/MNkViewController_doc/doc.md)
 
 ## Getting started
 
