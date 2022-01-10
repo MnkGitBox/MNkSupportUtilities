@@ -1,6 +1,8 @@
 # MNKCollectionViewController
 This ViewController component helps to show data in collection view using a small amount of code. 
 
+![build screenshot](build_screenshot.png) 
+
 <br>
 
 ## Declaration
@@ -52,13 +54,9 @@ override func updateUI(with data: UserData) {
      profileImageView.image = data.profileImage
 }
 ```
-**You can build the bellow screen using a small number of lines. Let's review the [source code]().**
-
-![build screenshot](build_screenshot.png) 
 
 <br>
 
----
 ## Other Helpful Classes
 
 - This will show given empty cell when the data array is empty.
@@ -76,5 +74,9 @@ class MNkCVC_EmptyCellType<EmptyCellType> {}
 ```Swift
  class MNkCollectionVC_Parameter<DataType>
 ```
+---
 
+You can find the original sample code [here](../../Example/MNkSupportUtilities/MNkCollectionViewController_comp.swift).
+
+<br>
 
