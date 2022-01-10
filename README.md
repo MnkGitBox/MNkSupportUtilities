@@ -11,6 +11,7 @@ MnkSupportUtilities contains different kinds of custom UI elements, subclasses, 
 
 ## Components
 - [MNkViewController](docs/MNkViewController_doc/doc.md)
+- [MNkTableViewController](docs/MNkTableViewController_doc/doc.md)
 
 ## Getting started
 
@@ -23,6 +24,9 @@ pod 'MNkSupportUtilities'
 
 ## Separate Component Libraries
 
+<br><br><br>
+
+---
 ## Author
 
 m.nadeeshan@yahoo.co.uk, malith.mnk93@gmail.com
