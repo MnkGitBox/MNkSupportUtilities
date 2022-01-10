@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct UserData {
     var name: String
     var age: Int
+    
+    var profileImage: UIImage?
 }

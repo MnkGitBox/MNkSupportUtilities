@@ -15,6 +15,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A899C069278C7B6900EE4568 /* MNkCollectionViewController_comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C068278C7B6900EE4568 /* MNkCollectionViewController_comp.swift */; };
+		A899C06B278C84D700EE4568 /* UIImage+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C06A278C84D700EE4568 /* UIImage+helper.swift */; };
 		B033828EB3FD3703AD0D7F8A /* Pods_MNkSupportUtilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9CBCF53659C23B7609E541 /* Pods_MNkSupportUtilities_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		77EF4DEA64B87E758DEE25F3 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MNkSupportUtilities.podspec; path = ../MNkSupportUtilities.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		846E4D360D356CA9B2062DCD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9C870EC5D6AA131A5FA988F8 /* Pods-MNkSupportUtilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Tests/Pods-MNkSupportUtilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A899C068278C7B6900EE4568 /* MNkCollectionViewController_comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkCollectionViewController_comp.swift; sourceTree = "<group>"; };
+		A899C06A278C84D700EE4568 /* UIImage+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+helper.swift"; sourceTree = "<group>"; };
 		B2476DB9500E60FFBEC28DC0 /* Pods-MNkSupportUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Example/Pods-MNkSupportUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D9B6833DBFB45089F6C447EF /* Pods_MNkSupportUtilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNkSupportUtilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				4AFCB36A278C5AB7004A7B03 /* MNKTableViewController_comp.swift */,
+				A899C068278C7B6900EE4568 /* MNkCollectionViewController_comp.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -132,9 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
 				4AFCB36C278C5AC2004A7B03 /* Components */,
 				4AFCB36F278C5AFC004A7B03 /* Models */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+				A899C06A278C84D700EE4568 /* UIImage+helper.swift */,
 			);
 			name = "Example for MNkSupportUtilities";
 			path = MNkSupportUtilities;
@@ -343,8 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A899C069278C7B6900EE4568 /* MNkCollectionViewController_comp.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				4AFCB36B278C5AB7004A7B03 /* MNKTableViewController_comp.swift in Sources */,
+				A899C06B278C84D700EE4568 /* UIImage+helper.swift in Sources */,
 				4AFCB36E278C5AEB004A7B03 /* UserData.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

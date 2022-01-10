@@ -28,7 +28,7 @@ public extension NavigationBarTransparentCompitable where Self: UIViewController
 }
 
 //02
-public protocol NavBarBackButtonAccesable: class {
+public protocol NavBarBackButtonAccesable: AnyObject {
     
     var navigationBackButton: UIButton! { get set }
     
