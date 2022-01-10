@@ -40,15 +40,15 @@ open class MNkViewController: UIViewController {
 
 -  #### `createViews()`
                     
-    > Use this function to create and configure subviews.
+    > Write subview init and configuration code's are here.
 
 -   #### `insertAndLayoutSubviews()`
 
-    > Use this function to insert and layout subviews to view.
+    > Write code's to insert and layout subviews to super-view.
 
 -   #### `fetchData()`
 
-    > Use this function to call API requests.
+    > You can write your API request are here.
 
 -   #### `updateUIWithNewData()`
 
