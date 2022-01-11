@@ -3,7 +3,7 @@ You can use the *SFSymbol* in your ios 13 below deployment target projects witho
 <br>
 
 ## Why App Symbol?
-SFSymbol is only available above the iOS 13, So we have to check the iOS version every time we use SFSymbol in the project.  We can get rid of this boilerplate code using the AppSymbol framework.
+SFSymbol is only available above the iOS 13, So we have to check the iOS version every time when we using the SFSymbol below iOS 13 deployment target projects. We can get rid of this boilerplate code using the AppSymbol framework.
 
 <br>
 
@@ -48,7 +48,7 @@ SFSymbol is only available above the iOS 13, So we have to check the iOS version
 
 - **Custom Symbol**
 
-    1. Create custom symbol using template and symbol image files to older iOS versions. (*You can find how to create custom symbol using template [here](https://developer.apple.com/documentation/uikit/uiimage/creating_custom_symbol_images_for_your_app).*)
+    1. Even though Apple has provided thousands of different symbols in the SF Symbol library, it’s impossible to cover every conceivable image you may need in your app. What Apple has done instead is make it really easy for you to build your own custom symbols, when needed. (*You can find how to create custom symbol using the symbol template [here](https://developer.apple.com/documentation/uikit/uiimage/creating_custom_symbol_images_for_your_app).*)
 
     <br>
 
