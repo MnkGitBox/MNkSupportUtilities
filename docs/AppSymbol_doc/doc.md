@@ -8,7 +8,6 @@ SFSymbol is only available above the iOS 13, So we have to check the iOS version
 <br>
 
 ## How to Use
-<br>
 
 - **SFSymbol**
     
