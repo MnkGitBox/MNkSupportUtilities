@@ -16,7 +16,6 @@ public protocol AppSymbol{
 }
 
 
-
 //MARK:- Helper Func
 extension AppSymbol{
     
@@ -44,9 +43,11 @@ extension AppSymbol{
 
 
 //MARK:- UIImage Convinient Init
-// Please don't initialize directly to app symbol name for image
-// It Will Provide result but not with symbol configuration
-// These init for use AppSymbol protcol to deside to get image with normal(before iOS 13) or new(after iOS 13) symbols.
+/**
+ Please don't initialize directly to app symbol name for image
+ It Will Provide result but not with symbol configuration
+ These init for use AppSymbol protcol to deside to get image with normal(before iOS 13) or new(after iOS 13) symbols.
+ */
 fileprivate extension UIImage {
     convenience init?(symbol named: AppSymbolNameType) {
         self.init(named: named.rawValue)

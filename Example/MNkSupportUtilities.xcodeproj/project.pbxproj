@@ -18,6 +18,7 @@
 		A899C06B278C84D700EE4568 /* UIImage+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C06A278C84D700EE4568 /* UIImage+helper.swift */; };
 		A899C06D278CC2CB00EE4568 /* MNkAlertView_comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C06C278CC2CB00EE4568 /* MNkAlertView_comp.swift */; };
 		A899C07A278D9F3F00EE4568 /* UIColor+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C079278D9F3F00EE4568 /* UIColor+helper.swift */; };
+		A899C07C278DC53C00EE4568 /* AppSymbol_comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C07B278DC53C00EE4568 /* AppSymbol_comp.swift */; };
 		B033828EB3FD3703AD0D7F8A /* Pods_MNkSupportUtilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9CBCF53659C23B7609E541 /* Pods_MNkSupportUtilities_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		A899C06A278C84D700EE4568 /* UIImage+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+helper.swift"; sourceTree = "<group>"; };
 		A899C06C278CC2CB00EE4568 /* MNkAlertView_comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkAlertView_comp.swift; sourceTree = "<group>"; };
 		A899C079278D9F3F00EE4568 /* UIColor+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+helper.swift"; sourceTree = "<group>"; };
+		A899C07B278DC53C00EE4568 /* AppSymbol_comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol_comp.swift; sourceTree = "<group>"; };
 		B2476DB9500E60FFBEC28DC0 /* Pods-MNkSupportUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Example/Pods-MNkSupportUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D9B6833DBFB45089F6C447EF /* Pods_MNkSupportUtilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNkSupportUtilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				4AFCB36A278C5AB7004A7B03 /* MNKTableViewController_comp.swift */,
 				A899C068278C7B6900EE4568 /* MNkCollectionViewController_comp.swift */,
 				A899C06C278CC2CB00EE4568 /* MNkAlertView_comp.swift */,
+				A899C07B278DC53C00EE4568 /* AppSymbol_comp.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				A899C06D278CC2CB00EE4568 /* MNkAlertView_comp.swift in Sources */,
 				4AFCB36B278C5AB7004A7B03 /* MNKTableViewController_comp.swift in Sources */,
 				A899C06B278C84D700EE4568 /* UIImage+helper.swift in Sources */,
+				A899C07C278DC53C00EE4568 /* AppSymbol_comp.swift in Sources */,
 				4AFCB36E278C5AEB004A7B03 /* UserData.swift in Sources */,
 				A899C07A278D9F3F00EE4568 /* UIColor+helper.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
