@@ -22,10 +22,11 @@ func showAlert() {
 ```
 
 ### **Build More Customized Alert**
+If your UI design element doesn't match with the UI element that comes with the library, you can create any custom alert view by subclassing the `MNkAlertView` class. 
+
 ![custom alert](custom_alert.gif)
 
-
-If your UI design element doesn't match with the UI element that comes with the library, you can create any custom alert view by subclassing the `MNkAlertView` class. 
+- Create `CustomAlertView` view by subclassing the `MNkAlertView`.
 
 ```Swift
 class CustomAlertView: MNkAlertView {
