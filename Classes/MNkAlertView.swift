@@ -7,389 +7,153 @@
 
 import UIKit
 
-@objc public protocol MNkAlertDelegate: NSObjectProtocol {
-    @objc optional func userPerformAlertAction(_ action: MNkAlertView.MNkAlertAction, aditional data: Any?)
-}
+open class MNkAlertView: UIView {
 
-open class MNkAlertView: MNkView {
+    ///You can catch action in delegate manner.
+    public weak var delegate: MNkAlertDelegate?
     
-    public enum MNkAlertType{
-        case single
-        case multi
-    }
+    ///You can catch any button action by assign a function type.
+    public var action: ((_ action: MNkAlertAction, _ data: Any?) -> Void)?
     
-    @objc public enum MNkAlertAction: Int {
-        ///Aggreed state. Ussually from right action button
-        case rightClick
-        ///Dis-Aggreed state. Ussually from left action button
-        case leftClick
-        ///State is not from accept or Cancell
-        case none
-        
-        public init(_ rawValue: Int) {
-            switch rawValue {
-            case 0:
-                self = .rightClick
-                
-            case 1:
-                self = .leftClick
-                
-            default:
-                self = .none
-            }
-        }
-    }
-    ///Alert properies to config alert view.
-    public enum AlertPropertyKeys{
-        case leftActionTextColor
-        case leftActionBGColor
-        case rightActionTextColor
-        case rightActionBGColor
-        case leftActionText
-        case rightActionText
-        case titleColor
-        case messageColor
-        
-        //aligment
-        case aligment
-        
-    }
+    ///Type of the alert action you can set here. *(ex: .single :- only one action button display)*
+    public var type: MNkAlertActionType  = .single
     
-    public enum Aligment{
-        case leftRight
-        case rightLeft
-        case right
-        case left
-        case center
-    }
+    ///Content aligment
+    public var aligment: MNkAlertViewContentAligment = .center
     
-    public var delegate: MNkAlertDelegate?
-    public var action: ((_ action: MNkAlertView.MNkAlertAction, _ data: Any?) -> Void)?
     
-    open var title:String?
-    open var message:String?
-    public var type:MNkAlertType = .single
-    public var properties:[AlertPropertyKeys:Any] = [:]
-    
-    //    --------------------------------------------------------
-    //    MARK:- Create static veriables for default values of app
-    //    --------------------------------------------------------
-    public var aligment: Aligment = .center 
-    
-    public var titleFont:UIFont = UIFont.systemFont(ofSize: 18, weight: .medium){
-        didSet{
-            titleLabel.font = titleFont
-        }
-    }
-    public var messageFont:UIFont = UIFont.systemFont(ofSize: 14, weight: .regular){
-        didSet{
-            messageLabel.font = messageFont
-        }
-    }
-    public var buttonTitleFont:UIFont = UIFont.systemFont(ofSize: 16, weight: .medium){
-        didSet{
-            rightActionButton.titleLabel?.font = buttonTitleFont
-            leftActionButton.titleLabel?.font = buttonTitleFont
-        }
-    }
-    public var titleColor:UIColor =  #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1){
-        didSet{
-            titleLabel.textColor = titleColor
-        }
-    }
-    public var messageColor:UIColor = .black{
-        didSet{
-            messageLabel.textColor = messageColor
-        }
-    }
-    public var buttonTitleColor:UIColor = .gray{
-        didSet{
-            rightActionButton.setTitleColor(buttonTitleColor, for: .normal)
-            leftActionButton.setTitleColor(buttonTitleColor, for: .normal)
-        }
-    }
-    public var buttonBackgroundColor:UIColor = .white{
-        didSet{
-            titleLabel.font = titleFont
-        }
-    }
-    
-    //    ---------------------------------
-    //    MARK:- Create and layout subviews
-    //    ---------------------------------
+    ///Title label of the alert
     public var titleLabel:UILabel!
+    
+    ///Message  label of the alert
     public var messageLabel:UILabel!
+    
+    ///Left side action button label of the alert
     public var leftActionButton:UIButton!
+    
+    ///Right side action button label of the alert
     public var rightActionButton:UIButton!
+    
+    ///Horizontal stack view that contains the action buttons
     public var buttonStackview:UIStackView!
+    
+    ///Alert element container view
     public var alertContainer:UIView!
+    
+    ///Vertical stack view that contains the all main alert element. (ex: title label, message label, and button stack view)
     public var mainStackView:UIStackView!
     
-    override open func createViews() {
-        alertContainer = UIView()
-        alertContainer.clipsToBounds = true
-        alertContainer.layer.cornerRadius = 9
-        alertContainer.backgroundColor = .white
-        alertContainer.translatesAutoresizingMaskIntoConstraints = false
-        
-        titleLabel = UILabel()
-        titleLabel.text = "heading"
-        titleLabel.font = titleFont
-        titleLabel.textColor = titleColor
-        titleLabel.numberOfLines = 2
-        titleLabel.textAlignment = .center
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        messageLabel = UILabel()
-        messageLabel.text = "Message of alert"
-        messageLabel.numberOfLines = 0
-        messageLabel.font = messageFont
-        messageLabel.textColor = messageColor
-        messageLabel.textAlignment = .center
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        leftActionButton = UIButton()
-        leftActionButton.setTitle("Cancel", for: .normal)
-        leftActionButton.contentEdgeInsets = UIEdgeInsets(top: 4, left: 12, bottom: 8, right: 12)
-        leftActionButton.titleLabel?.font = buttonTitleFont
-        leftActionButton.setTitleColor(buttonTitleColor, for: .normal)
-        
-        rightActionButton = UIButton()
-        rightActionButton.setTitle("OK", for: .normal)
-        rightActionButton.contentEdgeInsets = UIEdgeInsets(top: 4, left: 12, bottom: 8, right: 12)
-        rightActionButton.titleLabel?.font = buttonTitleFont
-        rightActionButton.setTitleColor(buttonTitleColor, for: .normal)
-        
-        buttonStackview = UIStackView()
-        buttonStackview.axis = .horizontal
-        buttonStackview.distribution = .fillEqually
-        buttonStackview.spacing = 1
-        buttonStackview.alignment = .fill
-        buttonStackview.translatesAutoresizingMaskIntoConstraints = false
-        
-        mainStackView = UIStackView()
-        mainStackView.axis = .vertical
-        mainStackView.distribution = .equalSpacing
-        mainStackView.alignment = .center
-        mainStackView.spacing = 8
-    }
+    private var buttonActionClouser: ((MNkAlertAction)->Void)?
     
-    
-    override open func insertAndLayoutSubviews() {
-        buttonStackview.addArrangedSubview(leftActionButton)
-        buttonStackview.addArrangedSubview(rightActionButton)
-        
-        mainStackView.addArrangedSubview(titleLabel)
-        mainStackView.addArrangedSubview(messageLabel)
-        mainStackView.addArrangedSubview(buttonStackview)
-        
-        self.addSubview(alertContainer)
-        alertContainer.addSubview(mainStackView)
-        
-        mainStackView.activateLayouts([.leading:0,.traling:0,.top:10,.bottom:0])
-        
-        NSLayoutConstraint.activate([alertContainer.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                                     alertContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                                     alertContainer.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
-                                     alertContainer.heightAnchor.constraint(greaterThanOrEqualToConstant: 150)])
-        
-        NSLayoutConstraint.activate([titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 30),
-                                     titleLabel.widthAnchor.constraint(equalTo: alertContainer.widthAnchor, multiplier: 0.88),
-                                     messageLabel.widthAnchor.constraint(equalTo: alertContainer.widthAnchor, multiplier: 0.88),
-                                     buttonStackview.widthAnchor.constraint(equalTo: alertContainer.widthAnchor, multiplier: 1)])
-    }
-    
-    override open func config() {
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        setPublicProperties()
-    }
-    
-    
-    //    ----------------------------------------------------------------------------------------------------------------------------------------------
-    //    MARK:- Show alert view with heading and alert message
-    //    -----------------------------------------------------------------------------------------------------------------------------------------------
-    ///    Show alert view with heading and alert message
-    ///    You can choose what type of your alert need to be by seting type. Single and multilple, Single only show ok button and action be default hide
-    ///    By changing properties you can change button title -> text, color, background color like things.
-    ///    And using action clouser, you can catch any action perform by user and give action you want.
-    open func show(in targetView:UIView, perform buttonAction:@escaping ((MNkAlertAction)->Void)){
-        
-        setPrivateProperties()
-        
-        titleLabel.text = title
-        messageLabel.text = message
+    private func setUpdatedConfig() {
         leftActionButton.isHidden = type == .single ? true : false
-        
-        self.alpha = 0
+    }
+    
+    
+    //MARK: - Actions
+    /**
+    - Show alert view with heading and alert message.
+    - You can choose what type of your alert need to be by seting type. Single and multilple, Single only show ok button and action be default hide
+    By changing properties you can change button title -> text, color, background color like things.
+    - And using action clouser, you can catch any action perform by user and give action you want.
+     */
+    open func show(in targetView: UIView, perform buttonAction: ((MNkAlertAction)->Void)? = nil){
         targetView.addSubview(self)
         self.frame = targetView.bounds
-        self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-            self.alpha = 1
-            self.transform = .identity
-        }, completion: nil)
+        setUpdatedConfig()
         
+        animate(show: true)
         
-        if type == .single || type == .multi{
-            rightActionButton.addtargetClouser {[weak self]_ in
-                self?.dismiss({ completed in
-                    if completed {
-                        buttonAction(.rightClick)
-                    }
-                })
+        buttonActionClouser = buttonAction
+    }
+    
+    public func dismiss(_ completed: @escaping ()->Void) {
+        animate(show: false, completed)
+    }
+    
+
+    //Button Actions
+    
+    @objc public func didTapRightActionButton() {
+        self.dismiss { [weak self] in
+            if let `buttonActionClouser` = self?.buttonActionClouser {
+                buttonActionClouser(.rightClick)
             }
-        }
-        
-        if type == .multi{
-            leftActionButton.addtargetClouser {[weak self]_ in
-                self?.dismiss({ completed in
-                    if completed {
-                        buttonAction(.leftClick)
-                    }
-                })
+            
+            if let `delegate` = self?.delegate {
+                delegate.userPerformAlertAction?(.rightClick, aditional: nil)
             }
         }
     }
     
-    public func dismiss(_ completed:@escaping(Bool)->Void){
-        UIView.animate(withDuration: 0.15, animations: {
+    @objc public func didTapLeftActionButton() {
+        self.dismiss { [weak self] in
+            if let `buttonActionClouser` = self?.buttonActionClouser {
+                buttonActionClouser(.leftClick)
+            }
+            
+            if let `delegate` = self?.delegate {
+                delegate.userPerformAlertAction?(.leftClick, aditional: nil)
+            }
+        }
+    }
+    
+    
+    //MARK: - Init the view
+    private func loadViews() {
+        createViews()
+        insertAndLayoutSubviews()
+        config()
+    }
+    
+    open func createViews() {
+        _createViews()
+    }
+    
+    open func insertAndLayoutSubviews() {
+        _insertAndLayoutSubviews()
+    }
+    
+    open func config() {
+        _config()
+    }
+    
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadViews()
+    }
+    
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //
+}
+
+
+//MARK: - ANIMATION RELATIVE CODE
+extension MNkAlertView {
+    private func animate(show isShowing: Bool, _ completed: (()->Void)? = nil) {
+        if isShowing {
             self.alpha = 0
-            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        }) { isCompleted in
-            self.transform = .identity
+            self.alertContainer.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }
+        
+        let duration: Double = isShowing ? 0.2 : 0.15
+        
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       options: .curveEaseOut,
+                       animations: {
+            
+            self.alpha = isShowing ? 1 : 0
+            self.alertContainer.transform = isShowing ? .identity : CGAffineTransform(scaleX: 1.1, y: 1.1)
+            
+        }) {  isCompleted in
+            guard isCompleted, !isShowing else { return }
             self.removeFromSuperview()
-            completed(isCompleted)
+            completed?()
         }
-    }
-    
-    
-    private func setPublicProperties(){
-        setAligment()
-    }
-    
-    private func setPrivateProperties(){
-        if let leftActionBGColor = (properties[.leftActionBGColor] as? UIColor){
-            leftActionButton.backgroundColor = leftActionBGColor
-        }
-        if let leftActionTextColor = (properties[.leftActionTextColor] as? UIColor){
-            leftActionButton.setTitleColor(leftActionTextColor, for: .normal)
-        }
-        if let rightActionTextColor = (properties[.rightActionTextColor] as? UIColor){
-            rightActionButton.setTitleColor(rightActionTextColor, for: .normal)
-        }
-        if let rightActionBGColor = (properties[.rightActionBGColor] as? UIColor){
-            rightActionButton.backgroundColor = rightActionBGColor
-        }
-        if let titlteColor = (properties[.titleColor] as? UIColor){
-            titleLabel.textColor = titlteColor
-        }
-        if let messageColor = (properties[.messageColor] as? UIColor){
-            messageLabel.textColor = messageColor
-        }
-        if let leftActionText = (properties[.leftActionText] as? String){
-            leftActionButton.setTitle(leftActionText, for: .normal)
-        }
-        if let rightActionText = (properties[.rightActionText] as? String){
-            rightActionButton.setTitle(rightActionText, for: .normal)
-        }
-        
-        //Aligment
-        if let aligment = (properties[.aligment] as? Aligment){
-            setAligment(aligment)
-        }
-        
-    }
-    
-}
-
-
-
-//    ------------------------------
-//    MARK:- Set aligment properties
-//    ------------------------------
-extension MNkAlertView{
-    
-    private func setAligment(_ aligment:Aligment = .center){
-        switch aligment{
-        case .leftRight,.rightLeft,.right,.left:
-            setTo(aligment)
-        case .center:
-            setToCenter()
-        }
-    }
-    
-    private func setTo(_ aligment:Aligment){
-        let aligTopContent:NSTextAlignment = (aligment == Aligment.left || aligment == Aligment.leftRight) ? NSTextAlignment.left : .right
-        let aligBottomContent:UIControl.ContentHorizontalAlignment = (aligment == Aligment.left || aligment == Aligment.rightLeft) ? UIControl.ContentHorizontalAlignment.left : .right
-        let stackAligmnet:UIStackView.Alignment = (aligment == Aligment.left || aligment == Aligment.rightLeft) ? UIStackView.Alignment.leading : .trailing
-        let leftACBtnPri:UILayoutPriority = (aligment == Aligment.left || aligment == Aligment.rightLeft) ? UILayoutPriority.defaultHigh : .defaultLow
-        let rightACBtnPri:UILayoutPriority = (aligment == Aligment.left || aligment == Aligment.rightLeft) ? UILayoutPriority.defaultLow : .defaultHigh
-        
-        titleLabel.textAlignment = aligTopContent
-        messageLabel.textAlignment = aligTopContent
-        
-        buttonStackview.distribution = .fill
-        buttonStackview.alignment = stackAligmnet
-        buttonStackview.spacing = 8
-        
-        leftActionButton.contentHorizontalAlignment = aligBottomContent
-        rightActionButton.contentHorizontalAlignment = aligBottomContent
-        
-        leftActionButton.setContentHuggingPriority(leftACBtnPri, for: .horizontal)
-        rightActionButton.setContentHuggingPriority(rightACBtnPri, for: .horizontal)
-        
-    }
-    
-    private func setToCenter(){
-        titleLabel.textAlignment = .center
-        messageLabel.textAlignment = .center
-        
-        buttonStackview.distribution = .fillEqually
-        buttonStackview.alignment = .fill
-        buttonStackview.spacing = 1
-        
-        leftActionButton.contentHorizontalAlignment = .center
-        rightActionButton.contentHorizontalAlignment = .center
-    }
-    
-}
-
-
-
-//MARK:- SUPPORT EXTENSION AND TYPEALISE FOR UIBUTTON CLOUSER ACTION
-public typealias UIButtonTargetClouser = (UIButton) -> ()
-
-public extension UIButton{
-    private struct AssociateKeys{
-        static var teargetClouser = "targetClouser"
-    }
-    
-    private var targetClouser:UIButtonTargetClouser?{
-        get{
-            guard let clouserWrapped = objc_getAssociatedObject(self, &AssociateKeys.teargetClouser) as? ClouserWrapped else{return nil}
-            return clouserWrapped.clouser
-        }
-        set{
-            guard let _newVal = newValue else{return}
-            objc_setAssociatedObject(self, &AssociateKeys.teargetClouser, ClouserWrapped(_newVal), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    func addtargetClouser(clouser:@escaping UIButtonTargetClouser){
-        targetClouser = clouser
-        addTarget(self, action: #selector(UIButton.clouserAction), for: .touchUpInside)
-    }
-    
-    @objc func clouserAction(){
-        guard let _targetClouser = targetClouser else {return}
-        _targetClouser(self)
     }
 }
-class ClouserWrapped:NSObject{
-    let clouser:UIButtonTargetClouser
-    init(_ clouser:@escaping UIButtonTargetClouser) {
-        self.clouser = clouser
-    }
-}
-//

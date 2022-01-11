@@ -74,9 +74,11 @@ class MNkCVC_EmptyCellType<EmptyCellType> {}
 ```Swift
  class MNkCollectionVC_Parameter<DataType>
 ```
----
-
+<br><br>
 You can find the original sample code [here](../../Example/MNkSupportUtilities/MNkCollectionViewController_comp.swift).
 
-<br>
+---
+
+
+
 

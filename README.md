@@ -13,6 +13,7 @@ MnkSupportUtilities contains different kinds of custom UI elements, subclasses, 
 - [MNkViewController](docs/MNkViewController_doc/doc.md)
 - [MNkTableViewController](docs/MNkTableViewController_doc/doc.md)
 - [MNKCollectionViewController](docs/MNkCollectionViewController_doc/doc.md)
+- [MNkAlertView](docs/MNkAlertView_doc/doc.md)
 
 ## Getting started
 

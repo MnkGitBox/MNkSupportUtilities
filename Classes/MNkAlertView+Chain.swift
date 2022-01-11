@@ -11,7 +11,7 @@ extension UIKitChain where Component : MNkAlertView {
     
     ///Change Alert type. Default single controller.
     @discardableResult
-    public func type(_ type: MNkAlertView.MNkAlertType) -> Self {
+    public func type(_ type: MNkAlertActionType ) -> Self {
         component.type = type
         return self
     }

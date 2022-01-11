@@ -89,6 +89,11 @@
 		9CBE14E807DE4E04221BC030E54D0DF3 /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE1FDA5BDBFF117AB7E7B51EC3F750D /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F03A79E288ACA342BAC5FA6C5BA3DEB /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E06730A8EC6D03D612A708A7382699 /* SDImageCache.m */; };
 		A81DF1CB0BCA261A0F9736587CADF3D1 /* SDWebImageCoderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A6943A4394C4051BDFD2A4F1B3ADF6 /* SDWebImageCoderHelper.m */; };
+		A899C070278D752C00EE4568 /* MNkAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C06F278D752C00EE4568 /* MNkAlertAction.swift */; };
+		A899C072278D754800EE4568 /* MNkAlertActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C071278D754800EE4568 /* MNkAlertActionType.swift */; };
+		A899C074278D756500EE4568 /* MNkAlertViewContentAligment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C073278D756500EE4568 /* MNkAlertViewContentAligment.swift */; };
+		A899C076278D758700EE4568 /* MNkAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C075278D758700EE4568 /* MNkAlertDelegate.swift */; };
+		A899C078278D75B100EE4568 /* MNkAlertView+LayoutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C077278D75B100EE4568 /* MNkAlertView+LayoutViews.swift */; };
 		AD7914305757C9810FBAFC3B257FCE9F /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 8282929CCF36A9E7F871E7843D578686 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFDBCCFB485AB855388FA351666E766A /* SDWebImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 957DE53A94031623728D3DF3AB2C4433 /* SDWebImageTransition.m */; };
 		B5BDF674CFE5BB7B4E6E48A8C000D6BE /* NSImage+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 013A7EA6027B2098D2A66A586DB8DB4D /* NSImage+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -250,6 +255,11 @@
 		A12B318B021B527679B28E53E43B6D8D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A56A3F7DF847B8D9A7E3C86D43EAEEAC /* MNkSupportUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MNkSupportUtilities.modulemap; sourceTree = "<group>"; };
 		A75BE746A498A97094D32FD632D3B68B /* Pods-MNkSupportUtilities_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MNkSupportUtilities_Example-umbrella.h"; sourceTree = "<group>"; };
+		A899C06F278D752C00EE4568 /* MNkAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MNkAlertAction.swift; path = Classes/MNkAlertAction.swift; sourceTree = "<group>"; };
+		A899C071278D754800EE4568 /* MNkAlertActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MNkAlertActionType.swift; path = Classes/MNkAlertActionType.swift; sourceTree = "<group>"; };
+		A899C073278D756500EE4568 /* MNkAlertViewContentAligment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MNkAlertViewContentAligment.swift; path = Classes/MNkAlertViewContentAligment.swift; sourceTree = "<group>"; };
+		A899C075278D758700EE4568 /* MNkAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkAlertDelegate.swift; sourceTree = "<group>"; };
+		A899C077278D75B100EE4568 /* MNkAlertView+LayoutViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNkAlertView+LayoutViews.swift"; sourceTree = "<group>"; };
 		AD594E84E49E0E8D28B5D0E9A1E2267A /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/SDImageCacheConfig.h; sourceTree = "<group>"; };
 		B0462EC0CF5495E6F9909C42006DDACB /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		B4D416D864E6EFEE77FF4C25DC003882 /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/NSButton+WebCache.h"; sourceTree = "<group>"; };
@@ -543,6 +553,11 @@
 				77EDB8BE25BA960B0025C0FC /* CustomIntensityVisualEffectView.swift */,
 				45F899E77F724C096F3764D6C72561C7 /* Pod */,
 				E392F9FCA028B7F427E69605D8B7B9FC /* Support Files */,
+				A899C06F278D752C00EE4568 /* MNkAlertAction.swift */,
+				A899C071278D754800EE4568 /* MNkAlertActionType.swift */,
+				A899C073278D756500EE4568 /* MNkAlertViewContentAligment.swift */,
+				A899C075278D758700EE4568 /* MNkAlertDelegate.swift */,
+				A899C077278D75B100EE4568 /* MNkAlertView+LayoutViews.swift */,
 			);
 			name = MNkSupportUtilities;
 			path = ../..;
@@ -819,6 +834,7 @@
 				82DCB96A255B9046007087EF /* BadgeButton.swift in Sources */,
 				82DCB955255B9046007087EF /* AppSymbol+UIimageView.swift in Sources */,
 				82DCB94D255B9046007087EF /* UIKitChain.swift in Sources */,
+				A899C074278D756500EE4568 /* MNkAlertViewContentAligment.swift in Sources */,
 				D02CCDBFF3E9E26C2101A3D85CAE4347 /* MNkSupportUtilities-dummy.m in Sources */,
 				82DCB963255B9046007087EF /* UIScrollView+Chain.swift in Sources */,
 				82DCB969255B9046007087EF /* MNkSeperator+Chain.swift in Sources */,
@@ -836,8 +852,10 @@
 				82DCB96C255B9046007087EF /* UIButton+Chain.swift in Sources */,
 				82DCB960255B9046007087EF /* AppSymbol.swift in Sources */,
 				82DCB95A255B9046007087EF /* Helper+Protocol.swift in Sources */,
+				A899C072278D754800EE4568 /* MNkAlertActionType.swift in Sources */,
 				82DCB953255B9046007087EF /* UICollectionView+Chain.swift in Sources */,
 				82DCB968255B9046007087EF /* MNkTableViewController.swift in Sources */,
+				A899C078278D75B100EE4568 /* MNkAlertView+LayoutViews.swift in Sources */,
 				82DCB96B255B9046007087EF /* UITextField+Chain.swift in Sources */,
 				82DCB94B255B9046007087EF /* MNkVerticalAlignButton.swift in Sources */,
 				82DCB95B255B9046007087EF /* SearchContainer.swift in Sources */,
@@ -848,6 +866,8 @@
 				82DCB949255B9046007087EF /* MNkCollectionViewController.swift in Sources */,
 				82DCB962255B9046007087EF /* MNkCollectionViewCell.swift in Sources */,
 				82DCB957255B9046007087EF /*  UIImageView+Chain.swift in Sources */,
+				A899C070278D752C00EE4568 /* MNkAlertAction.swift in Sources */,
+				A899C076278D758700EE4568 /* MNkAlertDelegate.swift in Sources */,
 				82DCB94E255B9046007087EF /* MNkTextFieldWithError.swift in Sources */,
 				82DCB965255B9046007087EF /* CoreDataSupport.swift in Sources */,
 				82DCB966255B9046007087EF /*  UITextView+Chain.swift in Sources */,

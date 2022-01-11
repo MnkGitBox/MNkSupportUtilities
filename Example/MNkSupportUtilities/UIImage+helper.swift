@@ -13,4 +13,6 @@ extension UIImage {
     class var profileMan: UIImage {.init(named: "profile.man")!}
     class var profileWomen: UIImage {.init(named: "profile.women")!}
     class var profileBaby: UIImage {.init(named: "profile.baby")!}
+    
+    class var gearRoundFill: UIImage {.init(named: "gear.round.fill")!}
 }
