@@ -16,6 +16,7 @@ MnkSupportUtilities contains different kinds of custom UI elements, subclasses, 
 - [MNkAlertView](docs/MNkAlertView_doc/doc.md)
 - [AppSymbol](docs/AppSymbol_doc/doc.md)
 - [UIKitChain](docs/UIKitChain_doc/doc.md)
+- [Custom Layout](docs/Custom_layout_doc/doc.md)
 
 ## Getting started
 
