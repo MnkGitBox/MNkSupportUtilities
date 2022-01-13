@@ -49,7 +49,7 @@ public extension UIView{
     
     
     //UIView layout extensions
-    func activateLayouts(equalConstant value:CGFloat = 0,to view:UIView? = nil,_ isSafeAreaActivate:Bool = false){
+    func activateLayouts(equalConstant value:CGFloat = 0,to view:UIView? = nil, layoutToSafeArea isSafeAreaActivate: Bool = false){
         self.translatesAutoresizingMaskIntoConstraints = false
         
         var parentView:UIView!
@@ -74,13 +74,13 @@ public extension UIView{
                                                                   constant: -value)])
     }
     
-    func activateLayouts(to parentView:UIView? = nil,_ layouts:[MNkLayoutKeys:CGFloat],_ isSafeAreaActivate:Bool = false){
+    func activateLayouts(to parentView:UIView? = nil,_ layouts:[MNkLayoutKeys:CGFloat], layoutToSafeArea isSafeAreaActivate:Bool = false){
         for val in layouts{
             activateLayout(to: parentView, val.key, val.value,isSafeAreaActivate)
         }
     }
     
-    func activateLayouts(to layoutsConfig:[UIView:[MNkLayoutKeys:CGFloat]],_ isSafeAreaActivate:Bool = false){
+    func activateLayouts(to layoutsConfig:[UIView:[MNkLayoutKeys:CGFloat]], layoutToSafeArea isSafeAreaActivate:Bool = false){
         for config in layoutsConfig{
             for layout in config.value{
                 activateLayout(to: config.key, layout.key, layout.value,isSafeAreaActivate)

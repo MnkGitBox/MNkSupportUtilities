@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A8184D142790884F00398784 /* CustomLayout_comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8184D132790884F00398784 /* CustomLayout_comp.swift */; };
 		A899C069278C7B6900EE4568 /* MNkCollectionViewController_comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C068278C7B6900EE4568 /* MNkCollectionViewController_comp.swift */; };
 		A899C06B278C84D700EE4568 /* UIImage+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C06A278C84D700EE4568 /* UIImage+helper.swift */; };
 		A899C06D278CC2CB00EE4568 /* MNkAlertView_comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899C06C278CC2CB00EE4568 /* MNkAlertView_comp.swift */; };
@@ -51,6 +52,7 @@
 		77EF4DEA64B87E758DEE25F3 /* MNkSupportUtilities.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MNkSupportUtilities.podspec; path = ../MNkSupportUtilities.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		846E4D360D356CA9B2062DCD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9C870EC5D6AA131A5FA988F8 /* Pods-MNkSupportUtilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNkSupportUtilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNkSupportUtilities_Tests/Pods-MNkSupportUtilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8184D132790884F00398784 /* CustomLayout_comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout_comp.swift; sourceTree = "<group>"; };
 		A899C068278C7B6900EE4568 /* MNkCollectionViewController_comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkCollectionViewController_comp.swift; sourceTree = "<group>"; };
 		A899C06A278C84D700EE4568 /* UIImage+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+helper.swift"; sourceTree = "<group>"; };
 		A899C06C278CC2CB00EE4568 /* MNkAlertView_comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNkAlertView_comp.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				A899C06C278CC2CB00EE4568 /* MNkAlertView_comp.swift */,
 				A899C07B278DC53C00EE4568 /* AppSymbol_comp.swift */,
 				A899C07D278DEFF300EE4568 /* UIKitChain_comp.swift */,
+				A8184D132790884F00398784 /* CustomLayout_comp.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				A899C069278C7B6900EE4568 /* MNkCollectionViewController_comp.swift in Sources */,
 				A899C06D278CC2CB00EE4568 /* MNkAlertView_comp.swift in Sources */,
 				4AFCB36B278C5AB7004A7B03 /* MNKTableViewController_comp.swift in Sources */,
+				A8184D142790884F00398784 /* CustomLayout_comp.swift in Sources */,
 				A899C06B278C84D700EE4568 /* UIImage+helper.swift in Sources */,
 				A899C07C278DC53C00EE4568 /* AppSymbol_comp.swift in Sources */,
 				4AFCB36E278C5AEB004A7B03 /* UserData.swift in Sources */,
