@@ -10,7 +10,7 @@ MNkSupportUtilities contains different kinds of custom UI elements, subclasses, 
 
 ⚠️ From `v3.0.0` onward,  MNkAlertView, AppSymbol, UIKitChain and, the CustomLayout are moved to separate libraries and will not be a part of the MNkSupportUtilites.
 
-⚠️ If you are willing to use MNkSupportUtilities with other separated libraries, you must use `v3.0.0` upwards. And the older versions below `v2.0.3` will not be support to use along with the separate libraries.
+⚠️ If you are willing to use MNkSupportUtilities with other separated libraries, you must use `v3.0.0` upwards. And the older versions below `v2.0.4` will not be support to use along with the separate libraries.
 
 ## Installation
 
@@ -28,7 +28,7 @@ platform :ios, '12.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'MNkSupportUtilities', '~> 2.0.3'
+    pod 'MNkSupportUtilities', '~> 2.0.4'
 end
 ```
 Then, run the following command:
@@ -44,7 +44,7 @@ $ pod install
 
 ```Swift
 dependencies: [
-    .package(url: "https://github.com/MnkGitBox/MNkSupportUtilities.git", .upToNextMajor(from: "2.0.3"))
+    .package(url: "https://github.com/MnkGitBox/MNkSupportUtilities.git", .upToNextMajor(from: "2.0.4"))
 ]
 ```
 
@@ -59,10 +59,10 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 - [MNkViewController](docs/MNkViewController_doc/doc.md)
 - [MNkTableViewController](docs/MNkTableViewController_doc/doc.md)
 - [MNKCollectionViewController](docs/MNkCollectionViewController_doc/doc.md)
-- [MNkAlertView](docs/MNkAlertView_doc/doc.md) *(up to v2.0.3)*
-- [AppSymbol](docs/AppSymbol_doc/doc.md) *(up to  v2.0.3)*
-- [UIKitChain](docs/UIKitChain_doc/doc.md) *(up to v2.0.3)*
-- [CustomLayout](docs/Custom_layout_doc/doc.md) *(up to v2.0.3)*
+- [MNkAlertView](docs/MNkAlertView_doc/doc.md) *(up to v2.0.4)*
+- [AppSymbol](docs/AppSymbol_doc/doc.md) *(up to  v2.0.4)*
+- [UIKitChain](docs/UIKitChain_doc/doc.md) *(up to v2.0.4)*
+- [CustomLayout](docs/Custom_layout_doc/doc.md) *(up to v2.0.4)*
 
 ## Separate Libraries
 

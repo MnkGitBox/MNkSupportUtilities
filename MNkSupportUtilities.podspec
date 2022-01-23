@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MNkSupportUtilities'
-  s.version          = '2.0.3'
+  s.version          = '2.0.4'
   s.summary          = 'All Supporting functions and components'
 
 # This description is used to generate tags and improve search results.
@@ -26,9 +26,9 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/MnkGitBox/MNkSupportUtilities.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/malithnadeeshan'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Sources/MNkSupportUtilities/**/*'
   
   # s.resource_bundles = {
   #   'MNkSupportUtilities' => ['MNkSupportUtilities/Assets/*.png']

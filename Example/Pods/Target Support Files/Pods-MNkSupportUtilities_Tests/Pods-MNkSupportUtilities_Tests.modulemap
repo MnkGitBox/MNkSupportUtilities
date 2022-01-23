@@ -1,6 +1,0 @@
-framework module Pods_MNkSupportUtilities_Tests {
-  umbrella header "Pods-MNkSupportUtilities_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
