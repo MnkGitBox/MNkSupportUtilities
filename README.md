@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/MNkSupportUtilities.svg?style=flat)](https://cocoapods.org/pods/MNkSupportUtilities)
 [![License](https://img.shields.io/cocoapods/l/MNkSupportUtilities.svg?style=flat)](https://cocoapods.org/pods/MNkSupportUtilities)
 [![Platform](https://img.shields.io/cocoapods/p/MNkSupportUtilities.svg?style=flat)](https://cocoapods.org/pods/MNkSupportUtilities)
+![SPM](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-orange)
 
 ## What is MNkSupportUtilities?
 
