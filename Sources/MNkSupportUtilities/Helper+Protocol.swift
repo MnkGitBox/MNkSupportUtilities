@@ -48,17 +48,16 @@ public extension NavBarBackButtonAccesable where Self : UIViewController {
     func configureNavigationCustomBackButton() {
         self.navigationItem.hidesBackButton = true
 
-        navigationBackButton = UIButton().chain
-            .setImage(backSymbolImage?.withRenderingMode(.alwaysTemplate))
-            .title(backTitle)
-            .titleColor(UINavigationBar.appearance().tintColor, for: .normal)
-            .titleColor(UIColor.gray, for: .disabled)
-            .font(.systemFont(ofSize: 17))
-            .titleEdgeInsets(.init(top: 0, left: -12, bottom: 0, right: 0))
-            .imageEdgeInsets(.init(top: 0, left: -18, bottom: 0, right: 0))
-            .lineBreakingMode(.byTruncatingTail)
-            .imageContentMode(.scaleAspectFit)
-            .component
+        navigationBackButton = UIButton()
+        navigationBackButton.setImage(backSymbolImage?.withRenderingMode(.alwaysTemplate), for: .normal)
+        navigationBackButton.setTitle(backTitle, for: .normal)
+        navigationBackButton.setTitleColor(UINavigationBar.appearance().tintColor, for: .normal)
+        navigationBackButton.setTitleColor(UIColor.gray, for: .disabled)
+        navigationBackButton.titleLabel?.font = .systemFont(ofSize: 17)
+        navigationBackButton.titleEdgeInsets = .init(top: 0, left: -12, bottom: 0, right: 0)
+        navigationBackButton.imageEdgeInsets = .init(top: 0, left: -18, bottom: 0, right: 0)
+        navigationBackButton.titleLabel?.lineBreakMode = .byTruncatingTail
+        navigationBackButton.imageView?.contentMode = .scaleAspectFit
 
         let buttonContainerView = UIView()
         buttonContainerView.addSubview(navigationBackButton)

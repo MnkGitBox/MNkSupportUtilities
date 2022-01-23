@@ -28,7 +28,7 @@ platform :ios, '12.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'MNkSupportUtilities', '~> 2.0.4'
+    pod 'MNkSupportUtilities'
 end
 ```
 Then, run the following command:

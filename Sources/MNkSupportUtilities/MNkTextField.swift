@@ -37,7 +37,13 @@ open class MNkTextField: UITextField {
     
     private var borderViews: [UIView] = []
     
-    private let _errorLabel = UILabel().chain.font(.systemFont(ofSize: 16.5)).textColor(.red).component
+    
+    private var _errorLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = .systemFont(ofSize: 16.5)
+        lbl.textColor = .red
+        return lbl
+    }()
     
     private func insertBorders(){
         for edge in borders{
