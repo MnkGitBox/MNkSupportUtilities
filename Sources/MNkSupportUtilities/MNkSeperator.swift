@@ -5,6 +5,8 @@
 //  Created by MNk_Dev on 3/12/18.
 //
 
+import UIKit
+
 open class MNkSeperator:MNkView{
     public var heightAnchorCons:NSLayoutConstraint?
     private var color:UIColor?

@@ -5,7 +5,7 @@
 //  Created by Malith Kamburapola on 2021-10-05.
 //
 
-import Foundation
+import UIKit
 
 public class MNkCustomFonts: NSObject {
     //Static declaration

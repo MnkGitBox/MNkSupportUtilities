@@ -6,6 +6,8 @@
 //  Copyright © 2018 azbow. All rights reserved.
 //
 
+import UIKit
+
 public protocol SearchDelegate{
     func didActivate(search view:SearchContainer.SearchView)
     func didDeActivate(search view:SearchContainer.SearchView)

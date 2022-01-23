@@ -6,6 +6,7 @@
 //  Copyright © 2020 Malith Nadeeshan. All rights reserved.
 //
 
+import UIKit
 
 extension UIKitChain where Component:MNkSeperator{
     

@@ -5,7 +5,7 @@
 //  Created by Malith Kamburapola on 2021-10-05.
 //
 
-import Foundation
+import UIKit
 
 enum CustomFontSizeScale: Int {
     case small = -1

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Malith Nadeeshan. All rights reserved.
 //
 
+import UIKit
+
 public extension UIKitChain where Component: MNkVerticalAlignButton {
     @discardableResult
     func title(_ title: String) -> Self {

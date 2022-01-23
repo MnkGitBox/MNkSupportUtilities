@@ -5,7 +5,7 @@
 //  Created by MNk_Dev on 5/11/18.
 //
 
-import Foundation
+import UIKit
 
 //-------------------------------------------//
 //UIView Extenstions
@@ -249,21 +249,21 @@ public extension UIView{
 //-------------------------------------------//
 //UIimageview Extenstions
 //-------------------------------------------//
-
-import SDWebImage
-public extension UIImageView{
-    func setImage(with url:URL?,tintColor tColor:UIColor?,plaseHolder plImage:UIImage? = nil,options sdwedImageOptions:SDWebImageOptions = []){
-        var renderingMode:UIImage.RenderingMode = .alwaysOriginal
-        if tColor != nil{
-            renderingMode = .alwaysTemplate
-        }
-        sd_setImage(with: url, placeholderImage: plImage, options: sdwedImageOptions) { [weak self]image, _,_, _ in
-            let _image = image?.withRenderingMode(renderingMode)
-            self?.tintColor = tColor
-            self?.image = _image
-        }
-    }
-}
+//
+//import SDWebImage
+//public extension UIImageView{
+//    func setImage(with url:URL?,tintColor tColor:UIColor?,plaseHolder plImage:UIImage? = nil,options sdwedImageOptions:SDWebImageOptions = []){
+//        var renderingMode:UIImage.RenderingMode = .alwaysOriginal
+//        if tColor != nil{
+//            renderingMode = .alwaysTemplate
+//        }
+//        sd_setImage(with: url, placeholderImage: plImage, options: sdwedImageOptions) { [weak self]image, _,_, _ in
+//            let _image = image?.withRenderingMode(renderingMode)
+//            self?.tintColor = tColor
+//            self?.image = _image
+//        }
+//    }
+//}
 
 /*.................................
  MARK:- UICollectionView extensions

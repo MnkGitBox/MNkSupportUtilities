@@ -4,8 +4,7 @@
 //
 //  Created by Malith Nadeeshan on 3/25/19.
 //
-
-import Foundation
+import UIKit
 
 public typealias ValidationData = (textContainer: MNkValidatableTextView, type: ValidationType)
 

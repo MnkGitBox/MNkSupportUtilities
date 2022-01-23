@@ -6,6 +6,8 @@
 //  Copyright © 2018 azbow. All rights reserved.
 //
 
+import UIKit
+
 public protocol BadgeButtonDelegate{
     func userTapped(_ badgeButton:BadgeButton)
 }

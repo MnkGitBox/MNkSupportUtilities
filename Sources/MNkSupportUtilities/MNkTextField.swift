@@ -5,7 +5,7 @@
 //  Created by Malith Nadeeshan on 3/23/19.
 //
 
-import Foundation
+import UIKit
 
 open class MNkTextField: UITextField {
     
