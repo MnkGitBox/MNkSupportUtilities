@@ -235,9 +235,7 @@ extension MNkTextValidatable{
         return emailPred.evaluate(with: emailTextContainer.textString)
     }
     
-    private func validatePhoneNo(in textContainer: UIView, isRequired: Bool = true)->Bool{
-        
-        print("Validating.......: ", textContainer.textString)
+    private func validatePhoneNo(in textContainer: UIView, isRequired: Bool = true)->Bool {
         
         guard let text = textContainer.textString, text != "" else { return isRequired ? false : true }
         
